@@ -1,0 +1,87 @@
+/* -------------------------------------------------- */
+/* WARNING!
+/* -------------------------------------------------- */
+
+// This file is not to be edited.
+// On the level of bad to worst,
+// it's on par with giving Gizmo from Gremlins a bath. 
+
+
+/* -------------------------------------------------- */
+/* TYPOGRAPHY
+/* -------------------------------------------------- */
+
+// BASE
+$root-font-size: 62.5% !default;
+
+
+/* -------------------------------------------------- */
+/* GENERIC AMOUNTS
+/* -------------------------------------------------- */
+
+$amounts: (
+    xs: 4px,
+    sm: 6px,
+    md: 8px,
+    lg: 16px,
+    xl: 24px,
+    none: 0
+) !default;
+
+
+/* -------------------------------------------------- */
+/* GENERIC NUMBERS
+/* -------------------------------------------------- */
+
+$numbers: (
+    0: 0,
+    1: 0.1,
+    2: 0.2,
+    3: 0.3,
+    4: 0.4,
+    5: 0.5,
+    6: 0.6,
+    7: 0.7,
+    8: 0.8,
+    9: 0.9,
+    10: 1
+);
+
+//$numbers: slice($numbers, 1, 9);
+
+
+/* -------------------------------------------------- */
+/* TRANSFORMS
+/* -------------------------------------------------- */
+
+$scales: (
+    xs: 0.5,
+    sm: 0.9,
+    md: 1.12,
+    lg: 1.25,
+    xl: 1.5,
+    none: 1
+) !default;
+
+
+/* -------------------------------------------------- */
+/* POSITIONS
+/* -------------------------------------------------- */	
+
+$directions: (
+    top: 'top',
+    right: 'right',
+    bottom: 'bottom',
+    left: 'left',
+
+    tr: 'top right',
+    br: 'bottom right',
+    bl: 'bottom left',
+    tl: 'top left',
+
+    center: 'center center',
+    tc: 'top center',
+    rc: 'right center',
+    bc: 'bottom center',
+    lc: 'left center'
+);

@@ -1,0 +1,196 @@
+/* -------------------------------------------------- */
+/* ICON
+/* -------------------------------------------------- */
+
+.#{$element}ui#{$modifier} {
+
+	&#{'menu'} {
+
+		@extend .flex-vh;
+		@extend .round-full;
+		@extend .background-primary-slant;
+		@extend .box-shadow-xs;
+		@extend .scale-sm;
+		@include transition($property: (background-size, box-shadow, transform), $ease: ease-out, $duration: 200ms);
+
+		cursor: pointer;
+		display: block;
+		position: relative;
+		padding: {
+			top: 1rem;
+			right: 1rem;
+			bottom: 1rem;
+			left: 1rem;			
+		}
+		width: 60px;
+		height: 60px;
+		background-size: 200%;
+
+		&::before {
+
+			@extend .scale-none;
+			@include transition($property: (color, transform), $ease: ease-out, $duration: 200ms);
+
+			content: 'Menu';
+			position: absolute;
+			left: -4em;
+			color: $white;
+			font-weight: bold;
+
+			@include break($type: 'width', $min: 0, $max: $mobile) {
+
+				display: none;
+
+			}
+
+		}
+
+		&:hover {
+
+			@extend .box-shadow-md;
+			@extend .scale-none;
+
+			background-size: 100%;
+
+			&::before {
+
+				@extend .scale-sm;
+
+			}
+
+		}
+
+		svg {
+
+			g {
+
+				@include transition($property: (opacity, transform), $ease: ease-in-out, $duration: 200ms);
+
+			}
+
+			g:first-child {
+
+				@extend .scale-none;
+				opacity: 1;
+
+			}
+
+			g:last-child {
+
+				@extend .scale-xs;
+				opacity: 0;
+
+			}
+
+		}
+
+		&.is-active {
+
+			&::before {
+
+				content: 'Close';
+				color: $accent;
+
+			}
+
+			svg {
+
+				g:first-child {
+
+					@extend .scale-xs;
+					opacity: 0;
+
+				}
+
+				g:last-child {
+
+					@extend .scale-none;
+					opacity: 1;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'play-pause'} {
+
+		@extend .flex-vh;
+		@extend .round-full;
+		@extend .background-primary-slant;
+		@extend .box-shadow-xs;
+		@extend .scale-sm;
+		@include transition($property: (background-size, box-shadow, transform), $ease: ease-out, $duration: 200ms);
+
+		cursor: pointer;
+		display: block;
+		padding: {
+			top: 2rem;
+			right: 2rem;
+			bottom: 2rem;
+			left: 2rem;			
+		}
+		width: 70px;
+		height: 70px;
+		background-size: 200%;
+
+		&:hover {
+
+			@extend .box-shadow-md;
+			@extend .scale-none;
+
+			background-size: 100%;
+
+		}
+
+		svg {
+
+			g {
+
+				@include transition($property: (opacity, transform), $ease: ease-in-out, $duration: 200ms);
+
+			}
+
+			g:first-child {
+
+				@extend .scale-none;
+				opacity: 1;
+
+			}
+
+			g:last-child {
+
+				@extend .scale-xs;
+				opacity: 0;
+
+			}
+
+		}
+
+		&.is-active {
+
+			svg {
+
+				g:first-child {
+
+					@extend .scale-xs;
+					opacity: 0;
+
+				}
+
+				g:last-child {
+
+					@extend .scale-none;
+					opacity: 1;
+
+				}
+
+			}
+
+		}
+
+	}
+
+}

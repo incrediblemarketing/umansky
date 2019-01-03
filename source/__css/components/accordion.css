@@ -1,0 +1,123 @@
+/* -------------------------------------------------- */
+/* ACCORDION
+/* -------------------------------------------------- */
+
+/* PARENT */
+.accordion {
+    background-color: transparent;
+}
+
+
+/* ITEM */
+.accordion-item:last-child > :last-child {
+    border-radius: 0;
+}
+
+.accordion-item:last-child {
+    margin-bottom: 4rem;
+    border-radius: 0;
+}
+
+
+/* STATE */
+/*
+.accordion-item.is-active {
+    border-right: thin solid var(--secondary-color); 
+    background-color: rgba(var(--charcoal-color-rgb), 0.05);
+}
+*/
+
+
+.accordion-item .is-active,
+.accordion-title.is-active {
+    color: var(--secondary-color);
+    border-right: thin solid var(--secondary-color);
+    background-color: rgba(var(--charcoal-color-rgb), 0.05);
+}
+
+.accordion-item:first-child> :first-child {
+    border-bottom: 0;
+    border-radius: 0;
+}
+
+
+/* TITLE */
+.accordion-title,
+:last-child:not(.is-active) > .accordion-title {
+    font-size: 1em;
+    padding: var(--gutter-sm);
+    color: var(--charcoal-color);
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    /*border-right: 0;*/
+    border-radius: 0;
+}
+
+.accordion-title {
+    border-right: 0 solid var(--dark-grey-color);
+}
+
+.accordion-title:hover,
+.accordion-title:focus,
+.accordion-title:active {
+    color: var(--secondary-color);
+    background-color: rgba(var(--charcoal-color-rgb), 0.05);
+}
+
+.accordion-title::before {
+    font-family: 'FontAwesome';
+    top: 50%;
+    right: 1rem;
+    margin-top: -0.5rem;
+    /*content: '\f067';*/
+    content: '';
+}
+
+
+/* STATES */
+.accordion-item.is-active > .accordion-title,
+.accordion-item.is-active > .accordion-title::before {
+    /*content: '\f068';*/
+    content: '';
+    color: var(--secondary-color);
+}
+
+
+/*
+ .accordion-item.is-active > .accordion-title {
+    border-right: thin solid var(--secondary-color); 
+    background-color: rgba(var(--charcoal-color-rgb), 0.05);
+}
+*/
+
+
+/* CONTENT */
+.accordion-content {
+    margin-left: 0.75rem;
+    padding: 0 0 0 0;
+    border: 0;
+    border-radius: 0;
+    background-color: rgba(var(--white-color-rgb), 0);
+}
+
+:last-child > .accordion-content:last-child {
+    border-bottom: 0;
+}
+
+.accordion-content li a {
+    font-size: 0.9em;
+    line-height: 1em;
+    display: block;
+    padding: var(--gutter-xs);
+    color: var(--dark-grey-color);
+}
+
+.accordion-content li:last-child {
+    /*margin-bottom: var(--gutter-single-sm);*/
+}
+
+.accordion-content li a:hover,
+.accordion-content li a:focus {
+    color: var(--secondary-color);
+}

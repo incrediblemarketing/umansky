@@ -1,0 +1,22 @@
+/* -------------------------------------------------- */
+/* SCALE
+/* -------------------------------------------------- */
+
+.#{$utility}scale#{$modifier} {
+
+	@each $name, $scale in $scales {
+
+		&#{$name} {
+
+			//@extend %force-gpu;
+			transform-origin: center center;
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+				transform: scale($scale);
+			}
+
+		}
+
+	}
+
+}

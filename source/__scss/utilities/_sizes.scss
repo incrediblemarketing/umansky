@@ -1,0 +1,65 @@
+/* -------------------------------------------------- */
+/* WIDTH
+/* -------------------------------------------------- */
+
+.#{$element}width#{$modifier} {
+
+	@each $name, $width in $widths {
+
+		&#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+				width: 100%;
+				max-width: $width;
+			}
+
+		}
+
+	}
+
+	&#{'auto'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			width: auto;
+		}
+
+	}	
+
+}
+
+
+/* -------------------------------------------------- */
+/* HEIGHT
+/* -------------------------------------------------- */
+
+.#{$element}height#{$modifier} {
+
+	@each $name, $height in $heights {
+
+		&#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+				height: $height;
+			}
+
+		}
+
+	}
+
+	&#{'auto'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			height: auto;
+		}
+
+	}
+
+	&#{'full'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			height: 100%;
+		}
+
+	}	
+
+}

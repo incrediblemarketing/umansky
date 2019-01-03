@@ -1,0 +1,54 @@
+/* -------------------------------------------------- */
+/* BLOCKER
+/* -------------------------------------------------- */
+
+/* PARENT */
+#blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: default;
+
+    background-color: #486997;
+
+    /*
+	animation-name: anim-blocker;
+	animation-play-state: paused;
+	animation-duration: 100ms;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+	*/
+}
+
+
+/*
+#blocker.active {
+	opacity: 0.75;
+	display: block;
+}
+@keyframes anim-blocker {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 0.75;
+	}
+}
+*/
+
+
+/* HELPERS */
+html.inactive,
+html.inactive body {
+    /*overflow: hidden !important;*/
+    /*height: 100%;*/
+}

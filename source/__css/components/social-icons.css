@@ -1,0 +1,432 @@
+/* -------------------------------------------------- */
+/* SOCIAL ICONS
+/* -------------------------------------------------- */
+
+/* PARENT */
+.social-icons-hero {
+    display: block;
+    position: absolute;
+    top: 75%;
+    left: 50px;
+    color: var(--primary-color);
+    font-size: 1rem;
+
+    /*transform: rotate(90deg);*/
+    transform: translateY(-75%);
+}
+
+
+/* CHILD */
+.social-icons-hero li {
+    position: relative;
+    margin: 1rem 0 1rem 0;
+}
+
+.social-icons-hero li a {
+    display: block;
+}
+
+.social-icons-hero li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    background-color: var(--primary-color);
+
+    transition: var(--transition);
+}
+
+
+/* ICONS */
+.social-icons-hero li a .fa {
+    margin-right: 0.5rem;
+    width: 25px;
+    height: 25px;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+
+/* LABEL */
+.social-icons-hero li a .icon-label {
+    opacity: 0;
+    font-size: 0.75em;
+    letter-spacing: 0.125em;
+    
+    transition: var(--transition);
+}
+
+.social-icons.no-labels li a .icon-label {
+    display: none;
+}
+
+
+/* HOVER */
+.social-icons-hero li:hover a .fa {
+    color: var(--white-color);
+}
+
+.social-icons-hero li:hover a .icon-label {
+    opacity: 1;
+    color: var(--white-color);
+}
+
+.social-icons-hero li:hover::after {
+    left: 0;
+    right: auto;
+    width: 25%;
+    background-color: var(--white-color);
+}
+
+
+/* RESPONSIVE */
+@media only screen and (min-width: 0) and (max-width: 667px) {
+
+    /* PARENT */
+    .social-icons-hero {
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+
+    /* CHILD */
+    .social-icons-hero li {
+        display: inline-block;
+        margin: 1rem 0 1rem 0;
+    }
+
+
+    /* ICONS */
+    .social-icons-hero li a .fa {
+        margin-right: 0.5rem;
+        width: 25px;
+        height: 25px;
+        line-height: 1.5em;
+        text-align: center;
+    }
+
+}
+
+
+/* -------------------------------------------------- */
+/* SOCIAL ICONS
+/* -------------------------------------------------- */
+
+/* COMMON */
+.social-icons {
+    position: relative;
+    display: block;
+}
+
+.social-icons.top,
+.social-icons.bottom {
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.social-icons.left,
+.social-icons.right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* PARENT */
+.social-icons.top {
+    top: 0;
+}
+
+.social-icons.right {
+    right: 0;
+}
+
+.social-icons.bottom {
+    bottom: 0;
+}
+
+.social-icons.left {
+    left: 0;
+}
+
+
+/* CHILD */
+.social-icons > li > a {
+    font-size: 1em;
+    position: relative;
+    z-index: auto;
+    display: inline-block;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 0 auto;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition);
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 0;
+    border-radius: 50%;
+    outline: 0;
+}
+
+
+/* ICON */
+.social-icons > li > a .fa {
+    position: absolute;
+    z-index: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 1023px) {
+
+    /* PARENT */
+    .social-icons.top:not(.fixed),
+    .social-icons.right:not(.fixed),
+    .social-icons.bottom:not(.fixed),
+    .social-icons.left:not(.fixed) {
+        /*display: block;*/
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        transform: translateY(0%);
+    }
+
+    /* CHILD */
+    .social-icons.top:not(.fixed) > li,
+    .social-icons.right:not(.fixed) > li,
+    .social-icons.bottom:not(.fixed) > li,
+    .social-icons.left:not(.fixed) > li {
+        display: inline-block;
+        margin: 0.2rem 0.4rem 0.2rem 0.4rem;
+    }
+
+}
+
+@media screen and (min-width: 0) and (max-width: 667px) {
+
+    .social-icons.fixed {
+        display: none;
+    }
+
+}
+
+
+/* -------------------------------------------------- */
+/* POSITIONING
+/* -------------------------------------------------- */
+
+/* FIXED */
+.social-icons.fixed {
+    position: fixed;
+}
+
+.social-icons.fixed > li:not(:last-child) {
+    border-bottom: thin solid var(--light-grey-color);
+    background-color: var(--white-color);
+}
+
+.social-icons.fixed > li > a {
+    font-size: 1em;
+    color: var(--secondary-color);
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.social-icons.fixed > li > a:hover {
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+}
+
+.social-icons.fixed:hover {
+    box-shadow: 0 16px 24px 2px rgba(var(--secondary-color-rgb), 0.1),
+                0 6px 30px 5px rgba(var(--secondary-color-rgb), 0.14),
+                0 8px 10px -5px rgba(var(--secondary-color-rgb), 0.16);
+}
+
+
+/* -------------------------------------------------- */
+/* THEMES
+/* -------------------------------------------------- */
+
+/* DEFAULT */
+.social-icons > li > a {
+    color: var(--dark-grey-color);
+    background-color: transparent;
+}
+
+.social-icons > li > a:hover {
+    color: var(--white-color);
+}
+
+
+/* LIGHT */
+.social-icons.light > li> a {
+    color: var(--accent-color);
+    background-color: transparent;
+}
+
+.social-icons.light > li > a:hover {
+    color: var(--white-color);
+}
+
+
+/* DARK */
+.social-icons.dark > li > a {
+    color: var(--secondary-color);
+    background-color: transparent;
+}
+
+.social-icons.dark > li > a:hover {
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+}
+
+
+/* -------------------------------------------------- */
+/* BRAND COLORS
+/* -------------------------------------------------- */
+
+/*
+[class^='social-icon-'] {
+    color: var(--white-color);
+}
+*/
+
+.social-icon-phone,
+.social-icon-phone-hover:hover {
+    color: var(--primary-color);
+}
+
+.social-icon-email,
+.social-icon-email-hover:hover {
+    color: var(--secondary-color);
+}
+
+.social-icon-behance,
+.social-icon-behance-hover:hover {
+    color: #1769ff;
+}
+
+.social-icon-codepen,
+.social-icon-codepen-hover:hover {
+    color: #47cf73;
+}
+
+.social-icon-dribble,
+.social-icon-dribble-hover:hover {
+    color: #ea4c89;
+}
+
+.social-icon-etsy,
+.social-icon-etsy-hover:hover {
+    color: #d5641c;
+}
+
+.social-icon-facebook,
+.social-icon-facebook-hover:hover {
+    color: #3b5998;
+}
+
+.social-icon-github,
+.social-icon-github-hover:hover {
+    color: #4078c0;
+}
+
+.social-icon-google-plus,
+.social-icon-google-plus-hover:hover {
+    color: #d34836;
+}
+
+.social-icon-instagram,
+.social-icon-instagram-hover:hover {
+    color: #ffc838;
+}
+
+.social-icon-linkedin,
+.social-icon-linkedin-hover:hover {
+    color: #0077b5;
+}
+
+.social-icon-medium,
+.social-icon-medium-hover:hover {
+    color: #3cb371;
+}
+
+.social-icon-pinterest,
+.social-icon-pinterest-hover:hover {
+    color: #cb2027;
+}
+
+.social-icon-reddit,
+.social-icon-reddit-hover:hover {
+    color: #ff4500;
+}
+
+.social-icon-skype,
+.social-icon-skype-hover:hover {
+    color: #00aff0;
+}
+
+.social-icon-slack,
+.social-icon-slack-hover:hover {
+    color: #3eb991;
+}
+
+.social-icon-snapchat,
+.social-icon-snapchat-hover:hover {
+    color: #fffc00;
+}
+
+.social-icon-telegram,
+.social-icon-telegram-hover:hover {
+    color: #08c;
+}
+
+.social-icon-tumblr,
+.social-icon-tumblr-hover:hover {
+    color: #fffc00;
+}
+
+.social-icon-twitch,
+.social-icon-twitch-hover:hover {
+    color: #6441a4;
+}
+
+.social-icon-twitter,
+.social-icon-twitter-hover:hover {
+    color: #0084b4;
+}
+
+.social-icon-vimeo,
+.social-icon-vimeo-hover:hover {
+    color: #1ab7ea;
+}
+
+.social-icon-yelp,
+.social-icon-yelp-hover:hover {
+    color: #c41200;
+}
+
+.social-icon-youtube,
+.social-icon-youtube-hover:hover {
+    color: #cc181e;
+}
+
+.social-icon-whatsapp,
+.social-icon-whatsapp-hover:hover {
+    color: #34af23;
+}

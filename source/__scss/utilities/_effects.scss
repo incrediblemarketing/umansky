@@ -1,0 +1,120 @@
+/* -------------------------------------------------- */
+/* EFFECTS
+/* -------------------------------------------------- */
+
+// BOX SHADOW
+.#{$element}box-shadow#{$modifier} {
+
+	@each $name, $amount in $amounts {
+
+		&#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+				@include shadow($type: 'box-shadow', $color: #000, $x: 0, $y: $amount, $blur: $amount, $spread: 0, $alpha: 0.2, $strength: 0, $inset: false);
+
+			}
+
+		}
+
+	}
+
+}
+
+
+// DROP SHADOW
+.#{$element}drop-shadow#{$modifier} {
+
+	@each $name, $amount in $amounts {
+
+		&#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+				@include shadow($type: 'drop-shadow', $color: #000, $x: 0, $y: $amount, $blur: $amount, $spread: 0, $alpha: 0.25, $strength: 0.5, $inset: false);
+
+			}
+
+		}
+
+	}
+
+}
+
+
+// TEXT SHADOW
+.#{$element}text-shadow#{$modifier} {
+
+	@each $name, $amount in $amounts {
+
+		&#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+				@include shadow($type: 'text-shadow', $color: #000, $x: $amount, $y: $amount, $blur: 1px, $alpha: 0.25, $strength: 1);
+
+			}
+
+		}
+
+	}
+
+}
+
+
+// BLUR
+.#{$element}blur#{$modifier} {
+
+	@each $name, $amount in $amounts {
+
+		&#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+				filter: blur($amount / 2);
+			}
+
+		}
+
+		&#{'svg'} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+				filter: url(#blur);
+			}
+
+		}
+
+	}
+
+}
+
+
+// BACKDROP BLUR
+.#{$element}frost#{$modifier} {
+
+	@each $name, $amount in $amounts {
+
+		&#{'white'}#{$modifier}#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+				background-color: rgba($white, 0.2);
+				backdrop-filter: blur($amount / 2);
+
+			}
+
+		}
+
+		&#{'black'}#{$modifier}#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+				background-color: rgba($black, 0.2);
+				backdrop-filter: blur($amount / 2);
+				
+			}
+
+		}
+
+	}
+
+}

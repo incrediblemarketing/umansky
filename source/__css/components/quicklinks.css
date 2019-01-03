@@ -1,0 +1,37 @@
+/* -------------------------------------------------- */
+/* QUICKLINKS
+/* -------------------------------------------------- */
+
+/* PARENT */
+#quicklinks {
+    position: fixed;
+    top: 50%;
+    right: 0;
+
+    overflow: hidden;
+
+    transform: translateY(-50%);
+
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: var(--radius-sm);
+    box-shadow: var(--box-shadow-xl);
+}
+
+
+/* CHILD */
+#quicklinks li {
+    font-size: 0.875em;
+
+    background-color: var(--white-color);
+}
+
+#quicklinks li a {
+    color: var(--secondary-color);
+}
+
+#quicklinks li a:last-child {
+    border-radius: 0;
+    background-color: var(--white-color);
+}

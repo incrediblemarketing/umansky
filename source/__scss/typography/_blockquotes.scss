@@ -1,0 +1,88 @@
+/* -------------------------------------------------- */
+/* BLOCKQUOTES
+/* -------------------------------------------------- */    
+
+.blockquote {
+
+    position: relative;
+    width: 100%;
+    //max-width: 400px;
+    /*border-left: 1px solid $white-color;*/
+
+    @include break($type: 'width', $min: 0, $max: $tablet) {
+
+        margin: {
+            left: auto;
+            right: auto;
+        }
+        max-width: 100%;
+
+    }
+
+    &::before {
+
+        @extend %pseudo;
+        @include icon($type: 'pseudo', $icon: f10d);
+
+        z-index: auto;
+        opacity: 0.1;
+        top: -0.25em;
+        left: -0.75em;
+        color: $charcoal;
+        font-size: 4em;
+
+        @include break($type: 'width', $min: 0, $max: $mobile) {
+
+            opacity: 0.075;
+            top: -0.5em;
+            left: 0;
+
+        }
+
+    }
+
+    &::after {
+
+        @extend %pseudo;
+        @extend .center-h;
+
+        z-index: auto;
+        width: 25%;
+        height: 1px;
+        background-color: $primary;
+
+    }
+
+    p {
+
+        padding: {
+            bottom: 4rem;
+            left: 2.5rem;
+        }
+        color: $charcoal;
+        font-size: 1.25em;
+        font-weight: bold;
+        line-height: 1.5em;
+
+        @include break($type: 'width', $min: 0, $max: $mobile) {
+
+            padding: {
+                left: 0.5em;
+            }
+            font-size: 1em;
+
+        }
+
+    }
+
+    footer {
+
+        cite {
+
+
+
+        }
+
+    }
+
+}

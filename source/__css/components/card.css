@@ -1,0 +1,29 @@
+/* -------------------------------------------------- */
+/* CARD
+/* -------------------------------------------------- */
+
+/* PARENT */
+.card {
+    position: relative;
+
+    padding: 0;
+
+    /*transition: var(--transition-fast);*/
+
+    border-radius: var(--radius-sm);
+    box-shadow: var(--box-shadow-sm);
+}
+
+
+/* HOVER */
+.card:hover { 
+    /*box-shadow: var(--box-shadow-md);*/
+}
+
+
+/* HELPERS */
+.card.outline {
+    border: 1px solid var(--secondary-color);
+    background-color: transparent;
+    box-shadow: none;
+}

@@ -1,0 +1,279 @@
+/*
+ * Author: Digital Zoom Studio
+ * Website: http://digitalzoomstudio.net/
+ * Portfolio: http://codecanyon.net/user/ZoomIt/portfolio
+ *
+ * Version: 1.31
+ *
+ */
+
+@keyframes keyframes-rotate {
+ 0% {
+ transform: rotate(0deg);
+}
+ 50% {
+ transform: rotate(180deg);
+}
+ 100% {
+ transform: rotate(360deg);
+}
+}
+
+.dzsparallaxer:not(.mode-oneelement) {
+    /*height: 300px;*/
+    overflow: inherit;
+    /*background-color: #1c1a17;*/
+    position: relative;
+    transition-property: height;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+    box-sizing: border-box;
+}
+
+.dzsparallaxer.overflow-visible:not(.mode-oneelement) {
+    overflow: visible;
+}
+
+.dzsparallaxer.overflow-hidden:not(.mode-oneelement) {
+    /*height: 300px;*/
+    overflow: hidden;
+    /*background-color: #1c1a17;*/
+}
+
+.dzsparallaxer:not(.mode-oneelement) * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.dzsparallaxer:not(.mode-oneelement) .dzsparallaxer--target {
+    position: relative;
+}
+
+
+.dzsparallaxer:not(.mode-oneelement) .dzsparallaxer--target.position-absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.dzsparallaxer.position-absolute {
+    position: absolute !important;
+}
+
+.dzsparallaxer:not(.mode-oneelement) .dzsparallaxer--blackoverlay {
+    position: absolute;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.dzsparallaxer:not(.mode-oneelement) > p, .dzsparallaxer:not(.mode-oneelement) > div {
+    position: relative;
+}
+
+.dzsparallaxer--aftermouse {
+    position: relative;
+}
+
+.dzsparallaxer.wait-readyall .dzsparallaxer--target {
+    opacity: 0;
+    transition-property: height, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.dzsparallaxer.mode-oneelement {
+    position: relative;
+}
+
+.dzsparallaxer.wait-readyall.dzsprx-readyall .dzsparallaxer--target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dzsparallaxer.use-loading .dzsparallaxer--target {
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in;
+}
+
+.dzsparallaxer.use-loading .preloader-semicircles {
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+}
+
+.dzsparallaxer.use-loading .horizontal-fog {
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in;
+}
+
+.dzsparallaxer.use-loading.loaded .horizontal-fog {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dzsparallaxer.height-is-based-on-content {
+    height: auto;
+    padding: 0;
+}
+
+.dzsparallaxer.height-is-based-on-content .dzsparallaxer--target {
+    position: absolute;
+    width: 100%;
+}
+
+.dzsparallaxer.height-is-based-on-content > div {
+    position: relative;
+}
+
+.dzsparallaxer > .parallaxer-content {
+    pointer-events: none;
+}
+
+.dzsparallaxer > .parallaxer-content > * {
+    pointer-events: auto;
+}
+
+.dzsparallaxer:not(.height-is-based-on-content) > .parallaxer-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dzsparallaxer.use-loading.loaded .dzsparallaxer--target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dzsparallaxer.use-loading.loaded .preloader-semicircles {
+    transform: translate3d(0, -50px, 0);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dzsparallaxer.allbody {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.divimage {
+    background-size: cover;
+    background-position: center center;
+}
+
+.divimage.repeat-pattern {
+    background-size: auto;
+    background-position: top left;
+}
+
+@keyframes preloader-semicircles-tween {
+ 0% {
+ transform: rotate(0deg);
+}
+ 50% {
+ transform: rotate(180deg);
+}
+ 100% {
+ transform: rotate(360deg);
+}
+}
+
+.preloader-semicircles {
+    width: 15px;
+    height: 15px;
+    background: rgba(230, 50, 50, 0.9);
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0.7;
+    visibility: visible;
+    pointer-events: none;
+    transform: translate3d(-50%, -50%, 0);
+    animation: preloader-semicircles-tween 1.4s infinite linear;
+}
+
+body .dzsparallaxer .preloader-semicircles {
+    position: absolute;
+}
+
+.preloader-semicircles:after {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-top: 5px solid #c83232;
+    border-bottom: 5px solid #c83232;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 25px;
+    content: '';
+    top: -10px;
+    left: -10px;
+    box-sizing: content-box;
+}
+
+.dzsparallaxer.mode-horizontal .dzsparallaxer--target {
+    position: absolute;
+}
+
+.dzsparallaxer.mode-horizontal .dzsparallaxer--target-con {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    min-width: 100%;
+}
+
+.dzsparallaxer.mode-horizontal.loaded .dzsparallaxer--target {
+    animation: slideshow 25s linear infinite;
+}
+
+.horizontal-fog {
+    position: absolute !important;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-image: url(img/fog_clouds_png_by_paradise234-d5czivb.png);
+    animation: slideshow 25s linear infinite;
+    background-size: cover;
+}
+
+.horizontal-fog.clone {
+    left: -100%;
+}
+ @keyframes slideshow {
+ 0% {
+ transform: translate3d(0, 0, 0);
+}
+ 100% {
+ transform: translate3d(100%, 0, 0);
+}
+}
+
+.dzsparallaxer.animation-engine-css .dzsparallaxer--target {
+    transition-property: opacity, visibility, transform;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+}
+
+/*# sourceMappingURL=dzsparallaxer.css.map */

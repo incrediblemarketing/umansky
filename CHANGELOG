@@ -1,0 +1,34 @@
+
+January 3, 2019
+Version 0.0.1
+	Website / App
+		- Fixed text being truncated in main menu.
+		- Adjusted breakpoint for main menu.
+		- Fixed form input fields missing their 'type' attribute.
+
+
+	Framework
+		- Added critical CSS options to configuration file.
+		- Tweaked HTML optimization options causing form fields to be mangled in final build.
+
+
+January 2, 2019
+Version 0.0.1
+	Website / App
+		- Beta / preview release.
+
+
+	Framework
+		- Added Mac support.
+		- Added fully featured SCSS (SASS) compiler.
+		- Added critical CSS task to compiler.
+			- This task will analyze HTML and inline critical path CSS.
+
+		- Added PostCSS plugin 'MQPacker'.
+		- Improved CSS optimizations.
+		- Foundation Framework lib and core assets such as jQuery are now configured in a separate config file (framework.json).
+		- Sorted and grouped some configuration options.
+		- Rewrote some tasks in main 'gulp.babel.js' file.
+		- Compiler will no longer compile CSS files.
+		- Updated NPM and Node.js to latest build.
+		- Updated plugins and modules.

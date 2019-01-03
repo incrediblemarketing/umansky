@@ -1,0 +1,134 @@
+/* -------------------------------------------------- */
+/* HERO
+/* -------------------------------------------------- */
+
+/* COMMON */
+.button-hero {
+    position: relative;
+    padding: 1rem;
+    font-family: var(--font-header);
+    font-size: 1.25em;
+    line-height: 1em;
+
+    transition: var(--transition); 
+}
+
+.button-hero::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 5px;
+    border-bottom: 1px solid var(--primary-color);
+    /*background-color: var(--primary-color);*/
+    z-index: -1;
+
+    transform: translateY(-50%);
+
+    transition: var(--transition);
+}
+
+
+/* PARENT */
+.button-hero {
+    color: var(--primary-color);
+}
+
+
+/* HOVER */
+.button-hero:hover {
+    color: var(--white-color);
+    letter-spacing: 0.075em;
+}
+
+.button-hero:hover::before {
+    border-bottom: 1px solid var(--white-color);
+    /*background-color: var(--white-color);*/
+}
+
+
+/* HELPERS */
+.button-hero-left::before {
+    left: -100%;
+    border-right: 25px solid rgba(var(--primary-color-rgb), 1);
+    border-left: 25px solid rgba(var(--primary-color-rgb), 0);
+}
+
+.button-hero-left:hover::before {
+    left: 100%;
+    width: 50%;
+    border-right: 25px solid rgba(var(--white-color-rgb), 0);
+    border-left: 25px solid rgba(var(--white-color-rgb), 1);
+}
+
+.button-hero-right::before {
+    right: -100%;
+    border-left: 25px solid rgba(var(--primary-color-rgb), 1);
+    border-right: 25px solid rgba(var(--primary-color-rgb), 0);
+}
+
+.button-hero-right:hover::before {
+    right: 100%;
+    width: 50%;
+    border-left: 25px solid rgba(var(--white-color-rgb), 0);
+    border-right: 25px solid rgba(var(--white-color-rgb), 1);
+}
+
+
+/* RESPONSIVE */
+@media only screen and (min-width: 0) and (max-width: 667px) {
+
+    .button-hero {
+        font-size: 1em;
+    }
+
+}
+
+
+/* -------------------------------------------------- */
+/* GRADIENT
+/* -------------------------------------------------- */
+
+/* COMMON */
+.button-fx-primary,
+.button-fx-secondary,
+.button-fx-accent,
+.button-fx-wild,
+.button-fx-charcoal {
+    position: relative;
+    color: var(--white-color);
+    transition: var(--transition-quick);
+}
+
+
+/* HOVER */
+.button-fx-primary:hover,
+.button-fx-secondary:hover,
+.button-fx-accent:hover,
+.button-fx-wild:hover,
+.button-fx-charcoal:hover {
+    /*color: var(--white-color);*/
+}
+
+
+/* COLORS */
+.button-fx-primary:hover {
+    background-color: var(--primary-color);
+}
+
+.button-fx-secondary:hover {
+    background-color: var(--secondary-color);
+}
+
+.button-fx-accent:hover {
+    background-color: var(--accent-color);
+}
+
+.button-fx-wild:hover {
+    background-color: var(--wild-color);
+}
+
+.button-fx-charcoal:hover {
+    background-color: var(--charcoal-color);
+}

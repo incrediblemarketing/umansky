@@ -1,0 +1,58 @@
+/* -------------------------------------------------- */
+/* MENU BAR
+/* -------------------------------------------------- */
+
+/* COMMON */
+.menubar {
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem; 
+    width: 100%;
+    height: 100%;
+}
+
+.menubar .cell {
+    position: relative;
+}
+
+
+/* -------------------------------------------------- */
+/* MENU LABEL
+/* -------------------------------------------------- */
+
+/* PARENT */
+#navbar-label,
+#nav-panel-label {
+    font-size: 1em;
+
+    cursor: pointer;
+    text-transform: uppercase;
+
+    color: var(--white-color);
+}
+
+
+/* HOVER */
+#navbar-label:hover + .nav-toggle div .hamburger span::before {
+    transform: translateX(0);
+}
+
+#navbar-label:hover + .nav-toggle div .hamburger span::after {
+    transform: translateX(200%);
+}
+
+
+/* THEME */
+#navbar.dark .menubar #navbar-label {
+    color: var(--secondary-color);
+}
+
+#navbar.sticky.dark .menubar #navbar-label {
+    color: var(--white-color);
+}
+
+
+/* STICKY */
+#navbar.sticky #navbar-label {
+    color: var(--white-color);
+}

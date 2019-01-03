@@ -1,0 +1,343 @@
+/*removeIf(production)*/
+:root {
+
+    /* -------------------------------------------------- */
+    /* COPY
+    /* -------------------------------------------------- */
+
+    --font-header: 'Martel', serif;
+    --font-subheader: 'Martel', serif;
+    --font-copy: 'Open Sans', sans-serif;
+    --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, Ubuntu, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+
+    /* -------------------------------------------------- */
+    /* COLORS
+	/* -------------------------------------------------- */
+
+        /* -------------------------------------------------- */
+        /* HEX
+        /* -------------------------------------------------- */
+
+        /* THEME */
+        --primary-color: #c6a55a;
+        --secondary-color: #001c34;
+        --accent-color: #ffdf97;
+        --wild-color: #c8c8c8;
+
+
+        /* COMMON */
+        --white-color: #fff;
+        --light-grey-color: #ddd;
+        --dark-grey-color: #828282;
+        --charcoal-color: #333;
+        --black-color: #000;
+
+
+        /* STATUS */
+        --ok-color: #0f0;
+        --error-color: #f00;
+        --warning-color: #fc0;
+
+
+        /* -------------------------------------------------- */
+        /* RGBA
+        /* -------------------------------------------------- */
+
+        /* THEME */
+        --primary-color-rgb: 198,165,90;
+        --secondary-color-rgb: 10,28,52;
+        --accent-color-rgb: 255,223,151;
+        --wild-color-rgb: 200,200,200;
+
+
+        /* COMMON */
+        --white-color-rgb: 255,255,255;
+        --light-grey-color-rgb: 225,225,225;
+        --dark-grey-color-rgb: 75,75,75;
+        --charcoal-color-rgb: 50,50,50;
+        --black-color-rgb: 25,25,25;
+
+
+        /* STATUS */
+        --ok-color-rgb: 0,250,0;
+        --error-color-rgb: 250,0,0;
+        --warning-color-rgb: 250,225,0;
+
+
+    /* -------------------------------------------------- */
+    /* LAYOUT
+	/* -------------------------------------------------- */
+
+        /* -------------------------------------------------- */
+        /* SECTION or ARTICLE
+    	/* -------------------------------------------------- */
+
+        /* MARGIN / PADDING */
+        --section-margin: 0rem auto 0rem auto;
+        --section-padding: 2rem 0rem 2rem 0rem;
+
+
+        /* RESPONSIVE */
+        --section-margin-mobile: 0rem auto 0rem auto;
+        --section-padding-mobile: 6rem 0rem 6rem 0rem;
+
+
+        /* -------------------------------------------------- */
+        /* GRID CELL
+    	/* -------------------------------------------------- */
+
+        /* XY */
+        --cell-padding-top: 2rem;
+        --cell-padding-right: 2rem;
+        --cell-padding-bottom: 2rem;
+        --cell-padding-left: 2rem;
+
+        /*
+		--cell-margin-top: 0.5rem;
+        --cell-margin-right: auto;
+        --cell-margin-bottom: 0.5rem;
+		--cell-margin-left: auto;
+    	*/
+
+
+        /* HELPERS */
+        --margin-top-auto: 0rem;
+        --margin-right-auto: auto;
+        --margin-bottom-auto: 0rem;
+        --margin-left-auto: auto;
+
+        --padding-top-auto: 4rem;
+        --padding-right-auto: 2rem;
+        --padding-bottom-auto: 2rem;
+        --padding-left-auto: 2rem;
+
+
+        /* RESPONSIVE */
+        --cell-padding-top-mobile: 2rem;
+        --cell-padding-right-mobile: 2rem;
+        --cell-padding-left-mobile: 2rem;
+        --cell-padding-bottom-mobile: 2rem;
+
+        /*
+		--cell-margin-top-mobile: 0.5rem;
+        --cell-margin-right-mobile: auto; 
+		--cell-margin-bottom-mobile: 0.5rem;
+        --cell-margin-left-mobile: auto; 
+		*/
+
+        --margin-top-auto-mobile: 0rem;
+        --margin-right-auto-mobile: auto;
+        --margin-bottom-auto-mobile: 0rem;
+        --margin-left-auto-mobile: auto;
+
+        --padding-top-auto-mobile: 2rem;
+        --padding-right-auto-mobile: 2rem;
+        --padding-bottom-auto-mobile: 2rem;
+        --padding-left-auto-mobile: 2rem;
+
+
+    /* -------------------------------------------------- */
+    /* SIZES
+	/* -------------------------------------------------- */
+
+        /* -------------------------------------------------- */
+        /* WIDTH
+    	/* -------------------------------------------------- */
+
+        --width-min: 50px;
+        --width-xxxs: 250px;
+        --width-xxs: 480px;
+        --width-xs: 800px;
+        --width-sm: 1024px;
+        --width-md: 1280px;
+        --width-lg: 1440px;
+        --width-xl: 1600px;
+        --width-xxl: 1920px;
+        --width-xxxl: 2560px;
+
+
+        /* -------------------------------------------------- */
+        /* HEIGHT
+    	/* -------------------------------------------------- */
+
+        --height-min: 25px;
+        --height-xxxs: 250px;
+        --height-xxs: 320px;
+        --height-xs: 600px;
+        --height-sm: 720px;
+        --height-md: 768px;
+        --height-lg: 900px;
+        --height-xl: 1050px;
+        --height-xxl: 1080px;
+        --height-xxxl: 1600px;
+
+
+        /* -------------------------------------------------- */
+        /* EQUAL WIDTH / HEIGHT
+    	/* -------------------------------------------------- */
+
+        --size-xxxs: 25px;
+        --size-xxs: 75px;
+        --size-xs: 100px;
+        --size-sm: 150px;
+        --size-md: 200px;
+        --size-lg: 250px;
+        --size-xl: 300px;
+        --size-xxl: 350px;
+        --size-xxxl: 400px;
+
+
+    /* -------------------------------------------------- */
+    /* MARGIN / PADDING / SPACING
+	/* -------------------------------------------------- */
+
+        /* -------------------------------------------------- */
+        /* ALL
+    	/* -------------------------------------------------- */
+
+        --gutter-xxxs: 0.25rem 0.25rem 0.25rem 0.25rem;
+        --gutter-xxs: 0.5rem 0.5rem 0.5rem 0.5rem;
+        --gutter-xs: 0.75rem 0.75rem 0.75rem 0.75rem;
+        --gutter-sm: 1rem 1rem 1rem 1rem;
+        --gutter-md: 2rem 2rem 2rem 2rem;
+        --gutter-lg: 4rem 4rem 4rem 4rem;
+        --gutter-xl: 6rem 6rem 6rem 6rem;
+        --gutter-xxl: 8rem 8rem 8rem 8rem;
+        --gutter-xxxl: 16rem 16rem 16rem 16rem;
+
+
+        /* -------------------------------------------------- */
+        /* SINGLE
+    	/* -------------------------------------------------- */
+
+        --gutter-single-xxxs: 0.25rem;
+        --gutter-single-xxs: 0.5rem;
+        --gutter-single-xs: 0.75rem;
+        --gutter-single-sm: 1rem;
+        --gutter-single-md: 2rem;
+        --gutter-single-lg: 4rem;
+        --gutter-single-xl: 6rem;
+        --gutter-single-xxl: 8rem;
+        --gutter-single-xxxl: 16rem;
+
+
+    /* -------------------------------------------------- */
+    /* TEXT
+	/* -------------------------------------------------- */
+
+        /* -------------------------------------------------- */
+        /* LETTER SPACING
+    	/* -------------------------------------------------- */
+
+        --text-letter-spacing-xxxs: 0.125rem;
+        --text-letter-spacing-xxs: 0.25rem;
+        --text-letter-spacing-xs: 0.5rem;
+        --text-letter-spacing-sm: 0.75rem;
+        --text-letter-spacing-md: 1rem;
+        --text-letter-spacing-lg: 1.25rem;
+        --text-letter-spacing-xl: 1.5rem;
+        --text-letter-spacing-xxl: 1.75rem;
+        --text-letter-spacing-xxxl: 2rem;
+
+
+        /* -------------------------------------------------- */
+        /* LINE HEIGHT
+    	/* -------------------------------------------------- */
+
+        --text-leading-xxxs: 1em;
+        --text-leading-xxs: 1.25em;
+        --text-leading-xs: 1.5em;
+        --text-leading-sm: 1.75em;
+        --text-leading-md: 2em;
+        --text-leading-lg: 2.25em;
+        --text-leading-xl: 2.5em;
+        --text-leading-xxl: 2.75em;
+        --text-leading-xxxl: 3em;
+
+
+    /* -------------------------------------------------- */
+    /* RADIUS
+	/* -------------------------------------------------- */
+
+    --radius-xxxs: 2px;
+    --radius-xxs: 4px;
+    --radius-xs: 6px;
+    --radius-sm: 8px;
+    --radius-md: 10px;
+    --radius-lg: 12px;
+    --radius-xl: 14px;
+    --radius-xxl: 16px;
+    --radius-xxxl: 18px;
+    --radius-full: 100px;
+
+
+    /* -------------------------------------------------- */
+    /* BORDER
+	/* -------------------------------------------------- */
+
+    --border-xxxs: 1px;
+    --border-xxs: 2px;
+    --border-xs: 3px;
+    --border-sm: 4px;
+    --border-md: 5px;
+    --border-lg: 6px;
+    --border-xl: 7px;
+    --border-xxl: 8px;
+    --border-xxxl: 9px;
+
+
+    /* -------------------------------------------------- */
+    /* FILTER EFFECTS
+	/* -------------------------------------------------- */
+
+    /* TEXT SHADOW; REFERENCE: VERT, HORIZ, BLUR, SPREAD, COLOR */
+    --text-shadow-xs: 1px 1px 0 rgba(0,0,0, 0.5);
+    --text-shadow-sm: 2px 2px 2px rgba(0,0,0, 0.5);
+    --text-shadow-md: 3px 3px 3px rgba(0,0,0, 0.5);
+    --text-shadow-lg: 4px 4px 4px rgba(0,0,0, 0.5);
+    --text-shadow-xl: 5px 5px 5px rgba(0,0,0, 0.5);
+
+
+    /* BOX SHADOW; REFERENCE: VERT, HORIZ, BLUR, SPREAD, COLOR / OPACITY */
+    --box-shadow-xs: 0px 2px 4px 0px rgba(0,0,0, 0.25);
+    --box-shadow-sm: 0px 4px 6px 0px rgba(0,0,0, 0.25);
+    --box-shadow-md: 0px 6px 8px 0px rgba(0,0,0, 0.25);
+    --box-shadow-lg: 0px 8px 20px 0px rgba(0,0,0, 0.25);
+    --box-shadow-xl: 0px 15px 30px 0px rgba(0,0,0, 0.25);
+
+
+    /* DROP SHADOW; REFERENCE: VERT, HORIZ, BLUR, COLOR / OPACITY */
+    --drop-shadow-xs: drop-shadow( 2px 2px 0px rgba(0,0,0, 0.25) );
+    --drop-shadow-sm: drop-shadow( 4px 4px 4px rgba(0,0,0, 0.25) );
+    --drop-shadow-md: drop-shadow( 6px 6px 6px rgba(0,0,0, 0.25) );
+    --drop-shadow-lg: drop-shadow( 8px 8px 8px rgba(0,0,0, 0.25) );
+    --drop-shadow-xl: drop-shadow( 10px 10px 10px rgba(0,0,0, 0.25) );
+
+
+    /* BLUR */
+    --blur-xs: blur(2px);
+    --blur-sm: blur(4px);
+    --blur-md: blur(6px);
+    --blur-lg: blur(8px);
+    --blur-xl: blur(10px);
+    --blur-mr-magoo: blur(12px);
+
+
+    /* -------------------------------------------------- */
+    /* TRANSITIONS
+	/* -------------------------------------------------- */
+
+    --transition: all 200ms ease;
+    --transition-in: all 200ms ease-in;
+    --transition-out: all 200ms ease-out;
+    --transition-in-out: all 200ms ease-in-out;
+
+    --transition-quick: all 100ms ease-in;
+    --transition-fast: all 200ms ease-in;
+    --transition-normal: all 300ms ease-in-out;
+    --transition-slow: all 400ms ease-out;
+    --transition-very-slow: all 500ms ease-out;
+
+}
+/*endRemoveIf(production)*/

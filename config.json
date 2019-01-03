@@ -1,0 +1,466 @@
+{
+	
+	"options": {
+		"name": "Umansky",
+		"site": "https://domain.com",
+		"siteVersion": "0.0.1",
+		"styleguideVersion": "0.0.1",
+		"production": true,
+		"serviceworker": false,
+		"appBanner": false,
+		"sourcemaps": false,
+		"cacheBuild": false,
+		"previewURL": "index.html"
+	},
+
+	"path": {
+		"source": "source/",
+		"build": "build/",
+		"scripts": "scripts/",
+		"assets": "assets/"
+	},
+
+	"accessibility": {
+		"allow": false,
+		"generateReport": false
+	},
+
+	"tracking": {
+
+		"fullstory": {
+			"allow": true,
+			"id": "HG432"
+		},
+
+		"ga": {
+			"allow": false,
+			"url": "domain.com",
+			"id": "UA-00000000-0",
+			"anonymizeIp": true,
+			"bounceTime": "",
+			"demographics": true,
+			"linkAttribution": false,
+			"minify": true,
+			"nonceTag": false,
+			"require": "urlChangeTracker",
+			"sendPageView": true,
+			"tagPlacement": "head"
+		},
+
+		"gtm": {
+			"allow": false,
+			"id": "GTM-0000000"
+		}
+
+	},
+
+	"robots": {
+		"useragent": "*",
+		"allow": [""],
+		"disallow": ["/assets/", "/cgi-bin/", "/downloads/", "/fonts/", "/dialog/", "/scripts/"]
+	},
+
+	"versioning": {
+
+		"scripts": {
+			"allow": true,
+			"prefix": ".",
+			"suffix": ".min"
+		},
+
+		"images": {
+			"allow": false,
+			"prefix": ".",
+			"suffix": ""
+		}
+
+	},
+
+	"fonts": {
+		"allow": true,
+		"source": "googlefonts",
+		"families": ["Montserrat", "Pinyon+Script"],
+		"id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+		"api": "//use.edgefonts.net",
+		"urls": ["/fonts.css"],
+		"text": null,
+		"version": 12345,
+		"loadAllFonts": true,
+		"classes": true,
+		"events": true,
+		"context": ["my-child"],
+		"timeout": 5000
+	},
+
+	"images": {
+
+		"raster": {
+			"level": 5,
+			"interlaced": true,
+			"progressive": true
+		},
+
+		"sprite": {
+			"files": "sprites/",
+			"convert": {
+						"allow": true,
+						"format": "png",
+						"scale": "1"
+			},
+			"mode": "sprite",
+			"class": "sprite-wrapper",
+			"selector": "sprite",
+			"layout": "vertical",
+			"padding": 0,
+			"asyncTransforms": false,
+			"preview": false
+		},
+
+		"svg": {
+			"convert": {
+						"allow": true,
+						"format": "png",
+						"scale": "2"
+			},
+			"cleanup": true,
+			"minify": true,
+			"removeEmptyText": true,
+			"removeMetadata": true,
+			"removeTitle": true,
+			"removeRaster": true,
+			"removeScript": true,
+			"removeStyle": true,
+			"removeViewBox": true
+		},
+
+		"webp": {
+			"convert": true,
+			"level": 0,
+			"quality": 100,
+			"alphaQuality": 100,
+			"sharpness": 0
+		}
+
+	},
+
+	"html": {
+		"files": "_pages/**/*.{html,hbs,handlebars}",
+		
+		"pages": "_pages/",
+		"layouts": "_layouts/",
+		"partials": "_partials/",
+		"helpers": "_helpers/",
+		"data": "_data/",
+		"inlineScripts": "_inline/",
+
+		"dialog": {
+			"files": "_dialog/**/*.{html,hbs,handlebars}",
+			"output": "dialog/"
+		}
+	},
+	
+	"vendors": {
+		"allow": false,
+		"bundle": "vendors.js",
+		"lint": false,
+		"attribute": "async",
+		"files": "__vendors/*.js"
+	},
+
+	"styleguide": {
+		"assets": ["!common/**/*.webp", "common/**/*"]
+	},
+
+	"optimizations": {
+		"html": {
+			"minify": true
+		},
+		"js": {
+			"lint": false,
+			"dropConsole": true,
+			"ie8Support": false,
+			"keepfnames": false,
+			"mangle": true,
+			"removeDeadCode": true,
+			"toplevel": false
+		},
+		"css": {
+			"lint": true,
+			"autoprefix": true,
+			"cascade": true,
+			"flexbox": true,
+			"grid": false,
+			"log": true,
+			"preserveVariables": false,
+			"rebase": true,
+			"removeDuplicatedProperties": true,
+			"removeOutdatedPrefixes": true,
+			"supports": true,
+			"support": ["last 2 versions", "ie >= 9", "android >= 4.4", "ios >= 7"]
+		},
+		"critical": {
+			"allow": true,
+			"inline": true,
+			"extract": false,
+			"width": 1920,
+			"height": 1080
+		}
+	},
+
+	"js": {
+		"source": "__lib/",
+		"bundle": "app.js",
+		"attribute": "defer",
+		
+		"files": ["<PLUGINS>",
+				  ">>plugins/jquery.easing.js",
+
+
+				  "<OPTIMIZATIONS>",
+				  "assets/selectorcache.js",
+				  "assets/passiveeventlisteners.js",
+
+
+				  "<POLYFILLS / FALLBACK>",
+				  "assets/modernizr.js",
+				  "polyfills/intersectionbserver.js",
+
+
+				  "<DATA>",
+				  "assets/cookies.js",
+				  ">>assets/loadjson.js",
+
+
+				  "<UTILITIES>",
+				  "assets/addmultipleeventlisteners.js",
+				  ">>assets/backbone.js",
+				  "assets/lazyload.js",
+				  "assets/print.js",
+				  "assets/scrolllock.js",
+				  "assets/scrollstartstop.js",
+				  ">>assets/smoothstate.js",
+				  "assets/stickykit.js",
+				  "assets/underscore.js",
+				  "assets/visibility.js",
+				  ">>assets/what-input.js",
+
+
+				  "<UI>",
+				  "assets/headroom.js",
+				  ">>assets/menuaim.js",
+
+
+				  "<FX>",
+				  "assets/curtains.js",
+				  ">>assets/granim.js",
+				  ">>plugins/particles/particles.core.js",
+				  ">>plugins/particles/particles.app.js",
+				  ">>assets/neuralnetwork.js",
+				  "assets/shaders.js",
+
+
+				  "<ELEMENT MANIPULATION>",
+				  ">>assets/adaptivebackground.js",
+				  ">>assets/duotone.js",
+				  ">>assets/tilt.js",
+
+
+				  "<SCROLL MANIPULATION>",
+				  "plugins/dzsparallaxer.js",
+				  "assets/emergence.js",
+				  ">>assets/rellax.js",
+				  ">>assets/scrollama.js",
+				  ">>assets/scrollissimo.js",
+				  ">>assets/scrollme.js",
+
+
+				  "<ANIMATION ENGINE (GSAP)>",
+				  "plugins/gsap/TweenMax.js",
+				  ">>plugins/gsap/TimelineMax.js",
+				  ">>plugins/gsap/plugins/BezierPlugin.js",
+				  ">>plugins/gsap/plugins/ColorPropsPlugin.js",
+				  ">>plugins/gsap/plugins/CSSPlugin.js",
+				  ">>plugins/gsap/plugins/CSSRulePlugin.js",
+				  ">>plugins/gsap/plugins/DirectionalRotationPlugin.js",
+				  ">>plugins/gsap/plugins/ModifiersPlugin.js",
+				  ">>plugins/gsap/plugins/ScrollToPlugin.js",
+				  ">>plugins/gsap/plugins/TextPlugin.js",
+
+				  "<ANIMATION ENGINE (GSAP CLUB GREENSOCK PLUGINS)>",
+				  ">>plugins/gsap/plugins/DrawSVGPlugin.js",
+				  ">>plugins/gsap/plugins/MorphSVGPlugin.js",
+				  ">>plugins/gsap/plugins/Physics2DPlugin.js",
+				  ">>plugins/gsap/plugins/PhysicsPropsPlugin.js",
+				  ">>plugins/gsap/plugins/ScrambleTextPlugin.js",
+				  "plugins/gsap/plugins/SplitTextPlugin.js",
+				  ">>plugins/gsap/plugins/ThrowPropsPlugin.js",
+
+
+				  "<3D LIBS>",
+				  ">>plugins/three/three.js",
+				  ">>plugins/three/plugins/three.controls.js",
+
+
+				  "<OTHER LIBS>",
+				  ">>plugins/p5/p5.js",
+				  ">>plugins/p5/plugins/p5.dom.js",
+				  ">>plugins/p5/plugins/p5.sound.js",
+
+
+				  "<COMPONENTS>",
+				  ">>plugins/fullpage/plugins/dragandmove.js",
+				  ">>plugins/fullpage/plugins/scrolloverflow.js",
+				  ">>plugins/fullpage/fullpage.extensions.js",
+				  ">>plugins/fullpage/fullpage.js",
+
+				  "plugins/metafizzy/flickity.js",
+				  "plugins/metafizzy/imagesloaded.js",
+				  ">>plugins/metafizzy/isotope.js",
+				  "plugins/metafizzy/plugins/background.lazyload.js",
+
+
+				  "<WIDGETS>",
+				  "plugins/waves.js",
+
+
+				  "<APP>",
+				  "options.js",
+				  "detect.js",
+				  "animations/*.js",
+				  "utilities.js",
+				  "components.js",
+				  "ui.js",
+				  ">>hashnav.js",
+				  "notice.js",
+				  "pages.js",
+				  ">>transition.js",
+				  "app.js",
+				  ">>utilities/benchmark.js"
+				 ]
+	
+	},
+
+	"css": {
+		"source": "__css/",
+		"bundle": "app.css",
+
+		"files": ["<INIT>",
+				  "__css/options.css",
+				  "fonts/fontawesome.css",
+
+
+				  "<JQUERY>",
+				  ">>jquery/jquery.mobile.css",
+
+
+				  "<DETECTION / FALLBACKS / POLYFILLS>",
+
+
+				  "DATA>",
+				  "FORMS>",
+				  "WRAPPERS>",
+				  "UTILITIES>",
+				  "UI",
+
+
+				  "<FX>",
+
+
+				  "<DOM>",
+
+
+				  "<SCROLL MANIPULATION>",
+				  "dzsparallaxer/dzsparallaxer.css",
+
+
+				  "<3D>",
+				  "<OTHER>",
+
+
+				  "<COMPONENTS>",
+				  ">>fullpage/fullpage.css",
+				  ">>fullpage/nav.css",
+				  "metafizzy/flickity.css",
+
+
+				  "<WIDGETS>",
+				  "waves/waves.css",
+
+
+				  "<FRAMEWORK>",
+				  "framework/foundation.css",
+				  ">>framework/foundation.rtl.css",
+
+
+				  "<ELEMENTS>",
+				  "__css/elements/*.css",
+
+
+				  "<UI>",
+				  "__css/ui/*.css",
+
+
+				  "<COMPONENTS>",
+				  "__css/components/*.css",
+
+
+				  "<UTILITIES>",
+				  "__css/utilities/*.css",
+
+
+				  "<APP>",
+				  "animations/*.css",
+				  "__css/copy.css",
+				  "__css/layout.css",
+				  "__css/rules.css",
+				  "__css/theme.css",
+				  "__css/responsive.css",
+				  "__css/accessibility.css"
+				 ]
+	
+	},
+
+	"scss": {
+		"source": "__scss/",
+		"critical": "app.css",
+		"bundle": "app.scss"
+	},
+
+	"sync": {
+		"notify": true,
+
+		"browsers": "default",
+		"host": "",
+		"https": false,
+		"localOnly": false,
+		"online": true,
+		"port": "3000",
+
+		"cors": true,
+		"open": "external",
+		"tunnel": false,
+		"xip": false,
+
+		"codeSync": true,
+		"injectChanges": true,
+		"watch": true,
+
+		"ghostMode": true,
+
+		"reloadDebounce": 0,
+		"reloadDelay": 1000,
+		"reloadThrottle": 0,
+		
+		"scrollElements": [],
+		"scrollElementMapping": [],
+		"scrollProportionally": true,
+		"scrollRestoreTechnique": "window.name",
+		"scrollThrottle": 0,
+
+		"logConnections": true,
+		"logFileChanges": false,
+		"logLevel": "info",
+		"timestamps": true
+	}
+	
+}

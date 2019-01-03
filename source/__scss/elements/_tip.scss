@@ -1,0 +1,62 @@
+/* -------------------------------------------------- */
+/* HELPERS
+/* -------------------------------------------------- */
+
+%tip {
+	@extend %pseudo;
+
+	width: 18px;
+	height: 18px;
+	background-color: inherit;
+	z-index: 1;
+}
+
+
+/* -------------------------------------------------- */
+/* TIP
+/* -------------------------------------------------- */
+
+.#{$element}tip#{$modifier} {
+
+	&#{'top'}::after,
+	&#{'right'}::after,
+	&#{'left'}::after,
+	&#{'bottom'}::after {
+
+		@extend %tip;
+
+	}
+
+	&#{'top'}::after {
+
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) rotate(45deg);
+
+	}
+
+	&#{'right'}::after {
+
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%) rotate(45deg);
+
+	}
+
+	&#{'bottom'}::after {
+
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%) rotate(45deg);
+
+	}
+
+	&#{'left'}::after {
+
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%) rotate(45deg);
+
+	}
+
+}

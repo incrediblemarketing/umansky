@@ -1,0 +1,141 @@
+/* -------------------------------------------------- */
+/* DIVIDER
+/* -------------------------------------------------- */
+
+/* COMMON */
+.hairline {
+    position: relative;
+    padding: 1rem;
+    font-family: var(--font-header);
+    font-size: 1.25em;
+
+    transition: var(--transition); 
+}
+
+.hairline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 5px;
+    z-index: -1;
+
+    transform: translateY(-50%);
+
+    transition: var(--transition);
+}
+
+
+/* COLORS */
+.hairline-primary.hairline-left::before {
+    border-right: 25px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+.hairline-primary.hairline-right::before {
+    border-left: 25px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+
+.hairline-secondary.hairline-left::before {
+    border-right: 25px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+}
+.hairline-secondary.hairline-right::before {
+    border-left: 25px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+
+.hairline-accent.hairline-left::before {
+    border-right: 25px solid var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+}
+.hairline-accent.hairline-right::before {
+    border-left: 25px solid var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+
+.hairline-wild.hairline-left::before {
+    border-right: 25px solid var(--wild-color);
+    border-bottom: 1px solid var(--wild-color);
+}
+.hairline-wild.hairline-right::before {
+    border-left: 25px solid var(--wild-color);
+    border-bottom: 1px solid var(--wild-color);
+}
+
+
+.hairline-white.hairline-left::before {
+    border-right: 25px solid var(--white-color);
+    border-bottom: 1px solid var(--white-color);
+}
+.hairline-white.hairline-right::before {
+    border-left: 25px solid var(--white-color);
+    border-bottom: 1px solid var(--white-color);
+}
+
+
+.hairline-light-grey.hairline-left::before {
+    border-right: 25px solid var(--light-grey-color);
+    border-bottom: 1px solid var(--light-grey-color);
+}
+.hairline-light-grey.hairline-right::before {
+    border-left: 25px solid var(--light-grey-color);
+    border-bottom: 1px solid var(--light-grey-color);
+}
+
+
+.hairline-dark-grey.hairline-left::before {
+    border-right: 25px solid var(--dark-grey-color);
+    border-bottom: 1px solid var(--dark-grey-color);
+}
+.hairline-dark-grey.hairline-right::before {
+    border-left: 25px solid var(--dark-grey-color);
+    border-bottom: 1px solid var(--dark-grey-color);
+}
+
+
+.hairline-charcoal.hairline-left::before {
+    border-right: 25px solid var(--charcoal-color);
+    border-bottom: 1px solid var(--charcoal-color);
+}
+.hairline-charcoal.hairline-right::before {
+    border-left: 25px solid var(--charcoal-color);
+    border-bottom: 1px solid var(--charcoal-color);
+}
+
+
+.hairline-black.hairline-left::before {
+    border-right: 25px solid var(--black-color);
+    border-bottom: 1px solid var(--black-color);
+}
+.hairline-black.hairline-right::before {
+    border-left: 25px solid var(--black-color);
+    border-bottom: 1px solid var(--black-color);
+}
+
+
+/* HELPERS */
+.hairline-left::before {
+    left: -100%;
+}
+
+
+.hairline-right::before {
+    right: -100%;
+
+}
+
+
+/* RESPONSIVE */
+@media only screen and (min-width: 0) and (max-width: 667px) {
+
+    .hairline::before {
+        top: 10%;
+
+        transform: translateY(-10%);
+    }
+
+}

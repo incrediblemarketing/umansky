@@ -1,0 +1,135 @@
+/* -------------------------------------------------- */
+/* SCROLL HINT
+/* -------------------------------------------------- */
+
+.scroll-hint {
+
+    @include transition($property: (opacity), $ease: ease-in-out, $duration: 400ms);
+
+    display: block;
+    position: relative;
+    margin-top: 4rem;
+    padding-top: 82px;
+    text-align:center;
+
+    @include break($type: 'height', $min: 0, $max: 512px) {
+
+        display: none;
+
+    }
+
+    &.is-not-top {
+
+        opacity: 0;
+
+        &::before {
+
+            animation: anim-scroll-hint 1.2s cubic-bezier(1, 0, 0, 1) infinite paused;
+
+        }
+
+
+    }
+
+    &:hover {
+
+        &::before {
+
+            background-color: $accent;
+
+        }
+
+        p {
+
+            color: $accent;
+
+        }
+
+        span::after {
+
+            border-top: 2px solid $accent;
+            border-right: 2px solid $accent;
+
+        }
+
+    }
+
+    &::before {
+
+        @extend %pseudo;
+        @include transition($property: (background-color), $ease: ease-in-out, $duration: 200ms);
+
+        top: 0;
+        left: 50%;
+        margin-left: -2px;
+        width: 2px;
+        height: 90px;
+        background-color: $white;
+        animation: anim-scroll-hint 1.2s cubic-bezier(1, 0, 0, 1) infinite running;
+
+    }
+
+    span {
+        display: block;
+        margin: 0 auto;
+        width: 10px;
+        height: auto;
+
+        &::after {
+
+            @include transition($property: (border-color), $ease: ease-in-out, $duration: 200ms);
+
+            content: '';
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid $white;
+            border-right: 2px solid $white;
+            transform: rotate(135deg);
+
+        }
+
+    }
+
+    p {
+
+        @include transition($property: (color), $ease: ease-in-out, $duration: 400ms);
+
+        margin: {
+            top: 0.5rem;
+            bottom: 0.5rem;
+        }
+        color: $white;
+        font-size: 0.75em;
+        font-weight: bold;
+        text-transform: uppercase;
+
+    }
+
+}
+
+@keyframes anim-scroll-hint {
+
+    0% {
+        transform-origin: 0% 0%;
+        transform: scale(1, 0);
+    }
+
+    50% {
+        transform-origin: 0% 0%;
+        transform: scale(1, 1);
+    }
+
+    50.1% {
+        transform-origin: 0% 100%;
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform-origin: 0% 100%;
+        transform: scale(1, 0);
+    }
+
+}

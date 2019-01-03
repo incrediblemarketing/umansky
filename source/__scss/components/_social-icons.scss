@@ -1,0 +1,55 @@
+/* -------------------------------------------------- */
+/* VARS
+/* -------------------------------------------------- */
+
+$social-icons: (
+	behance: #1769ff,
+	codepen: #47cf73,
+	dribble: #ea4c89,
+	etsy: #d5641c,
+	facebook: #3b5998,
+	github: #4078c0,
+	instagram: #ffc838,
+	linkedin: #0077b5,
+	medium: #3cb371,
+	pinterest: #cb2027,
+	reddit: #ff4500,
+	skype: #00aff0,
+	slack: #3eb991,
+	snapchat: #fffc00,
+	telegram: #08c,
+	tumblr: #fffc00,
+	twitch: #6441a4,
+	twitter: #0084b4,
+	vimeo: #1ab7ea,
+	yelp: #c41200,
+	youtube: #cc181e,
+	whatsapp: #34af23
+);
+
+
+/* -------------------------------------------------- */
+/* SOCIAL ICONS
+/* -------------------------------------------------- */
+
+/*
+[class^='social-icon-'] {
+    color: var(--white-color);
+}
+*/
+
+.#{$component}social-icon#{$modifier} {
+
+	@each $name, $color in $social-icons {
+
+		&#{$name},
+		&#{$name}#{'-hover'}:hover,
+		&#{$name}:active  {
+
+			color: $color;
+
+		}
+
+	}
+
+}

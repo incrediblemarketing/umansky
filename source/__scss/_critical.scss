@@ -1,0 +1,158 @@
+/* -------------------------------------------------- */
+/* SET-UP
+/* -------------------------------------------------- */
+
+:root {
+    overflow-x: hidden;
+    height: 100%;
+    font-size: $root-font-size;
+}
+
+html {
+    background-color: $html-background;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    font-family: $font-copy;
+    font-size: $body-font-size;
+    font-style: normal;
+    font-feature-settings: "lnum" on;
+    font-variant-numeric: lining-nums;
+    /*line-height: 1.5;*/
+    text-rendering: optimizeLegibility;
+    background-color: $body-background;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /*-webkit-overflow-scrolling: touch;
+	touch-action: none;*/
+}
+
+html, body {
+    //overflow-x: hidden;
+    //overflow-y: hidden;
+}
+
+
+/* -------------------------------------------------- */
+/* MAIN
+/* -------------------------------------------------- */
+
+main {
+    background: map-get($main, background);
+    /*visibility: hidden;*/ /* Causes stylized scrollbar to not appear on page load. */
+    /*display: none;*/ /*Potentially prevents iOS Reader from rendering text.*/
+}
+
+
+/* -------------------------------------------------- */
+/* ERROR: JS DISABLED
+/* -------------------------------------------------- */
+
+/* HIDE MAIN CONTENT FIRST */
+/*
+html.no-js {
+    background-color: $charcoal;
+}
+
+html.no-js main {
+    display: none;
+}
+*/
+
+/* PARENT */
+noscript {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    div {
+        @extend .center-vh;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-family: $font-stack;
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 300px;
+        color: $white;
+        text-align: center;
+
+        img {
+            display: block;
+            width: 75%;
+            margin: auto;
+            padding-bottom: 1rem;
+        }
+
+        span {
+            font-weight: bold;
+            color: $white;
+        }
+
+    }
+
+}
+
+
+/* -------------------------------------------------- */
+/* ERROR: WINDOW RESIZE
+/* -------------------------------------------------- */
+
+/* PARENT */
+#error {
+    overflow: hidden;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 100%;
+    background-color: $charcoal;
+
+    p {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 0 0.75rem 0 0.75rem;
+        width: 100%;
+        color: $white;
+        font-family: $font-copy;
+        font-size: 1.25em;
+        text-align: center;
+
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    @include break($type: 'width', $min: 0, $max: 319px) {
+
+        z-index: 9999;
+        display: block;
+
+    }
+
+}
+
+@include break($type: 'width', $min: 0, $max: 319px) {
+
+    html {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+}

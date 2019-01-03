@@ -1,0 +1,62 @@
+/* -------------------------------------------------- */
+/* LINKS
+/* -------------------------------------------------- */
+
+// COMMON
+a, button, cite, div, dd, dt, figcaption, h1, h2, h3, h4, h5, h6, input, label, li, ol, p, select, span, tr, td, textarea {
+	/*
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+	line-height: inherit;
+	text-align: inherit;
+	*/
+	border: 0;
+	outline: 0;
+}
+
+
+// STYLE
+a:not(button):not(.button) {
+
+	@include transition($property: color, $duration: 1000ms, $ease: cubic-bezier(0.680, -0.550, 0.265, 1.550), $delay: 0);
+
+	color: $primary;
+	text-decoration: none;
+
+	&:hover, &:focus {
+		color: lighten($primary, $lighten);
+    }
+
+	&:active {
+		color: $primary;
+	}
+	
+	&:visited {
+		//color: darken($primary, $darken);
+	}
+
+}
+
+
+// STATES
+.#{$element}#{$inactive},
+a.#{$inactive} {
+
+	@extend %#{$inactive};
+	cursor: not-allowed;
+	color: $gray;
+
+}
+
+
+.#{$element}button.#{$modifier}#{$inactive},
+button.#{$modifier}#{$inactive} {
+
+	@extend %#{$inactive};
+	cursor: not-allowed;
+	color: $gray;
+	background-color: $light-gray;
+
+}

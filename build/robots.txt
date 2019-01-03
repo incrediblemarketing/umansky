@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /cgi-bin/
+Disallow: /downloads/
+Disallow: /fonts/
+Disallow: /dialog/
+Disallow: /scripts/
+Sitemap: https://domain.com/sitemap.xml

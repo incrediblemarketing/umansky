@@ -1,0 +1,28 @@
+/* -------------------------------------------------- */
+/* DROP CAPS
+/* -------------------------------------------------- */
+
+p {
+
+    &.drop-cap {
+
+        &:first-child:first-letter {
+
+            margin: {
+                top: 3rem;
+                right: 3rem;
+                bottom: 0em;
+                left: 0;
+            }
+            float: left;
+            color: $primary;
+            font-family: $font-subheader;
+            font-size: 5em;
+
+
+
+        }
+
+    }
+
+}

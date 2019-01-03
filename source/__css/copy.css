@@ -1,0 +1,378 @@
+/* -------------------------------------------------- */
+/* GENERAL
+/* -------------------------------------------------- */
+
+body {
+    font-family: var(--font-copy);
+}
+
+h1, .font-header {
+    font-family: var(--font-header);
+    font-weight: 300;
+}
+
+h2, h3, h4, h5, h6, .font-subheader {
+    font-family: var(--font-copy);
+}
+
+.font-copy {
+    font-family: var(--font-copy);
+}
+
+.font-stack {
+    font-family: var(--font-stack);
+}
+
+/*
+a, blockquote, button, div, figcaption, h1, h2, h3, h4, h5, h6, input, label, dl, li, ol, p, select, span, table, textarea {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+	text-align: inherit;
+	border: 0;
+	
+	voice-family: female;
+	volume: medium;
+	azimuth: 0;
+	elevation: level;
+	pitch: medium;
+	richness: 50;
+	stress: 25;
+	speak: normal;
+	speak-header: once;
+	speak-numeral: continuous;
+	speak-punctuation: none;
+	speech-rate: medium;
+}
+*/
+
+a, button, input, label, cite, dt, dd, li, ol, div, p, span, tr, th, td {
+    font-family: inherit;
+    font-size: inherit;
+
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+
+    letter-spacing: inherit;
+
+    color: inherit;
+    /*text-align: inherit;*/
+    border: 0;
+}
+
+
+/* -------------------------------------------------- */
+/* LINKS
+/* -------------------------------------------------- */
+
+/* STATES */
+a:not([class^='button']):not(.card):not([class^='social-icon-']) {
+    transition: var(--transition);
+}
+
+a:not([class^='button']):not(.card):not([class^='social-icon-']):hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:not([class^='button']):not(.card):not([class^='social-icon-']):focus {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:not([class^='button']):not(.card):not([class^='social-icon-']):active {
+    color: var(--accent-color);
+    text-decoration: none;
+    /*background-color: inherit;*/
+}
+
+
+/* HELPERS */
+a.inactive,
+a.disabled {
+    cursor: pointer;
+    pointer-events: none;
+    color: var(--light-grey-color);
+}
+
+
+/* -------------------------------------------------- */
+/* HEADER
+/* -------------------------------------------------- */	
+
+h1, .h1 {
+    font-size: 4rem;
+}
+
+h2, .h2 {
+    font-size: 2rem;
+}
+
+h3, .h3 {
+    font-size: 1.75rem;
+}
+
+h4, .h4 {
+    font-size: 1.5rem;
+}
+
+h5, .h5 {
+    font-size: 1.25rem;
+}
+
+h6, .h6 {
+    font-size: 1rem;
+}
+
+
+/* RESPONSIVE */
+@media only screen and (min-width: 0) and (max-width: 375px) {
+
+	h1, .h1 {
+		font-size: 2rem;
+        line-height: 1em;
+	}
+
+	h2, .h2 {
+		font-size: 2rem;
+	}
+
+	h3, .h3 {
+		font-size: 1.75rem;
+	}
+
+	h4, .h4 {
+		font-size: 1.5rem;
+	}
+
+	h5, .h5 {
+		font-size: 1.25rem;
+	}
+
+	h6, .h6 {
+		font-size: 1rem;
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* PARAGRAPHS
+/* -------------------------------------------------- */
+
+p {
+    font-size: 1em;
+}
+
+.p1 {
+    font-size: 2em;
+}
+
+.p2 {
+    font-size: 1.75em;
+}
+
+.p3 {
+    font-size: 1.5em;
+}
+
+.p4 {
+    font-size: 1.25em;
+}
+
+.p5 {
+    font-size: 0.875em;
+}
+
+.p6 {
+    font-size: 0.75em;
+}
+
+.giant-print {
+    font-size: 6em;
+    line-height: 0.8em;
+}
+
+
+/* REPONSIVE */
+@media only screen and (min-width: 0) and (max-width: 375px) {
+
+    .giant-print {
+        font-size: 4em;
+        line-height: 0.8em;
+    }
+
+}
+
+
+/* -------------------------------------------------- */
+/* BLOCKQUOTE
+/* -------------------------------------------------- */	
+
+blockquote {
+    position: relative;
+    width: 100%;
+    /*border-left: 1px solid var(--white-color);*/
+}
+
+blockquote::after {
+    content: '\f10d';
+    opacity: 0.15;
+    position: absolute;
+    top: -0.25em;
+    left: 0.12em;
+    font-family: 'FontAwesome';
+    font-size: 4em;
+    z-index: auto;
+}
+
+blockquote p, cite {
+    color: var(--charcoal-color);
+}
+
+
+/* -------------------------------------------------- */
+/* HEADER STYLES
+/* -------------------------------------------------- */
+
+/* COMMMON */
+.header::after,
+.header-right::after,
+.header-left::after,
+.header-center::after {
+    content: '';
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 10%;
+    height: 1px;
+    border-radius: 0;
+}
+
+.header-right::after {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.header-left::after {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.header-center::after {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* STYLES */
+.header-25::after {
+    width: 25%;
+}
+
+.header-50::after {
+    width: 50%;
+}
+
+.header-75::after {
+    width: 75%;
+}
+
+.header-full::after {
+    width: 100%;
+}
+
+
+/* COLORS: BRAND */
+.header-primary::after {
+    background-color: var(--primary-color);
+}
+
+.header-secondary::after {
+    background-color: var(--secondary-color);
+}
+
+.header-accent::after {
+    background-color: var(--accent-color);
+}
+
+.header-wild::after {
+    background-color: var(--wild-color);
+}
+
+
+/* COLORS: GRAYSCALE */
+.header-white::after {
+    background-color: var(--white-color);
+}
+
+.header-light-grey::after {
+    background-color: var(--light-grey-color);
+}
+
+.header-dark-grey::after {
+    background-color: var(--dark-grey-color);
+}
+
+.header-charcoal::after {
+    background-color: var(--charcoal-color);
+}
+
+.header-black::after {
+    background-color: var(--black-color);
+}
+
+
+/* COLORS: STATUS */
+.header-ok::after {
+    background-color: var(--ok-color);
+}
+
+.header-error::after {
+    background-color: var(--error-color);
+}
+
+.header-warning::after {
+    background-color: var(--warning-color);
+}
+
+
+/* REPONSIVE */
+@media only screen and (min-width: 0) and (max-width: 639px) {
+
+    .header-right-mobile::after {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .header-left-mobile::after {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .header-center-mobile::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media only screen and (min-width: 0) and (max-width: 1023px) {
+
+    .header-right-tablet::after {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .header-left-tablet::after {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .header-center-tablet::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}

@@ -1,0 +1,178 @@
+/* -------------------------------------------------- */
+/* REFERENCE GUIDE
+/* -------------------------------------------------- */
+
+// strip-unit(24px);
+// pxtoem(16px);
+// emtopx(1em);
+
+
+/* -------------------------------------------------- */
+/* RETURN FIRST OR LAST ITEM IN LIST
+/* -------------------------------------------------- */
+
+@function first($list) {
+
+	@return nth($list, 1);
+	
+}
+
+@function last($list) {
+
+	@return nth($list, length($list));
+
+}
+
+
+/* -------------------------------------------------- */
+/* STRIP UNIT
+/* -------------------------------------------------- */
+
+// This function will strip units from number values.
+
+@function strip-unit($number) {
+
+	@if type-of($number) == 'number' and not unitless($number) {
+
+		@return $number / ($number * 0 + 1);
+
+	}
+
+	@return $number;
+
+}
+
+
+/* -------------------------------------------------- */
+/* PX TO EM
+/* -------------------------------------------------- */
+
+// For recognition and readibility, you will most likley use 'px' units in your '_settings' file.
+// Although, because this framework is mobile-first this function will convert all 'px' based units to the more reponsive and flexible 'em' unit.
+
+@function pxtoem($px) {
+
+	@return ( strip-unit($px) / strip-unit($base) ) + 0em;
+
+}
+
+
+/* -------------------------------------------------- */
+/* PX TO REM
+/* -------------------------------------------------- */
+
+// Converts 'px' unit to 'rem' unit.
+
+@function pxtorem($px) {
+
+	$rem: $px / 16px;
+
+	@return #{$rem}rem;
+
+}
+
+
+/*
+@mixin pxtorem($px) {
+
+	font-size: $px;
+	font-size: pxtorem($px);
+
+}
+*/
+
+
+/* -------------------------------------------------- */
+/* EM TO PX
+/* -------------------------------------------------- */
+
+// Converts 'em' unit to 'px' unit.
+
+@function emtopx($em) {
+
+	@if $em == 0 {
+
+		@return 0
+
+	}
+	
+	@return strip-unit($em / 1em) * strip-unit(1em / 1em) * 16 + 0px;
+
+}
+
+
+/* -------------------------------------------------- */
+/* TYPE CHECKING
+/* -------------------------------------------------- */
+
+@function is-number($value) {
+
+	@return type-of($value) == 'number';
+
+}
+
+@function is-time($value) {
+
+	@return is-number($value) and index('ms' 's', unit($value)) != null;
+
+}
+
+@function is-duration($value) {
+
+	@return is-time($value);
+
+}
+
+@function is-angle($value) {
+
+	@return is-number($value) and index('deg' 'rad' 'grad' 'turn', unit($value)) != null;
+
+}
+
+@function is-frequency($value) {
+
+	@return is-number($value) and index('Hz' 'kHz', unit($value)) != null;
+
+}
+
+@function is-integer($value) {
+
+	@return is-number($value) and round($value) == $value;
+
+}
+
+@function is-relative-length($value) {
+
+	@return is-number($value) and index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', unit($value)) != null;
+
+}
+
+@function is-absolute-length($value) {
+
+	@return is-number($value) and index('cm' 'mm' 'in' 'px' 'pt' 'pc', unit($value)) != null;
+
+}
+
+@function is-percentage($value) {
+
+	@return is-number($value) and unit($value) == '%';
+
+}
+
+@function is-length($value) {
+
+	@return is-relative-length($value) or is-absolute-length($value);
+
+}
+
+@function is-resolution($value) {
+
+	@return is-number($value) and index('dpi' 'dpcm' 'dppx', unit($value)) != null;
+
+}
+
+@function is-position($value) {
+	
+	@return is-length($value) or is-percentage($value) or index('top' 'right' 'bottom' 'left' 'center', $value) != null;
+
+}

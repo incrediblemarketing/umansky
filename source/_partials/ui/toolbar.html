@@ -1,0 +1,72 @@
+
+<!-- CONTENT: TOOLBAR -->
+<div id="toolbar">
+
+
+	<!-- TOP BAR -->
+	<div class="grid-x align-center align-justify menubar">
+		
+
+
+
+
+
+
+
+		<!-- SLIDER -->
+		<ul class="cell slider-default width-full menu-items list-vertical js-flickity" 
+			 data-flickity-options='{"cellSelector": ".slider-item",
+									 "initialIndex": 0,
+									 "accessibility": true,
+									 "setGallerySize": true,
+									 "resize": true,
+									 "cellAlign": "left",
+									 "contain": false,
+									 "imagesLoaded": true,
+									 "percentPosition": true,
+									 "rightToLeft": false,
+									 "draggable": true,
+									 "freeScroll": true,
+									 "wrapAround": false,
+									 "groupCells": false,
+									 "autoPlay": false,
+									 "pauseAutoPlayOnHover": false,
+									 "adaptiveHeight": true,
+									 "watchCSS": false,
+									 "dragThreshold": 10,
+									 "selectedAttraction": 0.2,
+									 "friction": 0.8,
+									 "freeScrollFriction": 0.03,
+									 "prevNextButtons": false,
+									 "pageDots": false,
+									 "lazyLoad": 2,
+									 "bgLazyLoad": 1
+									}'>
+
+
+			<!-- ITEM -->
+			{{#each menu.main}}
+
+				<li data-id="{{ id }}" class="slider-item"><a href="#{{ link }}" class="{{ id }} {{ classes }}">{{ title }}</a></li>
+
+			{{/each}}
+			<!-- // ITEM -->
+			
+		
+		</ul>
+		<!-- // SLIDER -->
+
+
+
+
+
+
+
+
+
+	</div>
+	<!-- // TOP BAR -->
+
+	
+</div>
+<!-- // CONTENT: TOOLBAR -->

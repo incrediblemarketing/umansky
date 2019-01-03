@@ -1,0 +1,265 @@
+/* -------------------------------------------------- */
+/* VARS
+/* -------------------------------------------------- */
+
+
+
+
+/* -------------------------------------------------- */
+/* STACK ORDER
+/* -------------------------------------------------- */
+
+@each $name, $order in $stack-order {
+
+    &#{$name} {
+        z-index: $order;
+    }
+
+}
+
+
+/* -------------------------------------------------- */
+/* LAYOUT
+/* -------------------------------------------------- */
+
+main {
+
+	width: 100%;
+	max-width: map-get($main, width);
+
+	&:not([class*="margin-none"]):not([class*="padding-none"]):not([class*="spacing-none"]) {
+
+		margin: {
+			top: map-get(map-get($main, margin), top);
+			right: map-get(map-get($main, margin), right);
+			bottom: map-get(map-get($main, margin), bottom);
+			left: map-get(map-get($main, margin), left);
+		}
+		padding: {
+			top: map-get(map-get($main, padding), top);
+			right: map-get(map-get($main, padding), right);
+			bottom: map-get(map-get($main, padding), bottom);
+			left: map-get(map-get($main, padding), left);
+		}
+
+		@include break($type: 'width', $min: 0, $max: $mobile, $orientation: '') {
+
+			margin: {
+				top: map-get(map-get($main, margin), top-mobile);
+				right: map-get(map-get($main, margin), right-mobile);
+				bottom: map-get(map-get($main, margin), bottom-mobile);
+				left: map-get(map-get($main, margin), left-mobile);
+			}
+			padding: {
+				top: map-get(map-get($main, padding), top-mobile);
+				right: map-get(map-get($main, padding), right-mobile);
+				bottom: map-get(map-get($main, padding), bottom-mobile);
+				left: map-get(map-get($main, padding), left-mobile);
+			}
+
+		}
+
+	}
+
+	section, article {
+
+		width: 100%;
+		max-width: map-get($main, width);
+		background: map-get($main, background);
+
+		&:not([class*="margin-none"]):not([class*="padding-none"]):not([class*="spacing-none"]) {
+
+			margin: {
+				top: map-get(map-get($sections, margin), top);
+				right: map-get(map-get($sections, margin), right);
+				bottom: map-get(map-get($sections, margin), bottom);
+				left: map-get(map-get($sections, margin), left);
+			}
+			padding: {
+				top: map-get(map-get($sections, padding), top);
+				right: map-get(map-get($sections, padding), right);
+				bottom: map-get(map-get($sections, padding), bottom);
+				left: map-get(map-get($sections, padding), left);
+			}
+
+			@include break($type: 'width', $min: 0, $max: $mobile, $orientation: '') {
+
+				margin: {
+					top: map-get(map-get($sections, margin), top-mobile);
+					right: map-get(map-get($sections, margin), right-mobile);
+					bottom: map-get(map-get($sections, margin), bottom-mobile);
+					left: map-get(map-get($sections, margin), left-mobile);
+				}
+				padding: {
+					top: map-get(map-get($sections, padding), top-mobile);
+					right: map-get(map-get($sections, padding), right-mobile);
+					bottom: map-get(map-get($sections, padding), bottom-mobile);
+					left: map-get(map-get($sections, padding), left-mobile);
+				}
+
+			}
+
+		}
+
+	}
+
+	@include break($type: 'width', $min: 0, $max: $desktop, $orientation: '') {
+
+		overflow: hidden;
+		
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* CELL
+/* -------------------------------------------------- */
+
+.grid-x {
+
+	&#{'.grid-margin-x >'} {
+
+		.cell:not([class*="margin-none"]):not([class*="spacing-none"]) {
+
+			margin: {
+				top: map-get(map-get($cells, margin), top);
+				right: map-get(map-get($cells, margin), right);
+				bottom: map-get(map-get($cells, margin), bottom);
+				left: map-get(map-get($cells, margin), left);
+			}
+
+			@include break($type: 'width', $min: 0, $max: $mobile, $orientation: '') {
+
+				margin: {
+					top: map-get(map-get($cells, margin), top-mobile);
+					right: map-get(map-get($cells, margin), right-mobile);
+					bottom: map-get(map-get($cells, margin), bottom-mobile);
+					left: map-get(map-get($cells, margin), left-mobile);
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'.grid-padding-x >'} {
+
+		.cell:not([class*="padding-none"]):not([class*="spacing-none"]) {
+
+			padding: {
+				top: map-get(map-get($cells, padding), top);
+				right: map-get(map-get($cells, padding), right);
+				bottom: map-get(map-get($cells, padding), bottom);
+				left: map-get(map-get($cells, padding), left);
+			}
+
+			@include break($type: 'width', $min: 0, $max: $mobile, $orientation: '') {
+
+				padding: {
+					top: map-get(map-get($cells, padding), top-mobile);
+					right: map-get(map-get($cells, padding), right-mobile);
+					bottom: map-get(map-get($cells, padding), bottom-mobile);
+					left: map-get(map-get($cells, padding), left-mobile);
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+.grid-y {
+
+	&#{'.grid-margin-y >'} {
+
+		.cell:not([class*="margin-none"]):not([class*="spacing-none"]):not([class*="text-block"]) {
+
+			margin: {
+				top: map-get(map-get($cells, margin), top);
+				bottom: map-get(map-get($cells, margin), bottom);
+			}
+
+			@include break($type: 'width', $min: 0, $max: $mobile, $orientation: '') {
+
+				margin: {
+					top: map-get(map-get($cells, margin), top-mobile);
+					bottom: map-get(map-get($cells, margin), bottom-mobile);
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'.grid-padding-y >'} {
+
+		.cell:not([class*="padding-none"]):not([class*="spacing-none"]):not([class*="text-block"]) {
+
+			padding: {
+				top: map-get(map-get($cells, padding), top);
+				bottom: map-get(map-get($cells, padding), bottom);
+			}
+
+			@include break($type: 'width', $min: 0, $max: $mobile, $orientation: '') {
+
+				padding: {
+					top: map-get(map-get($cells, padding), top-mobile);
+					bottom: map-get(map-get($cells, padding), bottom-mobile);
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* TEXT BLOCK
+/* -------------------------------------------------- */
+
+.text-block {
+
+	margin: {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	padding: {
+		top: map-get(map-get($cells, padding), top) * 2;
+		right: map-get(map-get($cells, padding), right) * 2;
+		bottom: map-get(map-get($cells, padding), bottom) * 2;
+		left: map-get(map-get($cells, padding), left) * 2;
+	}
+    width: 100%;
+
+	@include break($type: 'width', $min: 0, $max: $mobile, $orientation: '') {
+
+		padding: {
+			top: map-get(map-get($cells, padding), top-mobile);
+			right: map-get(map-get($cells, padding), right-mobile);
+			bottom: map-get(map-get($cells, padding), bottom-mobile);
+			left: map-get(map-get($cells, padding), left-mobile);
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+

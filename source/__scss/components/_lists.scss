@@ -1,0 +1,239 @@
+/* -------------------------------------------------- */
+/* LISTS
+/* -------------------------------------------------- */
+
+// COMMON
+dl, ul {
+    list-style: none;
+    list-style-type: none;
+    list-style-image: none;
+    list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7); // In IE, bullets are shown on first load.
+}
+
+
+// PROPERTIES
+.#{$component}list#{$modifier} {
+
+	&#{'vertical'} {
+
+		display: block;
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: ' li') {
+			display: block;
+		}
+
+	}
+
+	&#{'horizontal'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: ' li') {
+			display: inline;
+		}
+		
+	}
+
+	&#{'inside'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			list-style-position: inside;
+		}
+
+	}
+
+	&#{'outside'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			list-style-position: outside;
+		}
+
+	}
+
+	&#{'disc'} {
+		list-style-type: disc;
+	}
+
+	&#{'circle'} {
+		list-style-type: circle;
+	}
+
+	&#{'number'} {
+		list-style-type: number;
+	}
+
+	&#{'square'} {
+		list-style-type: square;
+	}
+
+}
+
+
+// TYPES
+.#{$component}list#{$modifier} {
+
+	&#{'default'},
+	&#{'dot'},
+	&#{'number'},
+	&#{'negative'} {
+
+		list-style-type: none;
+
+	}
+
+	&#{'default'} {
+
+		li {
+
+			border-bottom: 1px solid $light-gray;
+
+			a {
+
+				color: $charcoal;
+
+				&:hover {
+					color: $accent;
+				}
+
+				span {
+					display: block;
+					color: $secondary;
+					font-size: 0.8em;
+					font-weight: bold;
+
+					&:hover::before {
+						color: inherit;
+					}
+
+					&::before {
+						@include icon($type: 'inline', $icon: 'f054');
+						margin-right: 0.5rem;
+					}
+
+				}
+
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			&:nth-child(even) {
+				background-color: rgba($black, 0.01);
+			}
+
+
+
+		}
+
+	}
+
+	&#{'dot'} {
+
+		li::before {
+			@include icon($type: '', $icon: 'f111');
+
+			float: left;
+			margin-left: -0.75rem;
+			color: inherit;
+			font-size: 0.25em;
+			line-height: 4em;
+		}
+
+	}
+
+	&#{'number'} {
+
+		li {
+			counter-increment: item;
+			line-height: 1.5em;
+			text-indent: 1em;
+
+			&::before {
+				content: counter(item);
+				float: left;
+				width: 25px;
+				height: 25px;
+				color: $white;
+				font-family: $font-copy;
+				font-size: 1em;
+				line-height: 1.5em;
+				text-align: center;
+				text-indent: 0;
+				border-radius: 100%;
+				background-color: $charcoal;
+			}
+
+		}
+
+	}
+
+
+	&#{'check'} {
+
+		li {
+
+			&::before {
+				@include icon($type: 'psuedo', $icon: 'f058');
+
+				float: left;
+				margin-left: -1.5rem;
+				color: $primary;
+				font-size: 1.25em;
+				line-height: 1.25em;
+			}
+
+		}
+
+	}
+
+	&#{'negative'} {
+
+		li {
+
+			&::before {
+				@include icon($type: 'psuedo', $icon: 'f056');
+
+				float: left;
+				margin-left: -1.5rem;
+				color: $dark-gray;
+				font-size: 1.25em;
+				line-height: 1.25em;
+			}
+
+		}
+
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* DESCRIPTION
+/* -------------------------------------------------- */
+
+dt {
+    /*font-family: var(--font-header);*/
+    font-size: 1.125em;
+    margin-left: 1em;
+    padding-top: 5rem;
+    text-indent: -1em;
+    color: $charcoal;
+
+    dt::before {
+    	@include icon($type: '', $icon: f054);
+
+    	color: inherit;
+		font-size: 0.75em;
+		margin-right: 0.5rem;
+    }
+
+}
+
+dd {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+
+    &:last-child {
+		border-bottom: none;
+	}
+
+}

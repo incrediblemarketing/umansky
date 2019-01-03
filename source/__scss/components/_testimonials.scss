@@ -1,0 +1,222 @@
+/* -------------------------------------------------- */
+/* SLIDER
+/* -------------------------------------------------- */
+
+.testimonials {
+
+	overflow: visible;
+
+	padding: {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	width: 100%;
+
+	.item {
+
+		//@extend .box-shadow-xs;
+		//@extend .round-md;
+		//@extend .scale-xs;
+		@extend .blur-md;
+		@include transition($property: (opacity, transform, filter), $ease: ease-out, $duration: 200ms);
+
+		opacity: 0.5;
+		margin: {
+			top: 0;
+			right: 1rem;
+			bottom: 0;
+			left: 1rem;
+		}
+		padding: {
+			top: 6rem;
+			right: 6rem;
+			bottom: 6rem;
+			left: 6rem;
+		}
+		width: 33%;
+		height: auto;
+		text-align: center;
+		background-color: $wild;
+
+		@include break($type: 'width', $min: $mobile + 1, $max: 1400px) {
+
+			padding: {
+				top: 2rem;
+				right: 2rem;
+				bottom: 2rem;
+				left: 2rem;
+			}
+			width: 50%;
+
+		}
+
+		@include break($type: 'width', $min: 0, $max: $mobile) {
+
+			padding: {
+				top: 0.75rem;
+				right: 0.75rem;
+				bottom: 2rem;
+				left: 0.75rem;
+			}
+			width: 100%;
+			font-size: 0.75em;
+
+		}
+
+		&.is-selected {
+
+			//@extend .scale-none;
+			@extend .blur-none;
+			@extend .bring-to-front;
+			opacity: 1;
+
+		}
+
+		p {
+
+			font-size: 1.125em;
+
+		}
+
+		footer {
+
+			margin-bottom: 6rem;
+
+			cite {
+
+				font-size: 1em;
+				font-weight: bold;
+				font-style: normal;
+
+			}
+
+		}
+
+
+
+	}
+
+	.flickity-viewport {
+
+		overflow: visible;
+		//width: 100%;
+
+		.flickity-slider {
+
+
+
+
+		}
+
+	}
+
+	.button-group {
+
+		@extend .center-auto;
+		@extend .center-h;
+		@extend .z-1;
+
+		display: block;
+		position: absolute;
+		bottom: -1.5em;
+		width: auto;
+		height: 75px;
+		text-align: center;
+		background-color: $white;
+
+		p.status {
+
+			margin: {
+				top: 1rem;
+				bottom: 0;
+			}
+
+			.current {
+
+				@extend .font-subheader;
+
+				margin: {
+					left: 1rem;
+					right: 1rem;
+				}
+				color: $accent;
+				font-size: 2em;
+
+			}
+
+			.total {
+
+				margin: {
+					left: 1rem;
+					right: 1rem;
+				}
+				font-size: 1em;
+
+			}
+
+		}
+
+		button {
+
+			@include transition($property: (opacity, transform), $ease: ease-out, $duration: 200ms);
+
+			cursor: pointer;
+			display: inline;
+			position: absolute;
+			bottom: 0;
+			opacity: 0.5;
+			color: $white;
+			font-size: 1em;
+			background-color: transparent;
+
+			svg {
+
+				width: 100px;
+				height: 25px;
+
+			}
+
+			&.previous {
+
+				left: 0;
+				transform: translateX(-50px);
+
+				&:hover {
+
+					opacity: 1;
+					transform: translateX(-75px);
+
+				}
+
+
+			}
+
+			&.next {
+
+				right: 0;
+				transform: translateX(50px);
+
+				&:hover {
+
+					opacity: 1;
+					transform: translateX(75px);
+
+				}
+
+
+			}
+
+		}
+
+	}
+
+}
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+/* -------------------------------------------------- */
+/* SCROLLBAR
+/* -------------------------------------------------- */
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: $scroll-width;
+}
+
+
+/* BUTTON */
+::-webkit-scrollbar-button {
+    display: block;
+    height: $scroll-button-height;
+    border-radius: $scroll-button-radius;
+    background-color: $scroll-button-color;
+}
+
+::-webkit-scrollbar-button:hover {
+    background-color: $scroll-button-hover-color;
+}
+
+
+/* BAR */
+::-webkit-scrollbar-thumb {
+    border-radius: $scroll-bar-radius;
+    background-color: $scroll-bar-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: $scroll-bar-hover-color
+}
+
+
+/* TRACK */
+::-webkit-scrollbar-track {
+    background-color: $scroll-track-color;
+}
+
+::-webkit-scrollbar-track:hover {
+    background-color: $scroll-track-hover-color;
+}
+
+/*::-webkit-scrollbar-track-piece {}*/
+
+
+/* CORNER / RESIZER */
+/*::-webkit-scrollbar-corner {}*/
+
+/*::-webkit-resizer {}*/
+
+
+/* -------------------------------------------------- */
+/* SELECTION
+/* -------------------------------------------------- */
+
+::selection {
+    color: $selection-text-color;
+    background-color: $selection-background-color;
+}
+
+::-moz-selection {
+    color: $selection-text-color;
+    background-color: $selection-background-color;
+}

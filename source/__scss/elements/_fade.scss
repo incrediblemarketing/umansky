@@ -1,0 +1,81 @@
+/* -------------------------------------------------- */
+/* FADE
+/* -------------------------------------------------- */
+
+.#{$element}fade#{$modifier} {
+
+	&#{'top'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::before') {
+
+			@include fade($type: 'top', $color: #000, $alpha: 1, $scale: 50%, $start: 0, $stop: 100%, $order: -1, $prefix: '', $suffix: '', $clickable: false);
+
+		}
+
+	}
+
+	&#{'bottom'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::after') {
+
+			@include fade($type: 'bottom', $color: #000, $alpha: 1, $scale: 50%, $start: 0, $stop: 100%, $order: 1, $prefix: '', $suffix: '', $clickable: false);
+
+		}
+
+	}
+
+	&#{'left'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::before') {
+
+			@include fade($type: 'left', $color: #000, $alpha: 1, $scale: 25%, $start: 0, $stop: 100%, $order: auto, $prefix: '', $suffix: '', $clickable: false);
+
+		}
+
+	}
+
+	&#{'right'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::after') {
+
+			@include fade($type: 'right', $color: #000, $alpha: 1, $scale: 25%, $start: 0, $stop: 100%, $order: 0, $prefix: '', $suffix: '', $clickable: false);
+
+		}
+
+	}
+
+	&#{'tb'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			@include fade($type: 'top', $color: #000, $alpha: 1, $scale: 50%, $start: 0, $stop: 100%, $order: 0, $prefix: '', $suffix: '::before', $clickable: false);
+
+			@include fade($type: 'bottom', $color: #000, $alpha: 1, $scale: 50%, $start: 0, $stop: 100%, $order: 0, $prefix: '', $suffix: '::after', $clickable: false);
+
+		}
+
+	}
+
+	&#{'lr'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			@include fade($type: 'left', $color: #000, $alpha: 1, $scale: 25%, $start: 0, $stop: 100%, $order: 0, $prefix: '', $suffix: '::before', $clickable: false);
+
+			@include fade($type: 'right', $color: #000, $alpha: 1, $scale: 25%, $start: 0, $stop: 100%, $order: 0, $prefix: '', $suffix: '::after', $clickable: false);
+
+		}
+
+	}
+
+	&#{'full'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::after') {
+
+			@include fade($type: 'full', $color: #000, $alpha: 1, $scale: 50%, $start: 0, $stop: 100%, $order: -1, $prefix: '', $suffix: '', $clickable: false);
+
+		}
+
+	}
+
+}

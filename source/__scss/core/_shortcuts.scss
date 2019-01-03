@@ -1,0 +1,80 @@
+/* -------------------------------------------------- */
+/* MAP SHORTCUTS
+/* -------------------------------------------------- */
+
+// BREAKPOINTS
+$breakpoint-keys: map-keys($breakpoints);
+$breakpoint-values: map-values($breakpoints);
+
+$mobile: nth($breakpoint-values, 1);
+$tablet: nth($breakpoint-values, 2);
+$laptop: nth($breakpoint-values, 3);
+$desktop: nth($breakpoint-values, 4);
+
+
+// TYPOGRAPHY
+$h1: pxtoem( map-get($font-sizes, 1) );
+$h2: pxtoem( map-get($font-sizes, 2) );
+$h3: pxtoem( map-get($font-sizes, 3) );
+$h4: pxtoem( map-get($font-sizes, 4) );
+$h5: pxtoem( map-get($font-sizes, 5) );
+$h6: pxtoem( map-get($font-sizes, 6) );
+
+$p1: pxtoem( map-get($font-sizes, 1) / 2 );
+$p2: pxtoem( map-get($font-sizes, 2) / 2 );
+$p3: pxtoem( map-get($font-sizes, 3) / 2 );
+$p4: pxtoem( map-get($font-sizes, 4) / 2 );
+$p5: pxtoem( map-get($font-sizes, 5) / 2 );
+$p6: pxtoem( map-get($font-sizes, 6) / 2 );
+
+
+// GUTTERS
+$gutter-xs: map-get($gutters, xs);
+$gutter-sm: map-get($gutters, sm);
+$gutter-md: map-get($gutters, md);
+$gutter-lg: map-get($gutters, lg);
+$gutter-xl: map-get($gutters, xl);
+
+
+// WIDTHS
+$width-xs: map-get($widths, xs);
+$width-sm: map-get($widths, sm);
+$width-md: map-get($widths, md);
+$width-lg: map-get($widths, lg);
+$width-xl: map-get($widths, xl);
+
+
+// HEIGHTS
+$height-xs: map-get($heights, xs);
+$height-sm: map-get($heights, sm);
+$height-md: map-get($heights, md);
+$height-lg: map-get($heights, lg);
+$height-xl: map-get($heights, xl);
+
+
+// COLORS
+$primary: map-get($colors, primary);
+$secondary: map-get($colors, secondary);
+$accent: map-get($colors, accent);
+$wild: map-get($colors, wild);
+
+$white: map-get($colors, white);
+$light-gray: map-get($colors, light-gray);
+$gray: map-get($colors, gray);
+$dark-gray: map-get($colors, dark-gray);
+$charcoal: map-get($colors, charcoal);
+$black: map-get($colors, black);
+
+$ok: map-get($colors, ok);
+$warning: map-get($colors, warning);
+$error: map-get($colors, error);
+
+$transparent: map-get($colors, transparent);
+
+/*
+@debug 'Shortcut map tests:';
+@debug $h1 $p4;
+@debug $primary;
+@debug $mobile;
+@debug $gutter-xs;
+*/

@@ -1,0 +1,148 @@
+
+<!-- CONTENT: SIDEBAR LINKS -->
+<nav>
+
+
+	<!-- MENU -->
+	<ul class="accordion list-vertical" data-accordion data-magellan>
+
+
+		<!-- ITEM -->
+		{{#each sidebar.downloads}}
+		<li class="accordion-item"><a class="link-{{ id }} {{ classes }} accordion-title no-waves" href="#{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
+		{{/each}}
+		<!-- // ITEM -->
+
+
+		<!-- ITEM -->
+		<li class="accordion-item" data-accordion-item>
+
+			<!-- TITLE -->
+			<a href="#" class="accordion-title">Colors</a>
+			<!-- // TITLE -->
+
+
+			<!-- CONTENT -->
+			<ul class="accordion-content" data-tab-content>
+
+				{{#each sidebar.colors}}
+				<li><a href="#{{ link }}" class="link-{{ id }} {{ classes }} no-waves" {{{ attributes }}}>{{ title }}</a></li>
+				{{/each}}
+
+			</ul>
+			<!-- // CONTENT -->
+
+		</li>
+		<!-- // ITEM -->
+
+
+		<!-- ITEM -->
+		<li class="accordion-item" data-accordion-item>
+
+			<!-- TITLE -->
+			<a href="#" class="accordion-title">Logos</a>
+			<!-- // TITLE -->
+
+
+			<!-- CONTENT -->
+			<ul class="accordion-content" data-tab-content>
+
+				{{#each sidebar.logos}}
+				<li><a class="link-{{ id }} {{ classes }} no-waves" href="#{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
+				{{/each}}
+
+			</ul>
+			<!-- // CONTENT -->
+
+		</li>
+		<!-- // ITEM -->
+
+
+		<!-- ITEM -->
+		{{#each sidebar.visuals}}
+		<li class="accordion-item"><a class="link-{{ id }} {{ classes }} accordion-title no-waves" href="#{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
+		{{/each}}
+		<!-- // ITEM -->
+
+
+		<!-- ITEM -->
+		<li class="accordion-item" data-accordion-item>
+
+			<!-- TITLE -->
+			<a href="#" class="accordion-title">Typography</a>
+			<!-- // TITLE -->
+
+
+			<!-- CONTENT -->
+			<ul class="accordion-content" data-tab-content>
+
+				{{#each sidebar.typography}}
+				<li><a class="link-{{ id }} {{ classes }} no-waves" href="#{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
+				{{/each}}
+
+			</ul>
+			<!-- // CONTENT -->
+
+		</li>
+		<!-- // ITEM -->
+
+
+		<!-- ITEM -->
+		<li class="accordion-item" data-accordion-item>
+
+			<!-- TITLE -->
+			<a href="#" class="accordion-title">Buttons</a>
+			<!-- // TITLE -->
+
+
+			<!-- CONTENT -->
+			<ul class="accordion-content" data-tab-content>
+
+				{{#each sidebar.buttons}}
+				<li><a class="link-{{ id }} {{ classes }} no-waves" href="#{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
+				{{/each}}
+
+			</ul>
+			<!-- // CONTENT -->
+
+		</li>
+		<!-- // ITEM -->
+
+
+		<!-- ITEM -->
+		{{#each sidebar.dialog-box}}
+		<li class="accordion-item"><a class="link-{{ id }} {{ classes }} accordion-title no-waves" href="#{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
+		{{/each}}
+		<!-- // ITEM -->
+
+
+		<!-- ITEM -->
+		<li class="accordion-item" data-accordion-item>
+
+			<!-- TITLE -->
+			<a href="#" class="accordion-title">Animations</a>
+			<!-- // TITLE -->
+
+
+			<!-- CONTENT -->
+			<ul class="accordion-content" data-tab-content>
+
+				{{#each sidebar.animations}}
+				<li><a class="link-{{ id }} {{ classes }} no-waves" href="#{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
+				{{/each}}
+
+			</ul>
+			<!-- // CONTENT -->
+
+		</li>
+		<!-- // ITEM -->
+
+
+
+
+	</ul>
+	<!-- // MENU -->
+
+
+</nav>
+<!-- // CONTENT: SIDEBAR LINKS -->

@@ -1,0 +1,349 @@
+<!doctype html>
+
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<title>--name | {{{ title }}}</title>
+<meta charset="utf-8">
+<!--<meta http-equiv="x-ua-compatible" content="ie=edge">-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, user-scalable=yes, viewport-fit=cover">
+
+
+<!-- CANONICAL -->
+{{#ifpage 'index'}}
+	<link rel="canonical" href="--url">
+{{/ifpage}}
+
+{{#unlesspage 'index'}}
+	<link rel="canonical" href="--url{{ page }}">
+{{/unlesspage}}
+<!-- // CANONICAL -->
+
+
+<!-- CORE -->
+<meta name="description" content="--description">
+
+
+<!--removeIf(removeBase)-->
+<!-- build:base -->
+<!-- endbuild -->
+<!--endRemoveIf(removeBase)-->
+
+
+<!-- GENERAL -->
+<!--<meta http-equiv="cleartype" content="on">-->
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+<meta name="HandheldFriendly" content="--handheld-friendly">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
+
+
+<!-- ICONS -->
+<link rel="icon" type="image/png" href="{{ root }}--favicon-16" sizes="16x16">
+<link rel="icon" type="image/png" href="{{ root }}--favicon-32" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ root }}--image-icon-180" sizes="180x180">
+<link rel="manifest" href="{{ root }}manifest.json">
+<link rel="mask-icon" href="{{ root }}--safari-pinned-tab" color="--theme">
+<meta name="apple-mobile-web-app-title" content="--name">
+<meta name="apple-mobile-web-app-capable" content="--web-app-capable">
+<meta name="application-name" content="--name">
+<meta name="msapplication-TileColor" content="--background">
+<meta name="theme-color" content="--theme">
+
+
+<!-- FACEBOOK OPEN GRAPH -->
+<meta property="og:title" content="--name | {{{ title }}}">
+<meta property="og:description" content="--description">
+<meta property="og:locale" content="--og-locale"/>
+<meta property="og:type" content="--og-type"/>
+<meta property="og:image" content="{{ root }}--image-cover">
+<meta property="og:image:width" content="--og-image-width">
+<meta property="og:image:height" content="--og-image-height">
+<meta property="og:url" content="--url{{ page }}">
+
+
+<!-- TWITTER CARD -->
+<meta name="twitter:title" content="--name">
+<meta name="twitter:description" content="--description">
+<meta name="twitter:site" content="--twitter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="{{ root }}--image-profile">
+<meta name="twitter:image:alt" content="--url">
+
+
+<!-- APP BANNER -->
+<!--removeIf(removeAppBanner)-->
+<meta name="apple-itunes-app" content="app-id=--itunes-app-id">
+<meta name="google-play-app" content="app-id=--play-app-id">
+<!--endRemoveIf(removeAppBanner)-->
+
+
+
+
+
+<!-- build:inlinecss -->
+<!-- endbuild -->
+
+
+<!-- inject:app:css -->
+<!-- endinject -->
+
+
+<!-- build:inlinejs -->
+<!-- endbuild -->
+
+
+<!-- PRELOAD ASSETS -->
+<link rel="preload" href="{{ root }}fonts/fontawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
+<!-- // PRELOAD ASSETS -->
+
+
+</head>
+
+	<body>
+
+
+
+
+
+	<!-- JAVASCRIPT DISABLED MESSAGE -->
+	<noscript>
+
+		<!-- inject:app:css -->
+		<!-- endinject -->
+
+		<div>
+			<img src="assets/error.gif" alt="Ooops, your JavaScript is disabled."/>
+			<span>JavaScript is disabled on your browser</span>.<br>
+			It is required for this site to deliver a pleasant viewing experience. Please enable JavaScript to continue using this website.
+		</div>
+
+	</noscript>
+	<!-- // JAVASCRIPT DISABLE MESSAGE -->
+
+
+
+
+
+	<!-- ERROR -->
+	<div id="error">
+		<p>Please resize your window or rotate your phone to portrait mode.</p>
+	</div>
+	<!-- // ERROR -->
+
+
+
+
+
+	<!-- MAIN -->
+	<main id="main-{{ page }}" class="page off-canvas-content" data-page="{{ page }}" data-off-canvas-content role="main">
+
+		{{> body}}
+
+	</main>
+	<!-- // MAIN -->
+
+
+
+	{{> navbar}}
+	{{> nav-panel}}
+	{{> footer}}
+	{{> scroll-progress}}
+
+
+
+
+
+	<!-- SHADERS -->
+	<script id="plane-vs" type="x-shader/x-vertex">
+
+		#ifdef GL_ES
+		precision mediump float;
+		#endif
+
+
+		// Default mandatory variables.
+		attribute vec3 aVertexPosition;
+		attribute vec2 aTextureCoord;
+
+		uniform mat4 uMVMatrix;
+		uniform mat4 uPMatrix;
+
+
+		// Custom variables.
+		varying vec3 vVertexPosition;
+		varying vec2 vTextureCoord;
+
+
+		// Custom uniforms.
+		uniform float uTransitionTimer;
+		uniform vec2 uResolution;
+
+
+		void main() {
+
+
+			vec3 vertexPosition = aVertexPosition;
+			gl_Position = uPMatrix * uMVMatrix * vec4(vertexPosition, 1.0);
+
+
+			// Varyings
+			vTextureCoord = aTextureCoord;
+			vVertexPosition = vertexPosition;
+
+		}
+
+	</script>
+
+
+	<script id="plane-fs" type="x-shader/x-fragment">
+
+		#ifdef GL_ES
+		precision mediump float;
+		#endif
+
+
+		varying vec3 vVertexPosition;
+		varying vec2 vTextureCoord;
+
+
+		// Custom uniforms.
+		uniform float uTransitionTimer;
+		uniform vec2 uResolution;
+
+
+		// Our slides (could have been an array of int).
+		uniform int uActiveTexture;
+		uniform int uNextTexture;
+
+
+		// Our textures samplers. Notice how it matches our data-sampler attributes.
+		uniform sampler2D firstTexture;
+		uniform sampler2D secondTexture;
+		uniform sampler2D thirdTexture;
+		uniform sampler2D fourthTexture;
+		uniform sampler2D fifthTexture;
+		uniform sampler2D sixthTexture;
+		uniform sampler2D displacement;
+
+
+		void main( void ) {
+
+			// Our texture coords.
+			vec2 textureCoords = vec2(vTextureCoord.x, vTextureCoord.y);
+
+
+			// Our displacement texture.
+			vec4 displacementTexture = texture2D(displacement, textureCoords);
+
+
+			// Our displacement factor is a float varying from 1 to 0 based on the timer.
+			float displacementFactor = 1.0 - (cos(uTransitionTimer / (120.0 / 3.141592)) + 1.0) / 2.0;
+
+
+			// The effect factor will tell which way we want to displace our pixels the farther from the center of the videos, the stronger it will be.
+			vec2 effectFactor = vec2((textureCoords.x - 0.50) * 0.75, (textureCoords.y - 0.50) * 0.75);
+
+
+			// Calculate our displaced coordinates to our first video.
+			vec2 firstDisplacementCoords = vec2(textureCoords.x - displacementFactor * (displacementTexture.r * effectFactor.x), textureCoords.y- displacementFactor * (displacementTexture.r * effectFactor.y));
+
+
+			// Opposite displacement effect on the second video.
+			vec2 secondDisplacementCoords = vec2(textureCoords.x - (1.0 - displacementFactor) * (displacementTexture.r * effectFactor.x), textureCoords.y - (1.0 - displacementFactor) * (displacementTexture.r * effectFactor.y));
+
+
+			// Apply it on our active slide.
+			vec4 firstDistortedColor;
+
+			if (uActiveTexture == 1) {
+
+				firstDistortedColor = texture2D(firstTexture, firstDisplacementCoords);
+
+			} else if(uActiveTexture == 2) {
+
+				firstDistortedColor = texture2D(secondTexture, firstDisplacementCoords);
+
+			} else if(uActiveTexture == 3) {
+
+				firstDistortedColor = texture2D(thirdTexture, firstDisplacementCoords);
+
+ 			} else if(uActiveTexture == 4) {
+
+				firstDistortedColor = texture2D(fourthTexture, firstDisplacementCoords);
+
+			} else if(uActiveTexture == 5) {
+
+				firstDistortedColor = texture2D(fifthTexture, firstDisplacementCoords);
+
+			} else if(uActiveTexture == 6) {
+
+				firstDistortedColor = texture2D(sixthTexture, firstDisplacementCoords);
+
+			}
+
+
+			// Apply it on our next slide.
+			vec4 secondDistortedColor;
+
+			if ( uNextTexture == 1 ) {
+
+				secondDistortedColor = texture2D(firstTexture, secondDisplacementCoords);
+
+			} else if( uNextTexture == 2 ) {
+
+				secondDistortedColor = texture2D(secondTexture, secondDisplacementCoords);
+
+			} else if( uNextTexture == 3 ) {
+
+				secondDistortedColor = texture2D(thirdTexture, secondDisplacementCoords);
+
+			} else if( uNextTexture == 4 ) {
+
+				secondDistortedColor = texture2D(fourthTexture, secondDisplacementCoords);
+
+			} else if( uNextTexture == 5 ) {
+
+				secondDistortedColor = texture2D(fifthTexture, secondDisplacementCoords);
+
+			} else if( uNextTexture == 6 ) {
+
+				secondDistortedColor = texture2D(sixthTexture, secondDisplacementCoords);
+
+			}
+
+
+			// Mix both textures.
+			vec4 finalColor = mix(firstDistortedColor, secondDistortedColor, displacementFactor);
+
+
+			// Handling pre-multiplied alpha.
+			finalColor = vec4(finalColor.rgb * finalColor.a, finalColor.a);
+			gl_FragColor = finalColor;
+
+		}
+
+	</script>
+	<!-- // SHADERS -->
+
+
+
+
+
+	<!--removeIf(removeVendors)-->
+	<!-- inject:vendors:js -->
+	<!-- endinject -->
+	<!--endRemoveIf(removeVendors)-->
+
+
+	<!-- inject:app:js -->
+	<!-- endinject -->
+
+
+
+
+
+	</body>
+
+</html>

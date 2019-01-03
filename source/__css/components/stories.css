@@ -1,0 +1,41 @@
+/* -------------------------------------------------- */
+/* CASE STUDIES
+/* -------------------------------------------------- */
+
+/* PARENT */
+#stories {
+    /*min-height: 100%;*/
+}
+
+
+/* -------------------------------------------------- */
+/* PROFILE / USER
+/* -------------------------------------------------- */
+
+/* COMMON */
+#stories .profiles .cell {
+    position: relative;
+    margin-bottom: 4rem;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+}
+
+#stories .profiles .cell .text-container {
+    overflow: hidden;
+    height: 275px;
+    padding: 4rem 1rem 0 1rem;
+    text-align: center;
+}
+
+
+/* PARENT */
+#stories {
+    position: relative;
+}
+
+
+/* CHILD */
+#stories .profiles {
+    position: relative;
+    transition: var(--transition-normal);
+}

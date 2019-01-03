@@ -1,0 +1,139 @@
+
+# DOWNLOADS
+downloads:
+ -
+  id: download-assets
+  link: download-assets
+  title: Download Assets
+  classes: ''
+  attributes: ''
+
+
+# COLORS
+colors:
+ -
+  id: brand-colors
+  link: brand-colors
+  title: Branding
+  classes: ''
+  attributes: ''
+ -
+  id: grayscale-colors
+  link: grayscale-colors
+  title: Grayscale
+  classes: ''
+  attributes: ''
+ -
+  id: status-colors
+  link: status-colors
+  title: Status
+  classes: ''
+  attributes: ''
+
+
+# LOGOS
+logos:
+ -
+  id: brand-logo
+  link: brand-logo
+  title: Brand Logo
+  classes: ''
+  attributes: ''
+ -
+  id: app-icon-logo
+  link: app-icon-logo
+  title: App Icon
+  classes: ''
+  attributes: ''
+
+
+# VISUALS
+visuals:
+ -
+  id: branding-images
+  link: branding-images
+  title: Branding Images
+  classes: ''
+  attributes: ''
+ -
+  id: background-images
+  link: background-images
+  title: Background Images
+  classes: ''
+  attributes: ''
+
+
+# TYPOGRAPHY 
+typography:
+ -
+  id: headers
+  link: headers
+  title: Headers
+  classes: ''
+  attributes: ''
+ -
+  id: copy
+  link: copy
+  title: Copy
+  classes: ''
+  attributes: ''
+
+
+# BUTTONS
+buttons:
+ -
+  id: default-buttons
+  link: default-buttons
+  title: Default Buttons
+  classes: ''
+  attributes: ''
+ -
+  id: hero-buttons
+  link: hero-buttons
+  title: Hero Buttons
+  classes: ''
+  attributes: ''
+ -
+  id: disabled-buttons
+  link: disabled-buttons
+  title: Disabled Buttons
+  classes: ''
+  attributes: ''
+ -
+  id: button-groups
+  link: button-groups
+  title: Button Groups
+  classes: ''
+  attributes: ''
+
+
+# DIALOG BOX
+dialog-box:
+ -
+  id: dialog-box
+  link: dialog-box
+  title: Dialog Box
+  classes: ''
+  attributes: ''
+
+
+# ANIMATIONS
+animations:
+ -
+  id: mouseover-animations
+  link: mouseover-animations
+  title: Mouseover Animations
+  classes: ''
+  attributes: ''
+ -
+  id: microinteractions
+  link: microinteractions
+  title: Microinteractions
+  classes: ''
+  attributes: ''
+ -
+  id: looping-microinteractions
+  link: looping-microinteractions
+  title: Looping Microinteractions
+  classes: ''
+  attributes: ''

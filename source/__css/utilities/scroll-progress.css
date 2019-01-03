@@ -1,0 +1,30 @@
+/* -------------------------------------------------- */
+/* SCROLL PROGRESS
+/* -------------------------------------------------- */
+
+/* PARENT */
+.scroll-progress {
+    position: fixed;
+    left: 0;
+
+    display: block;
+
+    width: 0;
+    height: 1px;
+
+    transition: var(--transition);
+
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color) 100%);
+
+    will-change: width;
+}
+
+
+/* HELPERS */
+.scroll-progress.top {
+    top: 0;
+}
+
+.scroll-progress.bottom {
+    bottom: 0;
+}

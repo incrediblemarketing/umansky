@@ -1,0 +1,151 @@
+
+<!-- CONTENT: NAV PANEL -->
+<div id="nav-panel">
+
+
+	<!-- MENU -->
+	<ul class="menu-main anim fade-right">
+
+
+		<!-- ITEMS -->
+		{{#each menu.main}}
+
+			<li class="item" data-id="{{ id }}">
+
+				<a href="#{{ link }}" class="{{ id }} {{ classes }} change-slide" data-slide="{{ slide }}">
+
+					<span>{{ description }}</span>
+					{{ title }}
+
+				</a>
+
+			</li>
+
+		{{/each}}
+		<!-- // ITEMS -->
+		
+	
+	</ul>
+	<!-- // MENU -->
+
+
+
+
+
+	<!-- MENU -->
+	<!--
+	<ul class="menu flex-nowrap">
+
+		{{#each menu.main}}
+
+			<li>
+
+				<a href="#{{ link }}" class="{{ id }} {{ classes }} change-slide" data-slide="{{ slide }}">
+
+					<span>{{ description }}</span>
+					{{ title }}
+
+				</a>
+
+			</li>
+
+		{{/each}}
+
+	</ul>
+	-->
+	<!-- // MENU -->
+
+
+	<!-- GRID -->
+	<div class="grid-x align-left align-top small-up-1 medium-up-1 large-up-2 content">
+
+
+		<!-- CELL -->
+		<div class="cell content-left">
+
+
+			<!-- LOGO -->
+			<a href="/" class="logo no-pointer">
+
+				{{> logo}}
+
+			</a>
+			<!-- // LOGO -->
+
+
+			<!-- INFO -->
+			<div class="info">
+
+
+				<!-- CALLOUT -->
+				<a class="callout" href="#"><span class="fa fa-lg fa-phone margin-right-xs text-accent anim-play anim-tada hide-mobile"></span>Schedule a consultation</a>
+				<!-- // CALLOUT -->
+
+
+				<!-- SOCIAL -->
+				<ul class="social">
+
+					{{> social}}
+
+				</ul>
+				<!-- // SOCIAL -->
+
+
+			</div>
+			<!-- // INFO -->
+
+
+
+		</div>
+		<!-- // CELL -->
+
+
+
+		<!-- CANVAS -->
+		<div id="canvas" class="fade-bottom"></div>
+		<!-- // CANVAS -->
+
+
+		<!-- CELL -->
+		<div class="plane-textures" data-vs-id="plane-vs" data-fs-id="plane-fs">
+
+
+			<!-- PLANE TEXTURES -->
+			<img src="{{ root }}{{ assets }}filters/fur.jpg" alt="Filter" data-sampler="displacement"/>
+			<img src="{{ root }}{{ assets }}index/image-01.jpg" alt="Umansky Medical Center" data-sampler="firstTexture"/>
+			<img src="{{ root }}{{ assets }}index/image-02.jpg" alt="Umansky Medical Center" data-sampler="secondTexture"/>
+			<img src="{{ root }}{{ assets }}index/image-03.jpg" alt="Umansky Medical Center" data-sampler="thirdTexture"/>
+			<img src="{{ root }}{{ assets }}index/image-04.jpg" alt="Umansky Medical Center" data-sampler="fourthTexture"/>
+			<img src="{{ root }}{{ assets }}index/image-05.jpg" alt="Umansky Medical Center" data-sampler="fifthTexture"/>
+			<img src="{{ root }}{{ assets }}index/image-06.jpg" alt="Umansky Medical Center" data-sampler="sixthTexture"/>
+			<!-- // PLANE TEXTURES -->
+
+
+			<!-- FALLBACK -->
+			<!--<img src="{{ root }}{{ assets }}blank.svg" data-src="{{ root }}{{ assets }}index/woman-in-chair.jpg" alt="Umansky Plastic Surgery" class="hide lazy">-->
+			<!-- // FALLBACK -->
+
+
+		</div>
+		<!-- // CELL -->
+
+
+	</div>
+	<!-- // GRID -->
+
+
+	<!-- BACKGROUND -->
+	<div class="grid-x background">
+		
+		{{#repeat 6}}
+
+			<span class="cell auto"></span>
+
+		{{/repeat}}
+
+	</div>
+	<!-- // BACKGROUND -->
+
+
+</div>
+<!-- // CONTENT: NAV PANEL -->

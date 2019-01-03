@@ -1,0 +1,326 @@
+/* -------------------------------------------------- */
+/* NAMING CONVENTIONS (OPTIONAL)
+/* -------------------------------------------------- */
+
+// You will need to update your HTML templates, partials
+// and any selector references made in your JS files if
+// any changes are made to the 'Naming Conventions' settings.
+
+
+// BEM
+$element: '';
+$modifier: '-';
+$component: '';
+$utility: '';
+
+
+// ACTIONS
+$active: 'active';
+$inactive: 'inactive';
+
+$expand: 'expand';
+$collapse: 'collapse';
+
+$open: 'open';
+$close: 'close';
+
+$show: 'show';
+$hide: 'hide';
+
+$visible: 'visible';
+$hidden: 'hidden';
+
+
+// STATES
+$is-active: 'is-active';
+$is-inactive: 'is-inactive';
+
+$is-expanded: 'is-expanded';
+$is-collapsed: 'is-collapsed';
+
+$is-opened: 'is-opened';
+$is-closed: 'is-closed';
+
+$is-shown: 'is-shown';
+$is-hidden: 'is-hidden';
+
+$is-visible: 'is-visible';
+$is-hidden: 'is-hidden';
+
+
+// CHECKS
+$is-ok: 'is-ok';
+$is-warning: 'is-warning';
+$is-error: 'is-error';
+
+
+/* -------------------------------------------------- */
+/* BROWSER UI THEME
+/* -------------------------------------------------- */
+
+// SCROLL
+$scroll-width: 10px;
+
+
+// SCROLL UP / DOWN BUTTONS
+$scroll-button-height: 0;
+$scroll-button-radius: 0;
+$scroll-button-color: #3c3c3c;
+$scroll-button-hover-color: #c5a665;
+
+
+// SCROLL BAR
+$scroll-bar-radius: 0;
+$scroll-bar-color: #3c3c3c;
+$scroll-bar-hover-color: #c5a665;
+
+
+// SCROLL TRACK
+$scroll-track-color: #f5f5f5;
+$scroll-track-hover-color: #f5f5f5;
+
+
+// SELECTION
+$selection-text-color: #f5f5f5;
+$selection-background-color: #3c3c3c;
+
+
+/* -------------------------------------------------- */
+/* COLORS
+/* -------------------------------------------------- */
+
+// BRAND
+$colors: (
+    primary: #c6a664,
+    secondary: #b4924a,
+    accent: #edcc7a,
+    wild: #f8f5f1,
+    white: #fff,
+    light-gray: #f5f5f5,
+    gray: silver,
+    dark-gray: #3e3e3e,
+    charcoal: #333,
+    black: #000,
+    ok: #0f0,
+    warning: #fc0,
+    error: #f00,
+    transparent: transparent
+) !default;
+
+
+// MODIFIERS
+$lighten: 50%; // Adjust the amount of white added to a color.
+$darken: 25%; // Adjust the amount of black added to a color.
+
+
+/* -------------------------------------------------- */
+/* TYPOGRAPHY
+/* -------------------------------------------------- */
+
+// BASE
+$body-font-size: 1.6rem !default;
+$base: 16px !default;
+
+$header-line-height: 1em !default;
+$paragraph-line-height: 2em !default
+
+
+// FAMILIES
+$font-header: 'Montserrat', sans-serif !default;
+$font-subheader: 'Pinyon Script', cursive !default;
+$font-copy: 'Montserrat', sans-serif !default;
+$font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, Ubuntu, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$font-icons: 'FontAwesome';
+
+
+//SIZES
+$font-sizes: (
+    1: 48px,
+    2: 42px,
+    3: 36px,
+    4: 32px,
+    5: 28px,
+    6: 24px
+) !default;
+
+
+/* -------------------------------------------------- */
+/* BREAKPOINTS
+/* -------------------------------------------------- */
+
+$breakpoints: (
+    mobile: 667px,
+    tablet: 768px,
+    laptop: 1024px,
+    desktop: 1920px
+);
+
+
+/* -------------------------------------------------- */
+/* GUTTERS (MARGINS / PADDING)
+/* -------------------------------------------------- */
+
+$gutters: (
+    xs: 0.25rem,
+    sm: 0.5rem,
+    md: 1rem,
+    lg: 4rem,
+    xl: 8rem,
+    none: 0
+) !default;
+
+
+/* -------------------------------------------------- */
+/* SIZES
+/* -------------------------------------------------- */
+
+$widths: (
+    xs: 800px,
+    sm: 1024px,
+    md: 1440px,
+    lg: 1920px,
+    xl: 2560px,
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%
+) !default;
+
+
+$heights: (
+    xs: 600px,
+    sm: 768px,
+    md: 900px,
+    lg: 1080px,
+    xl: 1440px,
+    25: 25vh,
+    50: 50vh,
+    75: 75vh,
+    100: 100vh
+) !default;
+
+
+/* -------------------------------------------------- */
+/* LAYOUT
+/* -------------------------------------------------- */
+
+// DOCUMENT
+$html-background: transparent;
+$body-background: transparent;
+
+
+// STACK ORDER (Z-INDEX)
+$stack-order: (
+    'main': 1,
+    'footer': 2,
+    '#toolbar': 3,
+    '.scroll-progress': 4,
+    '.overlay': 5,
+    '.notification': 6,
+    '#blocker': 7,
+    '.js-off-canvas-overlay': 8,
+    '#dialog': 9,
+    '#nav-panel': 10,
+    '#navbar': 11
+);
+
+
+// CONTENT
+$main: (
+
+    margin: (
+        top: 0rem,
+        right: auto,
+        bottom: 0rem,
+        left: auto,
+
+        top-mobile: 0rem,
+        right-mobile: 0rem,
+        bottom-mobile: 0rem,
+        left-mobile: 0rem
+    ),
+
+    padding: (
+        top: 0rem,
+        right: 0rem,
+        bottom: 0rem,
+        left: 0rem,
+
+        top-mobile: 0rem,
+        right-mobile: 0rem,
+        bottom-mobile: 0rem,
+        left-mobile: 0rem
+    ),
+
+    width: 1920px,
+    background: #fff
+
+) !default;
+
+
+$sections: (
+
+    margin: (
+        top: 0rem,
+        right: 0rem,
+        bottom: 0rem,
+        left: 0rem,
+
+        top-mobile: 0rem,
+        right-mobile: 0rem,
+        bottom-mobile: 0rem,
+        left-mobile: 0rem
+    ),
+
+    padding: (
+        top: 10rem,
+        right: 5rem,
+        bottom: 10rem,
+        left: 5rem,
+
+        top-mobile: 5rem,
+        right-mobile: 1rem,
+        bottom-mobile: 5rem,
+        left-mobile: 1rem
+    ),
+
+    width: 100%,
+    background: transparent
+
+) !default;
+
+
+$cells: (
+
+    margin: (
+        top: 0rem,
+        right: 0rem,
+        bottom: 0rem,
+        left: 0rem,
+
+        top-mobile: 0rem,
+        right-mobile: 0rem,
+        bottom-mobile: 0rem,
+        left-mobile: 0rem
+    ),
+
+    padding: (
+        top: 2rem,
+        right: 2rem,
+        bottom: 2rem,
+        left: 2rem,
+
+        top-mobile: 3rem,
+        right-mobile: 2rem,
+        bottom-mobile: 3rem,
+        left-mobile: 2rem
+    )
+
+) !default;
+
+
+/* -------------------------------------------------- */
+/* TRANSITIONS
+/* -------------------------------------------------- */
+
+$timescale: 1;

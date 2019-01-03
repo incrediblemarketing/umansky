@@ -1,0 +1,486 @@
+/* -------------------------------------------------- */
+/* STACK ORDER (Z-INDEX)
+/* -------------------------------------------------- */
+
+main section {
+    z-index: 1;
+}
+
+#footer {
+    z-index: 2;
+}
+
+#navbar {
+    z-index: 3;
+}
+
+#toolbar {
+    z-index: 4;
+}
+
+#quicklinks, .scroll-progress {
+    z-index: 5;
+}
+
+#privacy-policy-notice {
+    z-index: 6;
+}
+
+#blocker, .js-off-canvas-overlay {
+    z-index: 7;
+}
+
+dialog {
+    z-index: 8;
+}
+
+#nav-panel {
+    z-index: 9;
+}
+
+
+/* -------------------------------------------------- */
+/* MAIN
+/* -------------------------------------------------- */
+
+main {
+    width: 100%;
+}
+
+
+/* -------------------------------------------------- */
+/* SECTION / ARTICLE (BLOCK LEVEL ELEMENT)
+/* -------------------------------------------------- */
+
+/* MARGINS */
+main section {
+    margin: var(--section-margin);
+}
+
+
+/* PADDING */
+main section {
+    padding: var(--section-padding);
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 414px) {
+
+    /* MARGINS */
+    main section {
+        margin: var(--section-margin-mobile);
+    }
+
+
+    /* PADDING */
+    main section {
+        padding: var(--section-padding-mobile);
+    }
+
+}
+
+
+/* -------------------------------------------------- */
+/* GRID CELL
+/* -------------------------------------------------- */
+
+    /* -------------------------------------------------- */
+    /* MARGIN
+    /* -------------------------------------------------- */
+
+    /* X */
+    .grid-x.grid-margin-x > .cell:not(.margin-none) {
+        /*
+        margin-top: var(--cell-margin-top);
+        margin-right: var(--cell-margin-right);
+        margin-bottom: var(--cell-margin-bottom);
+        margin-left: var(--cell-margin-left);
+        */
+    }
+
+
+    /* Y */
+    .grid-y.grid-margin-y > .cell:not(.margin-none) {
+        /*
+        margin-top: var(--cell-margin-top);
+        margin-bottom: var(--cell-margin-bottom);
+        */
+    }
+
+
+    /* HELPERS */
+    .grid-x.grid-margin-x > .cell.margin-none {
+        width: 100%;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+
+
+    .grid-x.grid-margin-x > .cell.margin-top-none {
+        margin-top: 0;
+    }
+
+    .grid-x.grid-margin-x > .cell.margin-right-none {
+        margin-right: 0;
+    }
+
+    .grid-x.grid-margin-x > .cell.margin-bottom-none {
+        margin-bottom: 0;
+    }
+
+    .grid-x.grid-margin-x > .cell.margin-left-none {
+        margin-left: 0;
+    }
+
+
+    .grid-x.grid-margin-x > .cell.margin-tb-none {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .grid-x.grid-margin-x > .cell.margin-lr-none {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+
+    /* -------------------------------------------------- */
+    /* PADDING
+    /* -------------------------------------------------- */
+
+    /* X */
+    .grid-x.grid-padding-x > .cell:not(.padding-none) {
+        padding-top: var(--cell-padding-top);
+        padding-right: var(--cell-padding-right);
+        padding-bottom: var(--cell-padding-bottom);
+        padding-left: var(--cell-padding-left);
+    }
+
+
+    /* Y */
+    .grid-y.grid-padding-y > .cell:not(.padding-none) {
+        padding-top: var(--cell-padding-top);
+        padding-bottom: var(--cell-padding-bottom);
+    }
+
+
+    /* HELPERS */
+    .grid-x.grid-padding-x > .cell.padding-none {
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+    }
+
+
+    .grid-x.grid-padding-x > .cell.padding-top-none {
+        padding-top: 0;
+    }
+
+    .grid-x.grid-padding-x > .cell.padding-right-none {
+        padding-right: 0;
+    }
+
+    .grid-x.grid-padding-x > .cell.padding-bottom-none {
+        padding-bottom: 0;
+    }
+
+    .grid-x.grid-padding-x > .cell.padding-left-none {
+        padding-left: 0;
+    }
+
+
+    .grid-x.grid-padding-x > .cell.padding-tb-none {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .grid-x.grid-padding-x > .cell.padding-lr-none {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+
+    /* -------------------------------------------------- */
+    /* RESPONSIVE
+    /* -------------------------------------------------- */
+
+    @media screen and (min-width: 0) and (max-width: 667px) {
+
+        /* -------------------------------------------------- */
+        /* MARGIN
+        /* -------------------------------------------------- */
+
+        /* X */
+        .grid-x.grid-margin-x > .cell:not(.margin-none):not(.margin-none-mobile):not(.margin-top-none-mobile):not(.margin-right-none-mobile):not(.margin-bottom-none-mobile):not(.margin-left-none-mobile):not(.margin-tb-none-mobile):not(.margin-lr-none-mobile) {
+            /*
+            margin-top: var(--cell-margin-top-mobile);
+            margin-right: var(--cell-margin-right-mobile);
+            margin-bottom: var(--cell-margin-bottom-mobile);
+            margin-left: var(--cell-margin-left-mobile);
+            */
+        }
+
+
+        /* Y */
+        .grid-y.grid-margin-y > .cell:not(.margin-none-mobile) {
+            /*
+            margin-top: var(--cell-margin-top-mobile);
+            margin-bottom: var(--cell-margin-bottom-mobile);
+            */
+        }
+
+
+        /* HELPERS */
+        .grid-x.grid-margin-x > .cell.margin-none-mobile {
+            width: 100%;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+        }
+
+
+        .grid-x.grid-margin-x > .cell.margin-top-none-mobile {
+            margin-top: 0;
+        }
+
+        .grid-x.grid-margin-x > .cell.margin-right-none-mobile {
+            margin-right: 0;
+        }
+
+        .grid-x.grid-margin-x > .cell.margin-bottom-none-mobile {
+            margin-bottom: 0;
+        }
+
+        .grid-x.grid-margin-x > .cell.margin-left-none-mobile {
+            margin-left: 0;
+        }
+
+
+        .grid-x.grid-margin-x > .cell.margin-tb-none-mobile {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .grid-x.grid-margin-x > .cell.margin-lr-none-mobile {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+
+        /* -------------------------------------------------- */
+        /* PADDING
+        /* -------------------------------------------------- */
+
+        /* X */
+        .grid-x.grid-padding-x > .cell:not(.padding-none):not(.padding-none-mobile):not(.padding-top-none-mobile):not(.padding-right-none-mobile):not(.padding-bottom-none-mobile):not(.padding-left-none-mobile):not(.padding-tb-none-mobile):not(.padding-lr-none-mobile) {
+            padding-top: var(--cell-padding-top-mobile);
+            padding-right: var(--cell-padding-right-mobile);
+            padding-bottom: var(--cell-padding-bottom-mobile);
+            padding-left: var(--cell-padding-left-mobile);
+        }
+
+
+        /* Y */
+        .grid-y.grid-padding-y > .cell:not(.padding-none-mobile) {
+            padding-top: var(--cell-padding-top-mobile);
+            padding-bottom: var(--cell-padding-bottom-mobile);
+        }
+
+
+        /* HELPERS */
+        .grid-x.grid-padding-x > .cell.padding-none-mobile {
+            padding-top: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+        }
+
+
+        .grid-x.grid-padding-x > .cell.padding-top-none-mobile {
+            padding-top: 0;
+        }
+
+        .grid-x.grid-padding-x > .cell.padding-right-none-mobile {
+            padding-right: 0;
+        }
+
+        .grid-x.grid-padding-x > .cell.padding-bottom-none-mobile {
+            padding-bottom: 0;
+        }
+
+        .grid-x.grid-padding-x > .cell.padding-left-none-mobile {
+            padding-left: 0;
+        }
+
+
+        .grid-x.grid-padding-x > .cell.padding-tb-none-mobile {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .grid-x.grid-padding-x > .cell.padding-lr-none-mobile {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+    }
+
+
+/* -------------------------------------------------- */
+/* AUTO
+/* -------------------------------------------------- */
+
+/* PARENT */
+.margin-auto {
+    margin-top: var(--margin-top-auto);
+    margin-right: var(--margin-right-auto);
+    margin-bottom: var(--margin-bottom-auto);
+    margin-left: var(--margin-left-auto);
+}
+
+.padding-auto {
+    padding-top: var(--padding-top-auto);
+    padding-right: var(--padding-right-auto);
+    padding-bottom: var(--padding-bottom-auto);
+    padding-left: var(--padding-left-auto);
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 667px) {
+
+    /* MARGIN */
+    .margin-auto {
+        margin-top: var(--margin-top-auto-mobile);
+        margin-right: var(--margin-right-auto-mobile);
+        margin-bottom: var(--margin-bottom-auto-mobile);
+        margin-left: var(--margin-left-auto-mobile);
+    }
+
+
+    /* PADDING */
+    .padding-auto {
+        padding-top: var(--padding-top-auto-mobile);
+        padding-right: var(--padding-right-auto-mobile);
+        padding-bottom: var(--padding-bottom-auto-mobile);
+        padding-left: var(--padding-left-auto-mobile);
+    }
+
+}
+
+
+/* -------------------------------------------------- */
+/* TEXT BLOCK
+/* -------------------------------------------------- */
+
+.text-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 50%;
+}
+
+
+/* -------------------------------------------------- */
+/* BUTTON GROUP
+/* -------------------------------------------------- */
+
+/* PARENT */
+.button-group {}
+
+
+/* CHILD */
+.button-group .button,
+.button-group button {
+    font-size: 1em;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.button-group .button:first-child {
+    margin-left: 0;
+}
+
+.button-group .button:last-child {
+    margin-right: 0;
+}
+
+.button-group.margin-none .button {
+    font-size: 1em;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 667px) {
+
+    /* CHILD */
+    .button-group .button,
+    .button-group button {
+        margin: 1.25rem auto 0 auto;
+    }
+
+    .button-group .button,
+    .button-group button {
+        max-width: 100%;
+    }
+
+    /*
+    .button-group[class*='width-'] {
+        max-width: 100% !important;
+    }
+    */
+
+}
+
+
+/* -------------------------------------------------- */
+/* MEDIA OBJECT SECTION
+/* -------------------------------------------------- */
+
+/* PARENT */
+.media-object-section:not(.padding-none) {
+    padding-bottom: 0 !important;
+}
+
+.media-object-section.right {
+    text-align: right;
+}
+
+
+/* CHILD */
+/*
+.media-object-section.right:first-child {
+    padding-left: 1rem;
+    padding-right: 0;
+}
+*/
+
+.media-object-section.right:first-child + .media-object-section {
+    text-align: right;
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 667px) {
+
+    /* PARENT */
+    .media-object-section.right {
+        text-align: left;
+    }
+
+
+    /* CHILD */
+    .media-object-section.right:first-child + .media-object-section {
+        text-align: left;
+    }
+
+}

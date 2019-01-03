@@ -1,0 +1,219 @@
+/* -------------------------------------------------- */
+/* TYPOGRAPHY
+/* -------------------------------------------------- */
+
+.#{$utility}text#{$modifier} {
+
+	@each $name, $amount in $amounts {
+
+		&#{'spacing'}#{$modifier}#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+				letter-spacing: pxtoem($amount / 2);
+			}
+
+		}
+
+	}
+
+	@each $name, $amount in $amounts {
+
+		&#{'leading'}#{$modifier}#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+				line-height: pxtoem($amount * 2);
+			}
+
+		}
+
+	}
+
+	&#{'lighter'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			font-weight: lighter;
+		}
+
+	}
+
+	&#{'bold'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			font-weight: bold;
+		}
+
+	}
+
+	&#{'bolder'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			font-weight: bolder;
+		}
+
+	}
+
+	&#{'indent-left'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			margin-left: 1em;
+			text-indent: -1em;
+		}
+
+	}
+
+	&#{'indent-right'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			margin-left: -1em;
+			text-indent: 1em;
+		}
+
+	}
+
+	&#{'left'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-align: left;
+		}
+
+	}
+
+	&#{'right'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-align: right;
+		}
+
+	}
+
+	&#{'center'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-align: center;
+		}
+
+	}
+
+	&#{'justify'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-align: justify;
+		}
+
+	}
+
+	&#{'capitalize'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-transform: capitalize;
+		}
+
+	}
+
+	&#{'lowercase'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-transform: lowercase;
+		}
+
+	}
+
+	&#{'uppercase'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-transform: uppercase;
+		}
+
+	}
+
+	&#{'normal'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			font-weight: normal;
+		}
+
+	}
+
+	&#{'italic'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			font-style: italic;
+		}
+
+	}
+
+	&#{'oblique'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			font-style: oblique;
+		}
+
+	}
+
+	&#{'overline'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-decoration: overline;
+		}
+
+	}
+
+	&#{'strike'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-decoration: line-through;
+		}
+
+	}
+
+	&#{'underline'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-decoration: underline;
+		}
+
+	}
+
+	&#{'overline-underline'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			text-decoration: overline underline;
+		}
+
+	}
+
+	&#{'break-all'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			word-break: break-all;
+		}
+
+	}
+
+	&#{'break-word'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			word-wrap: break-word;
+		}
+
+	}
+
+	&#{'nowrap'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			white-space: nowrap;
+		}
+
+	}
+
+	&#{'truncate'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+	}
+
+}

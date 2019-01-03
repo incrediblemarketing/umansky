@@ -1,0 +1,371 @@
+/* -------------------------------------------------- */
+/* VARS
+/* -------------------------------------------------- */
+
+$direction: slice($directions, 1, 8);
+
+
+/* -------------------------------------------------- */
+/* BORDERS
+/* -------------------------------------------------- */
+
+.#{$element}border#{$modifier} {
+
+	@each $name, $amount in $amounts {
+
+		&#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+				border: {
+					width: $amount / 2;
+				}
+				border-image-slice: 1;
+				
+				&#{'-hover'}:hover,
+				&#{'-focus'}:focus {
+
+					border: {
+						width: $amount / 2;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	@each $name, $direction in $directions {
+
+		&#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+				@if $direction == 'top' {
+
+					border: {
+						/*top: 0;*/
+						right: 0;
+						bottom: 0;
+						left: 0;
+					}
+
+				}
+
+				@else if $direction == 'right' {
+
+					border: {
+						top: 0;
+						/*right: 0;*/
+						bottom: 0;
+						left: 0;
+					}
+
+				}
+
+				@else if $direction == 'bottom' {
+
+					border: {
+						top: 0;
+						right: 0;
+						/*bottom: 0;*/
+						left: 0;
+					}
+
+				}
+
+				@else if $direction == 'left' {
+
+					border: {
+						top: 0;
+						right: 0;
+						bottom: 0;
+						/*eft: 0;*/
+					}
+
+				}
+
+				@else if $direction == 'tr' {
+
+					border: {
+						/*top: 0;*/
+						/*right: 0;*/
+						bottom: 0;
+						left: 0;
+					}
+
+				}
+
+				@else if $direction == 'br' {
+
+					border: {
+						top: 0;
+						/*right: 0;*/
+						/*bottom: 0;*/
+						left: 0;
+					}
+
+				}
+
+				@else if $direction == 'bl' {
+
+					border: {
+						top: 0;
+						right: 0;
+						/*bottom: 0;*/
+						/*left: 0;*/
+					}
+
+				}
+
+				@else if $direction == 'tl' {
+
+					border: {
+						/*top: 0;*/
+						right: 0;
+						bottom: 0;
+						/*left: 0;*/
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'thin'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				width: thin;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: thin;
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'medium'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				width: medium;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: medium;
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'thick'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				width: medium;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: thick;
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'dashed'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				style: dashed;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: dashed;
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'dotted'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				style: dotted;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: dotted;
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'double'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				style: double;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: double;
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'groove'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				style: groove;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: groove;
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'inset'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				style: inset;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: inset;
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'outset'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				style: outset;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: outset;
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'ridge'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				style: ridge;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: ridge;
+				}
+
+			}
+
+		}
+
+	}
+
+	&#{'solid'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+
+			border: {
+				style: solid;
+			}
+
+			&#{'-hover'}:hover,
+			&#{'-focus'}:focus {
+
+				border: {
+					width: solid;
+				}
+
+			}
+
+		}
+
+	}
+
+}

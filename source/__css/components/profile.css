@@ -1,0 +1,51 @@
+/* -------------------------------------------------- */
+/* PROFILES
+/* -------------------------------------------------- */
+
+/* PARENT */
+.profile {
+    background-color: var(--white-color);
+}
+
+
+/* CHILD */
+.profile .cell {
+    position: relative;
+}
+
+
+/* IMAGE */
+
+
+
+/* DESCRIPTION */
+.profile #description {
+    /*padding-right: var(--gutter-single-lg);*/
+	/*padding-left: var(--gutter-single-lg);*/
+}
+
+
+/* SOCIAL ICONS */
+.profile.social-icons {
+    position: absolute;
+    bottom: 0;
+
+    padding: var(--gutter-xs);
+
+    background-color: transparent;
+}
+
+.profile.social-icons li a {
+    font-size: 1em;
+
+    width: 35px;
+    height: 35px;
+
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+}
+
+.profile.social-icons li a:hover {
+    color: var(--white-color);
+    background-color: var(--accent-color);
+}

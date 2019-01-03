@@ -1,0 +1,108 @@
+/* -------------------------------------------------- */
+/* HELPERS
+/* -------------------------------------------------- */
+
+%header {
+    content: '';
+    display: block;
+    margin: {
+        top: 1rem;
+        bottom: 1rem;
+    };
+    width: 4%;
+    height: 2px;
+    border-radius: 0;
+}
+
+
+/* -------------------------------------------------- */
+/* HEADERS
+/* -------------------------------------------------- */
+
+// COLORS
+.#{$element}header#{$modifier} {
+
+    @include color($type: 'hex', $property: 'background-color', $prefix: '', $suffix: '::after', $alpha: 1);
+
+    &#{'left'}::after,
+    &#{'right'}::after,
+    &#{'center'}::after {
+
+        @extend %header;
+
+        background-color: $charcoal;
+
+    }
+
+    &#{'left'} {
+
+        @include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::after') {
+
+            margin: { 
+                left: 0;
+                right: auto;
+            }
+
+        }
+
+    }
+
+    &#{'right'} {
+
+        @include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::after') {
+
+            margin: { 
+                left: auto;
+                right: 0;
+            }
+
+        }
+
+    }
+
+    &#{'center'} {
+
+        @include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::after') {
+
+            margin: { 
+                left: auto;
+                right: auto;
+            }
+
+        }
+
+    }
+
+    &#{'25'} {
+
+        @include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::after') {
+            width: 25%;
+        }
+
+    }
+
+    &#{'50'} {
+
+        @include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::after') {
+            width: 50%;
+        }
+
+    }
+
+    &#{'75'} {
+
+        @include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::after') {
+            width: 75%;
+        }
+
+    }
+
+    &#{'100'} {
+
+        @include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '::after') {
+            width: 100%;
+        }
+        
+    }
+
+}

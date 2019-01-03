@@ -1,0 +1,2783 @@
+---
+layout: styleguide
+title: Style Guide
+assets: assets/
+dialog: dialog/
+---
+
+
+<!-- {{ page }} -->
+<div class="grid-x align-top">
+
+
+	<!-- ASIDE -->
+	<div id="sidebar" class="cell medium-2 sticky hide-mobile">
+
+
+		<!-- NAV ITEMS -->
+		<nav>
+
+
+			<!-- LOGO -->
+			<a href="#top" class="logo scroll-to no-waves">
+
+				{{> logo}}
+
+			</a>
+			<!-- // LOGO -->
+
+
+			<!-- VERSION -->
+			<a href="#" target="_blank" id="styleguide-version" class="styleguide-version text-accent-hover">...</a>
+			<!-- // VERSION -->
+
+
+			<!-- MENU -->
+			<ul class="accordion list-vertical margin-top-sm" data-accordion>
+
+
+				<!-- ITEM -->
+				{{#each sidebar.downloads}}
+				<li class="accordion-item"><a href="#{{ link }}" class="link-{{ id }} {{ classes }} accordion-title scroll-to" {{{ attributes }}}>{{ title }}</a></li>
+				{{/each}}
+				<!-- // ITEM -->
+
+
+				<!-- ITEM -->
+				<li class="accordion-item" data-accordion-item>
+
+					<!-- TITLE -->
+					<a href="#" class="accordion-title">Colors</a>
+					<!-- // TITLE -->
+
+
+					<!-- CONTENT -->
+					<ul class="accordion-content" data-tab-content>
+
+						{{#each sidebar.colors}}
+						<li><a href="#{{ link }}" class="link-{{ id }} {{ classes }} scroll-to" {{{ attributes }}}>{{ title }}</a></li>
+						{{/each}}
+
+					</ul>
+					<!-- // CONTENT -->
+
+				</li>
+				<!-- // ITEM -->
+
+
+				<!-- ITEM -->
+				<li class="accordion-item" data-accordion-item>
+
+					<!-- TITLE -->
+					<a href="#" class="accordion-title">Logos</a>
+					<!-- // TITLE -->
+
+
+					<!-- CONTENT -->
+					<ul class="accordion-content" data-tab-content>
+
+						{{#each sidebar.logos}}
+						<li><a href="#{{ link }}" class="link-{{ id }} {{ classes }} scroll-to" {{{ attributes }}}>{{ title }}</a></li>
+						{{/each}}
+
+					</ul>
+					<!-- // CONTENT -->
+
+				</li>
+				<!-- // ITEM -->
+
+
+				<!-- ITEM -->
+				<li class="accordion-item" data-accordion-item>
+
+					<!-- TITLE -->
+					<a href="#" class="accordion-title">Visuals</a>
+					<!-- // TITLE -->
+
+
+					<!-- CONTENT -->
+					<ul class="accordion-content" data-tab-content>
+
+						{{#each sidebar.visuals}}
+						<li><a href="#{{ link }}" class="link-{{ id }} {{ classes }} scroll-to" {{{ attributes }}}>{{ title }}</a></li>
+						{{/each}}
+
+					</ul>
+					<!-- // CONTENT -->
+
+				</li>
+				<!-- // ITEM -->
+
+
+				<!-- ITEM -->
+				<li class="accordion-item" data-accordion-item>
+
+					<!-- TITLE -->
+					<a href="#" class="accordion-title">Typography</a>
+					<!-- // TITLE -->
+
+
+					<!-- CONTENT -->
+					<ul class="accordion-content" data-tab-content>
+
+						{{#each sidebar.typography}}
+						<li><a href="#{{ link }}" class="link-{{ id }} {{ classes }} scroll-to" {{{ attributes }}}>{{ title }}</a></li>
+						{{/each}}
+
+					</ul>
+					<!-- // CONTENT -->
+
+				</li>
+				<!-- // ITEM -->
+
+
+				<!-- ITEM -->
+				<li class="accordion-item" data-accordion-item>
+
+					<!-- TITLE -->
+					<a href="#" class="accordion-title">Buttons</a>
+					<!-- // TITLE -->
+
+
+					<!-- CONTENT -->
+					<ul class="accordion-content" data-tab-content>
+
+						{{#each sidebar.buttons}}
+						<li><a href="#{{ link }}" class="link-{{ id }} {{ classes }} scroll-to" {{{ attributes }}}>{{ title }}</a></li>
+						{{/each}}
+
+					</ul>
+					<!-- // CONTENT -->
+
+				</li>
+				<!-- // ITEM -->
+
+
+				<!-- ITEM -->
+				{{#each sidebar.dialog-box}}
+				<li class="accordion-item"><a href="#{{ link }}" class="link-{{ id }} {{ classes }} accordion-title scroll-to" {{{ attributes }}}>{{ title }}</a></li>
+				{{/each}}
+				<!-- // ITEM -->
+
+
+				<!-- ITEM -->
+				<li class="accordion-item" data-accordion-item>
+
+					<!-- TITLE -->
+					<a href="#" class="accordion-title">Animations</a>
+					<!-- // TITLE -->
+
+
+					<!-- CONTENT -->
+					<ul class="accordion-content" data-tab-content>
+
+						{{#each sidebar.animations}}
+						<li><a href="#{{ link }}" class="link-{{ id }} {{ classes }} scroll-to" {{{ attributes }}}>{{ title }}</a></li>
+						{{/each}}
+
+					</ul>
+					<!-- // CONTENT -->
+
+				</li>
+				<!-- // ITEM -->
+
+
+			</ul>
+			<!-- // MENU -->
+
+
+		</nav>
+		<!-- // NAV ITEMS -->
+
+
+	</div>
+	<!-- // ASIDE -->
+
+
+
+
+
+	<!-- CONTENT -->
+	<div class="cell medium-9">
+
+
+		<!-- FONT FAMILY CONTAINER !DO NOT DELETE! -->
+		<div id="prop-css-font-families" class="position-absolute top left hide">
+			<div class="font-header"></div>
+			<div class="font-subheader"></div>
+			<div class="font-heavy"></div>
+			<div class="font-copy"></div>
+		</div>
+		<!-- // FONT FAMILY CONTAINER !DO NOT DELETE! -->
+
+
+
+
+
+		<!-- SECTION: HERO -->
+		<section id="introduction" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- BLOCK CAP -->
+			<svg class="block-cap bottom svg-white hide" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
+				{{> block-cap-inward }}
+			</svg>
+			<!-- // BLOCK CAP -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-center align-middle small-up-1 medium-up-2">
+
+
+				<!-- CELL -->
+				<div class="cell small-order-2 medium-order-1">
+					
+					<h1 class="p1 text-secondary text-bold">--name Style Guide</h1>
+
+					<p class="text-bold">In order to use this material you must follow these rules:</p>
+
+					<ul class="list-vertical list-margin-tb-xxs list-dot">
+
+						<li>Do not use these images in a way that would confuse someone into thinking that a product or item is made or endorsed by --name.</li>
+						<li>Do not use these images in a way that would confuse someone into thinking that a website is run or endorsed by --name.</li>
+						<li>Do not alter, stretch, condense, overlay, stylize, or otherwise skew these images in any way.</li>
+
+					</ul>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell small-order-1 medium-order-2 padding-none">
+
+
+					<!-- IMAGE -->
+					<img class="lazy" alt="--name Style Guide" data-src="{{ root }}{{ assets }}styleguide/hero.svg">
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+
+			</div>
+			<!-- // GRID -->
+
+
+
+		</section>
+		<!-- // SECTION: HERO -->
+
+
+
+
+
+		<!-- SECTION: ASSETS -->
+		<section id="download-assets" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Download Assets</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- BUTTON GROUP -->
+					<div class="button-group expanded stacked-for-small center">
+
+						<a href="{{ root }}--name-brand-assets.zip" id="download-graphic-assets" class="round-full button button-fx-secondary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top" download>Graphic Assets</a>
+
+						<a href="#" id="download-font-assets" class="round-full button button-fx-secondary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top" download>Fonts</a>
+
+					</div>
+					<!-- // BUTTON GROUP -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: ASSETS -->
+
+
+
+
+
+		<!-- SECTION: BRAND COLORS -->
+		<section id="brand-colors" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Brand Colors</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-3">
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-primary">
+						<span class="margin-right-xxs background-primary"></span>Primary
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-secondary">
+						<span class="margin-right-xxs background-secondary"></span>Secondary
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-accent">
+						<span class="margin-right-xxs background-accent"></span>Accent
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-wild">
+						<span class="margin-right-xxs border-thin border-solid border-dark-grey background-wild"></span>Wild
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->	
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: BRAND COLORS -->
+
+
+
+
+
+		<!-- SECTION: GRAYSCALE COLORS -->
+		<section id="grayscale-colors" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Grayscale Colors</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-3">
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-charcoal">
+						<span class="margin-right-xxs border-thin border-solid border-dark-grey background-white"></span>White
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-light-grey">
+						<span class="margin-right-xxs border-thin border-solid border-dark-grey background-light-grey"></span>Light Grey
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-dark-grey">
+						<span class="margin-right-xxs background-dark-grey"></span>Dark Grey
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-charcoal">
+						<span class="margin-right-xxs background-charcoal"></span>Charcoal
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->		
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: GRAYSCALE COLORS -->
+
+
+
+
+
+		<!-- SECTION: STATUS COLORS -->
+		<section id="status-colors" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Status Colors</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-3">
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-ok">
+						<span class="margin-right-xxs background-ok"></span>OK
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-warning">
+						<span class="margin-right-xxs background-warning"></span>Warning
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<ul class="cell prop-css-color p10 text-bold text-uppercase">
+
+					<!-- SAMPLE -->
+					<li class="text-error">
+						<span class="margin-right-xxs background-error"></span>Error
+					</li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="prop-css-color-info margin-left-sm">
+
+						<ul class="list-dot">
+							<!-- CSS PROP INFO -->
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: STATUS COLORS -->
+
+
+
+
+
+		<!-- SECTION: BRAND LOGO -->
+		<section id="brand-logo" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Brand Logo</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-center align-middle small-up-2 medium-up-2 large-up-4">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<img class="center lazy" alt="Primary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-primary.svg">
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<img class="center lazy" alt="Secondary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-secondary.svg">
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<img class="center lazy" alt="Dark --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-dark.svg">
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<div class="round-xxs center background-charcoal">
+						<img class="padding-xs lazy" alt="Light --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-light.svg">
+					</div>
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-center align-middle small-up-2 medium-up-2 large-up-4 position-relative hide-mobile">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<img class="center wh-xs lazy" alt="Primary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-primary.svg">
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<img class="center wh-xs lazy" alt="Secondary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-secondary.svg">
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<img class="center wh-xs lazy" alt="Dark --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-dark.svg">
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<div class="round-xxs center wh-xs background-charcoal">
+						<img class="padding-xs lazy" alt="Light --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-light.svg">
+					</div>
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: BRAND LOGO -->
+
+
+
+
+
+		<!-- SECTION: APP ICON -->
+		<section id="app-icon-logo" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">App Icon</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-center align-middle small-up-2 medium-up-2 large-up-4">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<div class="center round-lg wh-xxs background-transparent">
+						<img class="padding-xs lazy" alt="Primary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-primary.svg">
+					</div>
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<div class="center round-lg wh-xxs background-transparent">
+						<img class="padding-xs center lazy" alt="Secondary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-secondary.svg">
+					</div>
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<div class="center round-lg wh-xxs background-transparent">
+						<img class="padding-xs lazy" alt="Dark --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-dark.svg">
+					</div>
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- IMAGE -->
+					<div class="center round-lg wh-xxs background-secondary">
+						<img class="padding-xs lazy" alt="Light --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-light.svg">
+					</div>
+					<!-- // IMAGE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: APP ICON -->
+
+
+
+
+
+		<!-- SECTION: BRANDING IMAGES -->
+		<section id="branding-images" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Branding Images</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-center align-middle small-up-2 medium-up-2 large-up-3">
+
+
+				<!-- CELL -->
+				<img class="lazy cell" alt="Sample 1" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/big-ideas.svg">
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<img class="lazy cell" alt="Sample 2" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/join-us.svg">
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<img class="lazy cell" alt="Sample 3" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/scalable.svg">
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<img class="lazy cell" alt="Sample 4" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/shopping.svg">
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<img class="lazy cell" alt="Sample 5" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/teamwork.svg">
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<img class="lazy cell" alt="Sample 6" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/tokens.svg">
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: BRANDING IMAGES -->
+
+
+
+
+
+		<!-- SECTION: BACKGROUND IMAGES -->
+		<section id="background-images" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Background Images</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-2">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<div class="lazy round-sm height-xxs background-cover" alt="Sample 1" data-src="{{ root }}{{ assets }}common/data-01.png"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<div class="lazy round-sm height-xxs background-cover" alt="Sample 1" data-src="{{ root }}{{ assets }}common/network-01.png"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<div class="lazy round-sm height-xxs background-cover" alt="Sample 1" data-src="{{ root }}{{ assets }}common/network-02.png"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<div class="lazy round-sm height-xxs background-cover" alt="Sample 1" data-src="{{ root }}{{ assets }}common/network-03.png"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<div class="lazy round-sm height-xxs background-cover" alt="Sample 1" data-src="{{ root }}{{ assets }}common/network-04.png"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<div class="lazy round-sm height-xxs background-cover" alt="Sample 1" data-src="{{ root }}{{ assets }}common/teamwork-01.png"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<div class="lazy round-sm height-xxs background-cover" alt="Sample 1" data-src="{{ root }}{{ assets }}common/teamwork-02.png"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: BACKGROUND IMAGES -->
+
+
+
+
+
+		<!-- SECTION: HEADERS -->
+		<section id="headers" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Headers</h2>
+			<!-- // HEADER -->
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2">
+
+
+				<!-- CELL -->
+				<ul class="cell">
+
+
+					<!-- SAMPLE -->
+					<li class="prop-css-font-family p8 text-bold font-header"><!-- CSS PROP INFO --></li>
+					<!-- // SAMPLE -->
+
+
+					<!-- CSS PROP INFO -->
+					<li>
+
+						<ul class="margin-top-sm margin-lr-none p10 text-truncate">
+							<li><h1 class="prop-css-font-attributes text-primary">H1 Header Title</h1></li>
+							<li><h2 class="prop-css-font-attributes text-secondary">H2 Header Title</h2></li>
+							<li><h3 class="prop-css-font-attributes text-secondary">H3 Header Title</h3></li>
+							<li><h4 class="prop-css-font-attributes text-secondary">H4 Header Title</h4></li>
+							<li><h5 class="prop-css-font-attributes">H5 Header Title</h5></li>
+							<li><h6 class="prop-css-font-attributes">H6 Header Title</h6></li>
+						</ul>
+
+					</li>
+					<!-- // CSS PROP INFO -->
+
+
+				</ul>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<ul class="cell">
+
+					<!-- SAMPLE -->
+					<li class="prop-css-font-family text-bold font-copy"><!-- CSS PROP INFO --></li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li>
+
+						<ul class="margin-top-sm margin-lr-none p10 text-truncate">
+							<li><h1 class="prop-css-font-attributes font-copy text-primary">H1 Subheader Title</h1></li>
+							<li><h2 class="prop-css-font-attributes font-copy text-secondary">H2 Subheader Title</h2></li>
+							<li><h3 class="prop-css-font-attributes font-copy text-secondary">H3 Subheader Title</h3></li>
+							<li><h4 class="prop-css-font-attributes font-copy text-secondary">H4 Subheader Title</h4></li>
+							<li><h5 class="prop-css-font-attributes font-copy">H5 Subheader Title</h5></li>
+							<li><h6 class="prop-css-font-attributes font-copy">H6 Subheader Title</h6></li>
+						</ul>
+
+					</li>
+					<!-- CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: HEADERS -->
+
+
+
+
+
+		<!-- SECTION: COPY -->
+		<section id="copy" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Copy</h2>
+			<!-- // HEADER -->
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2">
+
+
+				<!-- CELL -->
+				<ul class="cell">
+
+					<!-- SAMPLE -->
+					<li class="prop-css-font-family text-bold font-copy"><!-- CSS PROP INFO --></li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="margin-top-sm">
+
+						<p class="prop-css-font-attributes">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+
+					</li>
+					<!-- CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<ul class="cell">
+
+					<!-- SAMPLE -->
+					<li class="prop-css-font-family text-bold font-copy"><!-- CSS PROP INFO --></li>
+					<!-- // SAMPLE -->
+
+					<!-- CSS PROP INFO -->
+					<li class="margin-top-sm">
+
+						<p class="prop-css-font-attributes p10 text-dark-grey">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+
+					</li>
+					<!-- CSS PROP INFO -->
+
+				</ul>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: COPY -->
+
+
+
+
+
+		<!-- SECTION: DEFAULT BUTTONS -->
+		<section id="default-buttons" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Default Buttons</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-3">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="#" class="prop-class-list round-full button button-fx-primary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default">Button</a>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="#" class="prop-class-list round-full button button-fx-secondary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default">Button</a>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="#" class="prop-class-list round-full button button-fx-accent button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default">Button</a>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: DEFAULT BUTTONS -->
+
+
+
+
+
+		<!-- SECTION: HERO BUTTONS -->
+		<section id="hero-buttons" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Hero Buttons</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-3">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="#" class="prop-class-list round-full button button-fx-primary anim-top">Button</a>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="#" class="prop-class-list round-full button button-fx-secondary anim-top">Button</a>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="#" class="prop-class-list round-full button button-fx-accent anim-top">Button</a>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: HERO BUTTONS -->
+
+
+
+
+
+		<!-- SECTION: FLAT BUTTONS -->
+		<section id="flat-buttons" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Flat Buttons</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-3">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="#" class="prop-class-list round-full button text-white text-white-hover background-primary background-secondary-hover prevent-default">Button</a>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="#" class="prop-class-list round-full button text-white text-accent-hover background-secondary background-charcoal-hover prevent-default">Button</a>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="#" class="prop-class-list round-full button text-charcoal text-white-hover background-accent background-secondary-hover prevent-default">Button</a>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: FLAT BUTTONS -->
+
+
+
+
+
+		<!-- SECTION: DISABLED BUTTONS -->
+		<section id="disabled-buttons" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Disabled Buttons</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-center align-stretch">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="#" class="prop-class-list round-full width-xxs button text-dark-grey background-light-grey prevent-default no-pointer">Disabled</a>
+
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: DISABLED BUTTONS -->
+
+
+
+
+
+		<!-- SECTION: BUTTON GROUPS -->
+		<section id="button-groups" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<h2 class="padding-auto padding-top-none header-style">Button Groups</h2>
+			<!-- // HEADER -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<!-- BUTTON GROUP -->
+					<div class="prop-class-list button-group expanded stacked-for-small">
+
+						<a href="#" class="round-full button button-fx-primary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default">Button 01</a>
+
+						<a href="#" class="round-full button button-fx-secondary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default">Button 02</a>
+
+					</div>
+					<!-- // BUTTON GROUP -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block">
+						<strong>Note</strong><br>
+						There is no limit to how many buttons can be placed inside <span>.button-group</span>, although this will be determined by the width of your container content. It is recommened to limit the button amount to 2.
+					</div>
+					<!-- // NOTE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: BUTTON GROUPS -->
+
+
+
+
+
+		<!-- SECTION: DIALOG COMPONENT -->
+		<section id="dialog-box" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<header class="padding-auto padding-top-none">
+
+				<h2 class="header-style">Dialog Box</h2>
+
+				<p>The Dialog component (also known as modal) can be used to load external content within the same domain or subdomain. This component will not allow content loaded from outside domains or websites for security and performance reasons. The dialog component also has a logical error checking feature that will check to see if the specified content exists, otherwise it will throw an error. Note that the component will only allow 1 dialog box at a time. Use the dialog component sparignly!</p>
+
+			</header>
+			<!-- // HEADER -->
+
+
+			<!-- HELPERS -->
+			<div class="padding-auto padding-top-none">
+
+				<p class="text-bold">Attributes</p>
+
+				<ul class="list-vertical list-margin-tb-xs margin-top-sm code-highlight">
+
+					<li><code>data-content-url="path"</code> - URL path to the external content. Used on block-level elements such as div's and li's.</li>
+
+					<li><code>data-content-selector="id-selector"</code> - The selector id to load the content, ex: #my-selector</li>
+
+					<li><code>data-content-width="400"</code> - Define a fixed width or set to <i>auto</i> and the dialog box will resize appropriately according to the browser's width.</li>
+
+					<li><code>data-content-height="600</code> - Define a fixed height or set to <i>auto</i> and the dialog box will resize appropriately according to the browser's height.</li>
+
+					<li><code>dialog-title="My Dialog Box"</code> - For accessibility, use this class to define the content's main title.</li>
+
+					<li><code>dialog-description="This is a dialog box."</code> - For accessibility, use this class to define the content's description.</li>
+
+				</ul>
+
+			</div>
+			<!-- // HELPERS -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-2">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<button href="{{ dialog }}sample" class="round-full button button-fx-primary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default" data-content-url="{{ dialog }}sample" data-content-selector="dialog-sample" data-content-width="auto" data-content-height="auto">Open Dialog Box</button>
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<p class="text-italic p10 text-light-grey">Used with a 'button' element, 'data-content-url' and sizing set to 'auto'.</p>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-content-url="path/to/dialog/content" data-content-selector="id-selector" data-content-width="auto" data-content-height="auto"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<div class="round-full button button-fx-primary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default" data-content-url="{{ dialog }}sample" data-content-selector="dialog-sample" data-content-width="650" data-content-height="650">Open Dialog</div>
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<p class="text-italic p10 text-light-grey">Used with a 'div' element and 'data-content-url' attribute with fixed sizing.</p>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-content-url="path/to/dialog/content" data-content-selector="id-selector" data-content-width="650" data-content-height="400"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+
+					<a href="{{ dialog }}sample" class="button text-secondary text-accent-hover text-normal text-underline no-waves prevent-default" data-content-selector="dialog-sample" data-content-width="650" data-content-height="auto">Open Dialog</a>
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<p class="text-italic p10 text-light-grey">Used with hyperlink text.</p>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							href="path/to/dialog/content" data-content-selector="id-selector" data-content-width="650" data-content-height="650"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: DIALOG COMPONENT -->
+
+
+
+
+
+		<!-- SECTION: MOUSEOVER -->
+		<section id="mouseover-animations" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<header class="padding-auto padding-top-none">
+
+				<h2 class="header-style">Mouseover</h2>
+
+				<p>These animations are disabled on mobile devices.</p>
+
+			</header>
+			<!-- // HEADER -->
+
+
+			<!-- HELPERS -->
+			<div class="padding-auto padding-top-none hide">
+
+				<p class="text-bold">Helpers</p>
+
+				<ul class="list-vertical list-margin-tb-xs margin-top-sm code-highlight">
+
+					<li><code>anim-play</code> - Play the element's animation.</li>
+
+					<li><code>anim-interact</code> - The element's animation will play once when in the viewport, and will play on mouse or touch interaction.</li>
+
+				</ul>
+
+			</div>
+			<!-- // HELPERS -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-2 large-up-3">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<p class="margin-bottom p10 text-bold">Animate Top</p>
+					<div class="prop-class-list round-full wh-xxxs background-secondary anim-top"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<p class="margin-bottom p10 text-bold">Animate Top Right</p>
+					<div class="prop-class-list round-full wh-xxxs background-secondary anim-tr"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<p class="margin-bottom p10 text-bold">Animate Right</p>
+					<div class="prop-class-list round-full wh-xxxs background-secondary anim-right"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<p class="margin-bottom p10 text-bold">Animate Bottom Right</p>
+					<div class="prop-class-list round-full wh-xxxs background-secondary anim-br"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<p class="margin-bottom p10 text-bold">Animate Bottom</p>
+					<div class="prop-class-list round-full wh-xxxs background-secondary anim-bottom"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<p class="margin-bottom p10 text-bold">Animate Bottom Left</p>
+					<div class="prop-class-list round-full wh-xxxs background-secondary anim-bl"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<p class="margin-bottom p10 text-bold">Animate Left</p>
+					<div class="prop-class-list round-full wh-xxxs background-secondary anim-left"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<p class="margin-bottom p10 text-bold">Animate Top Left</p>
+					<div class="prop-class-list round-full wh-xxxs background-secondary anim-tl"></div>
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: MOUSEOVER -->
+
+
+
+
+
+		<!-- SECTION: MICROINTERACTIONS -->
+		<section id="microinteractions" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<header class="padding-auto padding-top-none">
+
+				<h2 class="header-style">Microinteractions</h2>
+
+				<p>For microinteractions, the framework utilizes a modified version of the <a href="https://webkul.github.io/micron/docs.html" target="_blank" class="text-bold text-secondary text-accent-hover external">Micron JS animation library</a>. Microinteractions will trigger on mouseover as well as touchstart events.</p>
+
+			</header>
+			<!-- // HEADER -->
+
+
+			<!-- HELPERS -->
+			<div class="padding-auto padding-top-none">
+
+				<p class="text-bold">Data Helpers</p>
+
+				<ul class="list-vertical list-margin-tb-xs margin-top-sm code-highlight">
+
+					<li><code>data-anim="animation"</code> - Define an animtion type: <strong>blink, bounce, fade, flicker, groove, jelly, jerk, pop, shake, squeeze, swing, tada</strong>.</li>
+
+					<li><code>data-anim-duration="number"</code> - Define the duration (in seconds) of the animation.</li>
+
+					<li><code>data-anim-timing="type"</code> - Define the timing or easing: <strong>linear, ease-in, ease-out, ease-in-out</strong>.</li>
+
+					<li><code>data-anim-bind="true" data-anim-id="id-selector"</code> - Define the triggering element, and interaction will be applied to the element which reference to the defined id attribute.</li>
+
+				</ul>
+
+			</div>
+			<!-- // HELPERS -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-2 large-up-3">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Blink</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="blink" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="blink"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Bounce</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="bounce" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="bounce"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Fade</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="fade" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="fade"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Flicker</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="flicker" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="flicker"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Groove</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="groove" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="groove"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Jelly</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="jelly" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="jelly"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Jerk</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="jerk" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="jerk"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Pop</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="pop" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="pop"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Shake</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="shake" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="shake"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Squeeze</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="squeeze" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="squeeze"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Swing</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="swing" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="swing"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Tada</p>
+					<div class="round-full wh-xxxs background-secondary" data-anim="tada" data-anim-duration=".5" data-anim-repeat="infinite" data-anim-timing="ease-out"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							data-anim="tada"
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: MICROINTERACTIONS -->
+
+
+
+
+
+		<!-- SECTION: LOOPING MICROINTERACTIONS -->
+		<section id="looping-microinteractions" class="emergence-ignore" data-emergence="hidden">
+
+
+			<!-- HEADER -->
+			<header class="padding-auto padding-top-none">
+
+				<h2 class="header-style">Looping Microinteractions</h2>
+
+				<p>You can use <strong>Class Helpers</strong> on specific elements you want to call attention to. These element's will continously loop, but will stop on user interaction. By default animations are paused when not on-screen (or visibible in the browser's viewport).</p>
+
+			</header>
+			<!-- // HEADER -->
+
+
+			<!-- HELPERS -->
+			<div class="padding-auto padding-top-none">
+
+				<p class="text-bold">Class Helpers</p>
+
+				<ul class="list-vertical list-margin-tb-xs margin-top-sm code-highlight">
+
+					<li><code>anim</code> - Track the element's on-screen visibility, otherwise the animated element will continuously play even when not visible on-screen. Note: elements already interacted with will not reset or continue playing if it appears on-screen.</li>
+
+					<li><code>anim-[animation]</code> - Define an animation type where <strong>[animation]</strong> is: <strong>blink, bounce, fade, flicker, groove, jelly, jerk, pop, shake, squeeze, swing, tada</strong></li>
+
+					<li><code>anim-ease-[type]</code> - Define the timing or easing where <strong>[type]</strong> is: <strong>linear, in, out, in-out</strong>.</li>
+
+				</ul>
+
+			</div>
+			<!-- // HELPERS -->
+
+
+			<!-- GRID -->
+			<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-2 large-up-3">
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Blink</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-blink"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-blink
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Bounce</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-bounce"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-bounce
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Fade</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-fade"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-fade
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Flicker</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-flicker"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-flicker
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Groove</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-groove"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-groove
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Jelly</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-jelly"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-jelly
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Jerk</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-jerk"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-jerk
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Pop</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-pop"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-pop
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Shake</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-shake"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-shake
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Squeeze</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-squeeze"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-squeeze
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Swing</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-swing"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-swing
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+				
+
+				<!-- CELL -->
+				<div class="cell">
+
+					<!-- SAMPLE -->
+					<p class="margin-bottom p10 text-bold">Tada</p>
+					<div class="round-full wh-xxxs background-secondary anim anim-tada"></div>
+					<!-- // SAMPLE -->
+
+
+					<!-- NOTE -->
+					<div class="prop-note-block copy-to-clipboard">
+
+
+						<!-- HEADER -->
+						<strong>Attributes</strong><br>
+						<!-- // HEADER -->
+
+
+						<!-- CONTENT -->
+						<code class="copy-to-clipboard-content">
+							anim anim-tada
+						</code>
+						<!-- // CONTENT -->
+
+
+						<!-- BUTTON -->
+						<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+							<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+							<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+						</a>
+						<!-- // BUTTON -->
+
+
+					</div>
+					<!-- // NOTE -->
+
+				</div>
+				<!-- // CELL -->
+
+
+			</div>
+			<!-- // GRID -->
+
+
+		</section>
+		<!-- // SECTION: LOOPING MICROINTERACTIONS -->
+
+
+
+
+
+		{{> footer}}
+
+
+
+
+
+	</div>
+	<!-- // CONTENT -->
+
+
+</div>
+<!-- // {{ page }} -->

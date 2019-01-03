@@ -1,0 +1,85 @@
+/* -------------------------------------------------- */
+/* DIALOG
+/* -------------------------------------------------- */
+
+/* PARENT */
+#dialog {
+    position: fixed;
+    top: 50%;
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*left: 50%;*/
+
+    display: none;
+    overflow: hidden;
+
+    width: 100%;
+    height: auto;
+    padding: 0 0 0 0;
+
+    /*transition: var(--transition-quick);*/
+    /*transform: translate(-50%, -50%);*/
+    transform: translateY(-50%);
+
+    opacity: 0;
+    border: 0;
+    border-radius: var(--radius-md);
+    background-color: var(--white-color);
+    box-shadow: var(--box-shadow-xl);
+
+    /* Force GPU Rendering */
+    /*backface-visibility: hidden;*/
+	/*perspective: 1000;*/
+
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-filter: blur(0);
+    will-change: auto;
+}
+
+
+/* CHILD */
+#dialog-container {
+    position: relative;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+#dialog-container {
+    -ms-overflow-style: none;
+}
+
+#dialog-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* ERROR */
+#dialog-error {
+    content: var(--charcoal-color);
+    text-align: center;
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 1023px) and (min-height: 0) and (max-height: 1023px) {
+
+    #dialog {
+        top: 0;
+        left: 0 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        max-height: 100% !important;
+
+        transform: translate(0,0) !important;
+
+        border-radius: 0;
+    }
+
+}

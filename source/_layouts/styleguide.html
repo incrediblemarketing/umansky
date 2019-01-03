@@ -1,0 +1,181 @@
+<!doctype html>
+
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<title>--name | {{{ title }}}</title>
+<meta charset="utf-8">
+<!--<meta http-equiv="x-ua-compatible" content="ie=edge">-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, user-scalable=yes, viewport-fit=cover">
+
+
+<!-- CANONICAL -->
+{{#ifpage 'index'}}
+	<link rel="canonical" href="--url">
+{{/ifpage}}
+
+{{#unlesspage 'index'}}
+	<link rel="canonical" href="--url{{ page }}">
+{{/unlesspage}}
+<!-- // CANONICAL -->
+
+
+<!-- CORE -->
+<meta name="description" content="--description">
+
+
+<!--removeIf(removeBase)-->
+<!-- build:base -->
+<!-- endbuild -->
+<!--endRemoveIf(removeBase)-->
+
+
+<!-- GENERAL -->
+<!--<meta http-equiv="cleartype" content="on">-->
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+<meta name="HandheldFriendly" content="--handheld-friendly">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
+
+
+<!-- ICONS -->
+<link rel="icon" type="image/png" href="{{ root }}--favicon-16" sizes="16x16">
+<link rel="icon" type="image/png" href="{{ root }}--favicon-32" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ root }}--image-icon-180" sizes="180x180">
+<link rel="manifest" href="{{ root }}manifest.json">
+<link rel="mask-icon" href="{{ root }}--safari-pinned-tab" color="--theme">
+<meta name="apple-mobile-web-app-title" content="--name">
+<meta name="apple-mobile-web-app-capable" content="--web-app-capable">
+<meta name="application-name" content="--name">
+<meta name="msapplication-TileColor" content="--theme">
+<meta name="theme-color" content="--theme">
+
+
+<!-- FACEBOOK OPEN GRAPH -->
+<meta property="og:title" content="--name | {{{ title }}}">
+<meta property="og:description" content="--description">
+<meta property="og:locale" content="--og-locale"/>
+<meta property="og:type" content="--og-type"/>
+<meta property="og:image" content="{{ root }}--image-cover">
+<meta property="og:image:width" content="--og-image-width">
+<meta property="og:image:height" content="--og-image-height">
+<meta property="og:url" content="--url{{ page }}">
+
+
+<!-- TWITTER CARD -->
+<meta name="twitter:title" content="--name">
+<meta name="twitter:description" content="--description">
+<meta name="twitter:site" content="--twitter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="{{ root }}--image-profile">
+<meta name="twitter:image:alt" content="--url">
+
+
+
+
+
+<!-- build:inlinecss -->
+<!-- endbuild -->
+
+
+<!-- inject:styleguide:css -->
+<!-- endinject -->
+
+
+<!-- build:inlinejs -->
+<!-- endbuild -->
+
+
+
+
+
+</head>
+
+	<body>
+
+
+
+
+
+	<!-- JAVASCRIPT DISABLED MESSAGE / NOTE: AFFECTS PAGE SPEED INDEX SCORE. MOVE UNDER build:css. -->
+	<noscript>
+
+		<!-- inject:styleguide:css -->
+		<!-- endinject -->
+
+		<div>
+			<img src="assets/error.gif" alt="Ooops, your JavaScript is disabled."/>
+			<span>JavaScript is disabled on your browser</span>.<br>
+			It is required for this site to deliver a pleasant viewing experience. Please enable JavaScript to continue using this website.
+		</div>
+
+	</noscript>
+	<!-- // JAVASCRIPT DISABLE MESSAGE -->
+
+
+
+
+
+	<!-- ERROR -->
+	<div id="error">
+		<p>Please resize your window or rotate your phone to portrait mode.</p>
+	</div>
+	<!-- // ERROR -->
+
+
+
+
+
+	<!-- MAIN -->
+	<main id="main-{{ page }}" class="page off-canvas-content" data-page="{{ page }}" data-off-canvas-content role="main">
+
+		
+		{{> body}}
+
+
+	</main>
+	<!-- // MAIN -->
+
+
+	{{> dialog}}
+	{{> blocker}}
+
+
+	{{> privacy-policy}}
+
+
+
+
+
+	<!--removeIf(removeVendors)-->
+	<!-- inject:vendors:js -->
+	<!-- endinject -->
+	<!--endRemoveIf(removeVendors)-->
+
+
+	<!-- inject:styleguide:js -->
+	<!-- endinject -->
+
+
+
+
+
+	<script>
+
+		var version = "styleguideVersion",
+			versionInfo = document.getElementById("styleguide-version");
+
+		console.log(version);
+
+		versionInfo.textContent = "Ver. " + version;
+
+	</script>
+
+
+
+
+
+	</body>
+
+</html>

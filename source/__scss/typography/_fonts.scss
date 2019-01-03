@@ -1,0 +1,118 @@
+/* -------------------------------------------------- */
+/* FONT FAMILIES
+/* -------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6, .#{$element}font-header {
+
+	@extend .text-spacing-md;
+
+	font-family: $font-header;
+	text-transform: uppercase;
+
+}
+
+
+.#{$element}font-subheader {
+
+	@extend .margin-tb-lg;
+	@extend .text-spacing-none;
+
+	color: $primary;
+	font-family: $font-subheader;
+	font-weight: normal;
+	text-transform: none;
+
+}
+
+
+.#{$element}font-copy {
+	font-family: $font-copy;
+}
+
+
+.#{$element}font-stack {
+	font-family: $font-stack;
+}
+
+
+.#{$element}font-icons {
+	font-family: $font-icons;
+}
+
+
+/* -------------------------------------------------- */
+/* TYPE
+/* -------------------------------------------------- */	
+
+h, .h {
+
+	@each $name, $font-size in $font-sizes {
+
+		&#{$name} {
+			font-size: pxtorem($font-size);
+			line-height: $header-line-height;
+			/*line-height: round( pxtoem($font-size / 2 * 0.5, $basepx) );*/
+		}
+
+	}
+
+}
+
+
+p {
+	font-size: 1em;
+	line-height: $paragraph-line-height;
+}
+
+
+.p {
+
+	@each $name, $font-size in $font-sizes {
+
+		&#{$name} {
+			font-size: pxtoem($font-size / 2);
+		}
+
+	}
+
+}
+
+
+.#{$element}text#{$modifier} {
+	
+	&#{'small'} {
+
+		font-size: 1em;
+
+	}
+
+	&#{'medium'} {
+
+		font-size: 3em;
+
+		@include break($type: 'width', $min: 0, $max: $mobile) {
+
+			font-size: 2em;
+
+		}
+
+	}
+
+	&#{'large'} {
+
+		font-size: 6em;
+
+		@include break($type: 'width', $min: 0, $max: $mobile) {
+
+			font-size: 3em;
+
+		}
+
+	}
+
+}
+
+
+.#{$modifier}fluid-type {
+	@include fluid-type( map-get($font-sizes, 6) / 2, map-get($font-sizes, 1) );
+}

@@ -1,0 +1,237 @@
+/* -------------------------------------------------- */
+/* TEXT
+/* -------------------------------------------------- */
+
+/* PSEUDO */
+.text-truncate-fade::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+
+    width: 100%;
+    height: 35%;
+
+
+    background: rgba(var(--secondary-color-rgb), 0);
+    background: linear-gradient(rgba(var(--secondary-color-rgb), 0) 0%, rgba(var(--secondary-color-rgb), 1) 100%);
+
+    transition: var(--transition);
+}
+
+/* -------------------------------------------------- */
+/* FADE
+/* -------------------------------------------------- */
+
+/* COMMON */
+.fade-full::before,
+.fade-full::after,
+.fade-top::before,
+.fade-right::after,
+.fade-bottom::after,
+.fade-left::before,
+.fade-lr::before,
+.fade-lr::after {
+    content: '';
+    z-index: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+
+/* FULL */
+.fade-full::before {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fade-full::after {
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* TOP / BOTTOM */
+.fade-top::before,
+.fade-bottom:after {
+    width: 100%;
+}
+
+.fade-top::before {
+    top: 0;
+    height: 50%;
+}
+
+.fade-bottom::after {
+    bottom: 0;
+    height: 50%;
+
+}
+
+
+/* LEFT / RIGHT */
+.fade-right::after,
+.fade-left::before,
+.fade-lr::before,
+.fade-lr::after {
+    bottom: 0;
+    width: 15%;
+    height: 100%;
+}
+
+
+.fade-right::after,
+.fade-lr::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(var(--secondary-color-rgb), 0) 10%, rgba(var(--secondary-color-rgb), 1) 100%);
+}
+
+
+.fade-left::before,
+.fade-lr::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(var(--secondary-color-rgb), 1) 10%, rgba(var(--secondary-color-rgb), 0) 100%);
+}
+
+
+/* COLORS */
+.fade-full-primary::before {
+    background: radial-gradient(ellipse at center, rgba(var(--primary-color-rgb), 0) 25%, rgba(var(--primary-color-rgb), 1) 75%);
+}
+.fade-full-primary::after {
+    background: linear-gradient(rgba(var(--primary-color-rgb), 0) 0%, rgba(var(--primary-color-rgb), 1) 90%);
+}
+
+.fade-full-secondary::before {
+    background: radial-gradient(ellipse at center, rgba(var(--secondary-color-rgb), 0) 25%, rgba(var(--secondary-color-rgb), 1) 75%);
+}
+.fade-full-secondary::after {
+    background: linear-gradient(rgba(var(--secondary-color-rgb), 0) 0%, rgba(var(--secondary-color-rgb), 1) 90%);
+}
+
+.fade-full-accent::before {
+    background: radial-gradient(ellipse at center, rgba(var(--accent-color-rgb), 0) 25%, rgba(var(--accent-color-rgb), 1) 75%);
+}
+.fade-full-accent::after {
+    background: linear-gradient(rgba(var(--accent-color-rgb), 0) 0%, rgba(var(--accent-color-rgb), 1) 90%);
+}
+
+.fade-full-wild::before {
+    background: radial-gradient(ellipse at center, rgba(var(--wild-color-rgb), 0) 25%, rgba(var(--wild-color-rgb), 1) 75%);
+}
+.fade-full-wild::after {
+    background: linear-gradient(rgba(var(--wild-color-rgb), 0) 0%, rgba(var(--wild-color-rgb), 1) 90%);
+}
+
+.fade-full-white::before {
+    background: radial-gradient(ellipse at center, rgba(var(--white-color-rgb), 0) 25%, rgba(var(--white-color-rgb), 1) 75%);
+}
+.fade-full-white::after {
+    background: linear-gradient(rgba(var(--white-color-rgb), 0) 0%, rgba(var(--white-color-rgb), 1) 90%);
+}
+
+.fade-full-light-grey::before {
+    background: radial-gradient(ellipse at center, rgba(var(--light-grey-color-rgb), 0) 25%, rgba(var(--light-grey-color-rgb), 1) 75%);
+}
+.fade-full-light-grey::after {
+    background: linear-gradient(rgba(var(--light-grey-color-rgb), 0) 0%, rgba(var(--light-grey-color-rgb), 1) 90%);
+}
+
+.fade-full-dark-grey::before {
+    background: radial-gradient(ellipse at center, rgba(var(--dark-grey-color-rgb), 0) 25%, rgba(var(--dark-grey-color-rgb), 1) 75%);
+}
+.fade-full-dark-grey::after {
+    background: linear-gradient(rgba(var(--dark-grey-color-rgb), 0) 0%, rgba(var(--dark-grey-color-rgb), 1) 90%);
+}
+
+.fade-full-charcoal::before {
+    background: radial-gradient(ellipse at center, rgba(var(--charcoal-color-rgb), 0) 25%, rgba(var(--charcoal-color-rgb), 1) 75%);
+}
+.fade-full-charcoal::after {
+    background: linear-gradient(rgba(var(--charcoal-color-rgb), 0) 0%, rgba(var(--charcoal-color-rgb), 1) 90%);
+}
+
+.fade-full-black::before {
+    background: radial-gradient(ellipse at center, rgba(var(--black-color-rgb), 0) 25%, rgba(var(--black-color-rgb), 1) 75%);
+}
+.fade-full-black::after {
+    background: linear-gradient(rgba(var(--black-color-rgb), 0) 0%, rgba(var(--black-color-rgb), 1) 90%);
+}
+
+
+.fade-top-primary::before {
+    background: linear-gradient(to bottom, rgba(var(--primary-color-rgb), 1) 0%, rgba(var(--primary-color-rgb), 0) 100%);
+}
+.fade-bottom-primary::after {
+    background: linear-gradient(rgba(var(--primary-color-rgb), 0) 0%, rgba(var(--primary-color-rgb), 1) 100%);
+}
+
+
+.fade-top-secondary::before {
+    background: linear-gradient(to bottom, rgba(var(--secondary-color-rgb), 1) 0%, rgba(var(--secondary-color-rgb), 0) 100%);
+}
+.fade-bottom-secondary::after {
+    background: linear-gradient(rgba(var(--secondary-color-rgb), 0) 0%, rgba(var(--secondary-color-rgb), 1) 100%);
+}
+
+
+.fade-top-accent::before {
+    background: linear-gradient(to bottom, rgba(var(--accent-color-rgb), 1) 0%, rgba(var(--accent-color-rgb), 0) 100%);
+}
+.fade-bottom-accent::after {
+    background: linear-gradient(rgba(var(--accent-color-rgb), 0) 0%, rgba(var(--accent-color-rgb), 1) 100%);
+}
+
+
+.fade-top-wild::before {
+    background: linear-gradient(to bottom, rgba(var(--wild-color-rgb), 1) 0%, rgba(var(--wild-color-rgb), 0) 100%);
+}
+.fade-bottom-wild::after {
+    background: linear-gradient(rgba(var(--wild-color-rgb), 0) 0%, rgba(var(--wild-color-rgb), 1) 100%);
+}
+
+
+.fade-top-white::before {
+    background: linear-gradient(to bottom, rgba(var(--white-color-rgb), 1) 0%, rgba(var(--white-color-rgb), 0) 100%);
+}
+.fade-bottom-white::after {
+    background: linear-gradient(rgba(var(--white-color-rgb), 0) 0%, rgba(var(--white-color-rgb), 1) 100%);
+}
+
+
+.fade-top-light-grey::before {
+    background: linear-gradient(to bottom, rgba(var(--light-grey-color-rgb), 1) 0%, rgba(var(--light-grey-color-rgb), 0) 100%);
+}
+.fade-bottom-light-grey::after {
+    background: linear-gradient(rgba(var(--light-grey-color-rgb), 0) 0%, rgba(var(--light-grey-color-rgb), 1) 100%);
+}
+
+
+.fade-top-dark-grey::before {
+    background: linear-gradient(to bottom, rgba(var(--dark-grey-color-rgb), 1) 0%, rgba(var(--dark-grey-color-rgb), 0) 100%);
+}
+.fade-bottom-dark-grey::after {
+    background: linear-gradient(rgba(var(--dark-grey-color-rgb), 0) 0%, rgba(var(--dark-grey-color-rgb), 1) 100%);
+}
+
+
+.fade-top-charcoal-grey::before {
+    background: linear-gradient(to bottom, rgba(var(--charcoal-color-rgb), 1) 0%, rgba(var(--charcoal-color-rgb), 0) 100%);
+}
+.fade-bottom-charcoal-grey::after {
+    background: linear-gradient(rgba(var(--charcoal-color-rgb), 0) 0%, rgba(var(--charcoal-color-rgb), 1) 100%);
+}
+
+
+.fade-top-black-grey::before {
+    background: linear-gradient(to bottom, rgba(var(--black-color-rgb), 1) 0%, rgba(var(--black-color-rgb), 0) 100%);
+}
+.fade-bottom-black-grey::after {
+    background: linear-gradient(rgba(var(--black-color-rgb), 0) 0%, rgba(var(--black-color-rgb), 1) 100%);
+}

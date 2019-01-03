@@ -1,0 +1,134 @@
+/* -------------------------------------------------- */
+/* VARS
+/* -------------------------------------------------- */
+
+$direction: slice($directions, 1, 13);
+
+
+/* -------------------------------------------------- */
+/* BACKGROUNDS
+/* -------------------------------------------------- */
+
+// POSITION
+.#{$element}background#{$modifier} {
+
+	@each $name, $direction in $directions {
+
+		&#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+				background-position: unquote($direction);
+			}
+
+		}
+
+	}
+
+	&#{'auto'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-size: auto;
+		}
+
+	}
+
+	&#{'contain'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-size: contain;
+		}
+
+	}
+
+	&#{'cover'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-size: cover;
+		}
+
+	}
+
+	&#{'repeat'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-repeat: repeat;
+		}
+
+	}
+
+	&#{'repeat-x'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-repeat: repeat-x;
+		}
+
+	}
+
+	&#{'repeat-y'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-repeat: repeat-y;
+		}
+
+	}
+
+	&#{'no-repeat'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-repeat: no-repeat;
+		}
+
+	}
+
+	&#{'fixed'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-attachment: fixed;
+		}
+
+	}
+
+	&#{'local'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-attachment: local;
+		}
+
+	}
+
+	&#{'scroll'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-attachment: scroll;
+		}
+
+	}
+
+	&#{'color-none'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-color: transparent;
+		}
+
+	}
+
+	&#{'image-none'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background-image: none;
+		}
+
+	}
+
+	&#{'none'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			background: {
+				color: transparent;
+				image: none;
+			}
+		}
+
+	}
+
+}

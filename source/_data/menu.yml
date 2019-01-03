@@ -1,0 +1,91 @@
+
+# CONTENT
+main:
+ -
+  id: home
+  link: welcome
+  title: Home
+  description: Welcome
+  slide: 1
+  classes: 'scroll-to'
+
+
+ -
+  id: about-us
+  link: about-us
+  title: About Us
+  description: Company
+  slide: 2
+  classes: 'scroll-to'
+
+
+ -
+  id: procedures
+  link: procedures
+  title: Procedures
+  description: Surgical & Non-Surgical
+  slide: 3
+  classes: 'scroll-to'
+
+
+ -
+  id: gallery
+  link: gallery
+  title: Gallery
+  description: Before & After
+  slide: 4
+  classes: 'scroll-to'
+
+
+ -
+  id: Specials
+  link: specials
+  title: Specials
+  description: Offerings
+  slide: 5
+  classes: 'scroll-to'
+
+
+ -
+  id: contact
+  link: contact
+  title: Contact
+  description: Consultation
+  slide: 6 
+  classes: 'scroll-to'
+
+
+
+
+
+quicklinks:
+ -
+  id: dr-michael-woffeld
+  link: http://www.drwolfeld.com/michael-wolfeld-plastic-surgeon-nyc.php
+  title: Dr. Michael Wolffeld
+  classes: ''
+
+
+ -
+  id: before-and-after-gallery
+  link: http://www.drwolfeld.com/photo-gallery.php
+  title: Before and After Gallery
+  classes: ''
+
+
+
+
+
+locations:
+ -
+  id: new-york-city-nyc-office
+  link: http://www.drwolfeld.com/new-york-plastic-surgery-office.php
+  title: New York City, NYC
+  classes: ''
+
+
+ -
+  id: hackensack-nj-office
+  link: http://www.drwolfeld.com/new-jersey-plastic-surgery-office.php
+  title: Hackensack, NJ Office
+  classes: ''

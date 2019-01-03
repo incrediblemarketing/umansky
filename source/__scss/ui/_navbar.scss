@@ -1,0 +1,162 @@
+/* -------------------------------------------------- */
+/* NAVBAR
+/* -------------------------------------------------- */
+
+#navbar {
+
+	//@extend .box-shadow-none;
+	@include transition($property: (background-color), $ease: ease-in-out, $duration: 200ms);
+
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: transparent;
+
+	@include break($type: 'width', $min: 0, $max: $mobile) {
+
+		padding: {
+			left: 1rem;
+			right: 1rem;	
+		}
+
+	}
+
+	// Classes for 'uiScrollEvents' in 'ui.js'.
+	&.is-scrolling-up {
+
+	}
+
+	&.is-scrolling-down {
+
+	}
+
+	&.is-top {
+
+	}
+
+	&.is-not-top {
+
+		//@extend .box-shadow-sm;
+		//background-color: $charcoal;
+
+		.top-bar {
+
+			.top-bar-left {
+
+				@extend .no-pointer;
+				opacity: 0;
+
+				.logo {
+
+
+				}
+
+			}
+
+			.tob-bar-right {
+
+				.ui-menu {
+
+					//@extend .background-charcoal-slant;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&.is-bottom {
+
+	}
+
+	&.is-not-bottom {
+
+	}
+	////////////////////////////////////
+
+	.top-bar {
+
+		@extend .center-auto;
+
+		position: relative;
+		padding: {
+			top: 1rem;
+			right: 3rem;
+			bottom: 1rem;
+			left: 3rem;
+		}
+		width: 100%;
+		height: 100px;
+		max-width: map-get($main, width);
+		background-color: transparent;
+
+		@include break($type: 'width', $min: 0, $max: $mobile) {
+
+			padding: {
+				left: 0;
+				right: 0;	
+			}
+
+		}
+
+		.top-bar-left {
+
+			@include transition($property: (opacity), $ease: ease-in-out, $duration: 200ms);
+
+			max-width: 75%;
+
+			.logo {
+
+				//@extend .left-auto;
+				
+				display: block;
+				width: 100%;
+				max-width: 400px;
+
+				svg {
+
+					@extend .svg-white;
+
+				}
+
+			}
+
+		}
+
+		.top-bar-right {
+
+			flex: auto;
+			max-width: 25%;
+
+			.menu {
+
+				//@extend .right-auto;
+
+				width: auto;
+
+				li {
+
+					display: inline-block;
+
+				}
+
+			}
+
+			.ui-menu {
+
+				@extend .right-auto;
+
+				//width: 60px;
+				//height: 60px;
+
+			}
+
+		}
+
+	}
+
+}

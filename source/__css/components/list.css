@@ -1,0 +1,185 @@
+/* -------------------------------------------------- */
+/* DEFAULT
+/* -------------------------------------------------- */
+
+/* PARENT */
+.list-default {
+
+}
+
+
+/* CHILD */
+.list-default li {
+    border-bottom: 1px solid var(--light-grey-color);
+}
+
+.list-default li:last-child {
+    border-bottom: none;
+}
+
+.list-default li a {
+    /*display: block;*/
+
+    /*margin-left: 1em;*/
+
+    /*text-indent: -1em;*/
+
+    color: var(--charcoal-color);
+}
+
+.list-default li a:hover {
+    color: var(--accent-color);
+}
+
+.list-default li a span {
+    font-size: 0.8em;
+    font-weight: bold;
+    display: block;
+    color: var(--secondary-color);
+}
+
+.list-default li:nth-child(even) {
+    background-color: rgba(0,0,0, 0.01);
+}
+
+
+/* PSUEDO */
+.list-default li a span::before {
+    font-family: FontAwesome;
+    margin-right: 0.5rem;
+    content: '\f054';
+}
+
+.list-default li a span:hover::before {
+    color: inherit;
+}
+
+
+/* -------------------------------------------------- */
+/* DOT
+/* -------------------------------------------------- */
+
+/* PARENT */
+.list-dot {
+    list-style-type: none;
+}
+
+
+/* CHILD */
+.list-dot li::before {
+    font-family: 'FontAwesome';
+    font-size: 0.25em;
+    line-height: 4em;
+    float: left;
+    margin-left: -0.75rem;
+    content: '\f111';
+    color: inherit;
+}
+
+
+/* -------------------------------------------------- */
+/* NUMBERED
+/* -------------------------------------------------- */
+
+/* PARENT */
+.list-number {
+    list-style-type: none;
+}
+
+
+/* CHILD */
+.list-number li {
+    counter-increment: item;
+}
+
+
+/* PSUEDO */
+.list-number li::before {
+    font-family: var(--font-copy);
+    font-size: 1em;
+    line-height: 1.5em;
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin-left: -1.5rem;
+    content: counter(item);
+    text-align: center;
+    color: var(--charcoal-color);
+    border-radius: 100%;
+    background: var(--light-grey-color);
+}
+
+
+/* -------------------------------------------------- */
+/* POSITIVE CHECK LIST
+/* -------------------------------------------------- */
+
+/* PARENT */
+.list-check {
+    list-style-type: none;
+}
+
+
+/* PSUEDO */
+.list-check li::before {
+    font-family: 'FontAwesome';
+    font-size: 1.25em;
+    line-height: 1.25em;
+    float: left;
+    margin-left: -1.5rem;
+    content: '\f058';
+    color: var(--primary-color);
+}
+
+
+/* -------------------------------------------------- */
+/* NEGATIVE CHECK LIST
+/* -------------------------------------------------- */
+
+/* PARENT */
+.list-negative {
+    list-style-type: none;
+}
+
+
+/* PSUEDO */
+.list-negative li::before {
+    font-family: 'FontAwesome';
+    font-size: 1.25em;
+    line-height: 1.25em;
+    float: left;
+    margin-left: -1.5rem;
+    content: '\f056';
+    color: var(--dark-grey-color);
+}
+
+
+/* -------------------------------------------------- */
+/* DESCRIPTION
+/* -------------------------------------------------- */
+
+dt {
+    /*font-family: var(--font-header);*/
+    font-size: 1.125em;
+    margin-left: 1em;
+    padding-top: 5rem;
+    text-indent: -1em;
+    color: var(--charcoal-color);
+}
+
+dd {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+dd:last-child {
+    border-bottom: none;
+}
+
+dt::before {
+    font-family: FontAwesome;
+    font-size: 0.75em;
+    margin-right: 0.5rem;
+    content: '\f054';
+    color: inherit;
+}

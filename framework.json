@@ -1,0 +1,57 @@
+{
+
+	"source": "node_modules/",
+	"bundle": "framework.js",
+	"attribute": "defer",
+	
+	"files": ["<JQUERY>",
+			  "jquery/dist/jquery.js",
+			  "jquery.easing/jquery.easing.js",
+
+
+			  "<FRAMEWORK>",
+			  "foundation-sites/dist/js/plugins/foundation.core.js",
+
+
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.util.box.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.util.imageLoader.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.util.keyboard.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.util.motion.js",			  
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.util.nest.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.util.timer.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.util.touch.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.util.triggers.js",
+
+
+			  ">>foundation-sites/dist/js/plugins/foundation.slider.js",
+
+
+			  ">>foundation-sites/dist/js/plugins/foundation.dropdownMenu.js",
+			  ">>foundation-sites/dist/js/plugins/foundation.drilldown.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.accordionMenu.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.magellan.js",
+
+
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.accordion.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.dropdown.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.offcanvas.js",
+			  ">>foundation-sites/dist/js/plugins/foundation.reveal.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.tabs.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.responsiveAccordionTabs.js",
+
+
+			  ">>foundation-sites/dist/js/plugins/foundation.orbit.js",
+			  ">>foundation-sites/dist/js/plugins/foundation.tooltip.js",
+
+
+			  ">>foundation-sites/dist/js/plugins/foundation.abide.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.equalizer.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.interchange.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.toggler.js",
+			  "foundation-sites/dist/js/plugins/foundation.smoothScroll.js",
+			  ">>>>>foundation-sites/dist/js/plugins/foundation.sticky.js"
+			 ]
+	
+	
+}

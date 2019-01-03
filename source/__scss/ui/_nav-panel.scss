@@ -1,0 +1,466 @@
+/* -------------------------------------------------- */
+/* NAV PANEL
+/* -------------------------------------------------- */
+
+#nav-panel {
+
+	@extend .spacing-none;
+	@extend .no-scrollbar;
+
+	overflow: {
+		x: hidden;
+		y: hidden;
+	}
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	//background-color: $charcoal;
+
+	.menu-main {
+
+		@extend .z-3;
+		@extend .center-v;
+		//@extend .text-shadow-sm;
+		@extend .no-scrollbar;
+		//@extend .frost-black-xl;
+
+		overflow: hidden;
+
+		position: absolute;
+		left: 0;
+		padding: {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+
+		width: 100%;
+
+		.item {
+
+			padding: {
+				left: 0;
+				right: 4rem;
+			}
+			width: 33%;
+
+			@include break($type: 'width', $min: 0, $max: $tablet) {
+
+				width: auto;
+
+			}
+
+			@include break($type: 'height', $min: 0, $max: $mobile) {
+
+				width: auto;
+
+			}
+
+			&:first-child  {
+
+				padding-left: 4rem;
+
+			}
+
+			&:last-child {
+
+				padding-right: 4rem;
+
+			}
+
+			a {
+
+				@extend .text-spacing-sm;
+				//@extend .text-truncate;
+				@include transition($property: (color), $ease: ease-in-out, $duration: 200ms);
+
+				overflow: hidden;
+				position: relative;
+				margin: {
+					top: 3rem;
+					right: 0;
+					bottom: 3rem;
+					left: 0;
+				}
+				color: $white;
+				font-size: 3em;
+				text-transform: uppercase;
+				white-space: nowrap;
+				background-color: transparent;
+
+				@include break($type: 'height', $min: 0, $max: $mobile) {
+
+					font-size: 2em;
+
+				}
+
+				@include break($type: 'height', $min: 0, $max: $laptop) {
+
+					font-size: 2em;
+
+				}
+
+				span {
+
+					@extend .text-spacing-sm;
+
+					overflow: hidden;
+					display: block;
+					position: relative;
+					margin: {
+						bottom: 1rem;
+						left: 0.5rem;
+					}
+					color: $gray;
+					font-size: 1.5rem;
+					font-weight: bold;
+					text-transform: uppercase;
+
+				}
+
+				&::after {
+
+					@extend %pseudo;
+					@include transition($property: (transform), $ease: ease-in-out, $duration: 200ms);
+
+					z-index: -1;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 65%;
+					background-color: $accent;
+
+					transform: scaleX(0);
+					transform-origin: left center;
+
+				}
+
+				&:hover {
+
+					color: $accent;
+
+					span {
+
+						color: $accent;
+
+					}
+
+					&::after {
+
+						//transform: scaleX(1);
+
+					}
+
+				}
+
+			}
+
+		}
+
+		.flickity-viewport {
+
+			//width: 100%;
+
+			.flickity-slider {
+
+
+
+
+			}
+
+		}
+
+	}
+
+	.content {
+
+		@extend .z-2;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		.content-left {
+
+			@extend .z-2;
+
+			position: relative;
+			padding: {
+				top: 8rem;
+				right: 4rem;
+				bottom: 8rem;
+				left: 4rem;
+			}
+			height: 75vh;
+
+			@include break($type: 'width', $min: 0, $max: $tablet) {
+
+				padding: {
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+				}
+				height: 100vh;
+
+			}
+
+			@include break($type: 'height', $min: 0, $max: $tablet) {
+
+				padding: {
+					top: 0;
+					right: 2rem;
+					bottom: 0;
+					left: 2rem;
+				}
+				width: 100%;
+
+			}
+
+			@include break($type: 'height', $min: 0, $max: 575px) {
+
+				height: 100vh;
+
+			}
+
+			.logo {
+
+				position: absolute;
+				top: 0;
+				display: block;
+				width: 100%;
+				max-width: 600px;
+
+				@include break($type: 'height', $min: 0, $max: 575px) {
+
+					max-width: 400px;
+
+				}
+
+				svg {
+
+					@extend .svg-white;
+
+				}
+
+			}
+
+			.info {
+
+				position: absolute;
+				bottom: 2em;
+
+				@include break($type: 'width', $min: 0, $max: $tablet) {
+
+					display: block;
+					left: 0;
+					right: 0;
+					margin: {
+						left: auto;
+						right: auto;
+					}
+					text-align: center;
+
+				}
+
+				@include break($type: 'height', $min: 0, $max: 575px) {
+
+					//display: none;
+
+				}
+
+
+				.social {
+
+					@extend .spacing-none;
+
+					li {
+
+						display: inline-block;
+						margin: {
+							left: 1rem;
+							right: 1rem;
+						}
+
+						:first-child {
+							margin-left: 0;
+						}
+
+						:last-child {
+							margin-right: 0;
+						}
+
+					}
+
+					a {
+
+						@extend .spacing-none;
+						@extend .flex-vh;
+						@extend .round-full;
+						@extend .box-shadow-none;
+						@include transition($property: (color, border-color, background-color), $ease: ease-out, $duration: 200ms);
+
+						display: block;
+						width: 50px;
+						height: 50px;
+						color: $white;
+						font-size: 1em;
+						border: 1px solid $white;
+						background-color: transparent;
+
+						&:hover, &:active {
+
+							color: $black;
+							border-color: transparent;
+							background-color: $accent;
+
+						}
+
+					}
+
+				}
+
+				.callout {
+
+					@extend .text-spacing-sm;
+					@include transition($property: (color), $ease: ease-in-out, $duration: 200ms);
+
+					display: block;
+					position: relative;
+					margin-bottom: 1rem;
+					padding: {
+						top: 1rem;
+						right: 1rem;
+						bottom: 1rem;
+						left: 1rem;
+					}
+					color: $white;
+					font-weight: bold;
+					text-transform: uppercase;
+
+					@include break($type: 'width', $min: 0, $max: $tablet) {
+
+						margin: {
+							top: 0;
+							right: 2rem;
+							bottom: 2rem;
+							left: 2rem;
+						}
+						color: $black;
+						font-size: 1em;
+						border: 2px solid transparent;
+						background-color: $accent;
+
+					}
+
+					@include break($type: 'height', $min: 0, $max: 414px) {
+
+						display: none;
+
+					}
+
+					&:hover {
+
+						color: $black;
+
+						&::after {
+
+							transform: scaleX(1);
+
+						}
+
+						span {
+
+							color: $black;
+
+						}
+
+					}
+
+					&::after {
+
+						@extend %pseudo;
+						@include transition($property: (transform), $ease: ease-in-out, $duration: 200ms);
+
+						z-index: -1;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background-color: $accent;
+
+						transform: scaleX(0);
+						transform-origin: left center;
+
+					}		
+
+				}
+
+			}
+
+		}
+
+		#canvas {
+
+			@extend .z-0;
+
+			//opacity: 0.5;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+
+			-webkit-tap-highlight-color:rgba(0,0,0,0);
+
+		}
+
+		.plane-textures {
+
+			@extend .send-to-back;
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 50vw;
+			height: 100vh;
+			background-color: transparent;
+
+			@include break($type: 'width', $min: 0, $max: 1024px) {
+
+				width: 100vw;
+
+			}
+
+			img {
+
+				display: none;
+
+			}
+
+		}
+
+	}
+
+	.background {
+
+		@extend .z-0;
+
+		span {
+
+			width: 100%;
+			height: 100vh;
+			background-color: $black;
+
+		}
+
+	}
+
+}

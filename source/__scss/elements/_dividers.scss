@@ -1,0 +1,56 @@
+/* -------------------------------------------------- */
+/* DIVIDERS (HORIZONTAL RULE)
+/* -------------------------------------------------- */
+
+hr {
+
+	@extend .margin-tb-lg;
+	@extend .padding-none;
+
+	width: 100%;
+	max-width: 100%;
+	height: 1px;
+	border: 0;
+	outline: 0;
+}
+
+.#{$element}hr#{$modifier} {
+
+	@each $name, $height in $amounts {
+
+		&#{$name} {
+
+			@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+				height: $height;
+			}
+
+		}
+
+	}
+
+	&#{'thin'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			height: 1px;
+		}
+
+	}
+
+	&#{'medium'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			height: 2px;
+		}
+
+	}
+
+	&#{'thick'} {
+
+		@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '') {
+			height: 4px;
+		}
+
+	}
+
+}
+

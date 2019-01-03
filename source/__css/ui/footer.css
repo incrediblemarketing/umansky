@@ -1,0 +1,194 @@
+/* -------------------------------------------------- */
+/* FOOTER
+/* -------------------------------------------------- */
+
+/* PARENT */
+#footer {
+    overflow: hidden;
+}
+
+
+/* -------------------------------------------------- */
+/* LOGO
+/* -------------------------------------------------- */
+
+/* PARENT */
+#footer .menubar .logo {
+    display: block;
+}
+
+
+#footer .menubar .logo svg {
+    width: 100%;
+    max-width: 300px;
+
+    transform: scale(1);
+    transform-origin: center;
+    transition: var(--transition);
+}
+
+
+/* CHILD */
+#footer .menubar .logo svg path,
+#footer .menubar .logo svg polygon,
+#footer .menubar .logo svg rect {
+    fill: var(--white-color);
+    transition: var(--transition);
+}
+
+
+/* HOVER */
+#footer .menubar .logo:hover svg path,
+#footer .menubar .logo:hover svg polygon,
+#footer .menubar .logo:hover svg rect {
+    fill: var(--primary-color);
+}
+
+
+/* STICKY */
+#footer.sticky .menubar .logo svg,
+#footer.sticky .menubar .logo svg {
+    fill: var(--primary-color);
+
+    transform: scale(0.75);
+}
+
+
+/* -------------------------------------------------- */
+/* MENU
+/* -------------------------------------------------- */
+
+/* PARENT */
+#footer .menubar .menu-items {
+    
+}
+
+
+/* CHILD */
+#footer .menubar .menu-items li {
+    position: relative;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: var(--dark-grey-color);
+    font-family: var(--font-header);
+    font-size: 0.75em;
+    letter-spacing: 0.025em;
+    text-indent: 0;
+
+    transition: var(--transition);
+}
+
+
+/* TITLE */
+#footer .menubar .menu-items li:first-child {
+	pointer-events: none;
+	position: relative;
+	color: var(--light-grey-color);
+	text-indent: 0;
+}
+
+#footer .menubar .menu-items li:first-child::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -10px;
+	width: 2px;
+	height: 50%;
+	background-color: var(--light-grey-color);
+}
+
+
+/* PSUEDO */
+#footer .menubar .menu-items li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    width: 0;
+    height: 1px;
+    background-color: var(--white-color);
+    z-index: 1;
+
+    transform: translateX(-100%);
+    transition: var(--transition);
+}
+
+
+/* HOVER */
+#footer .menubar .menu-items li:hover {
+    color: var(--primary-color);
+}
+
+#footer .menubar .menu-items li:hover::after {
+    left: 0;
+    width: 50%;
+    background-color: var(--primary-color);
+
+    transform: translateX(0);
+}
+
+
+/* -------------------------------------------------- */
+/* CALLOUT
+/* -------------------------------------------------- */
+
+/* PARENT */
+#footer .menubar .callout {
+    position: relative;
+    margin-left: 2rem;
+    max-width: 175px;
+    color: var(--primary-color);
+    font-family: var(--font-header);
+    font-size: 0.8em;
+    letter-spacing: 0.025em;
+    transition: var(--transition);
+}
+
+
+/* CHILD */
+#footer .menubar .callout span {
+    display: block;
+    position: relative;
+    padding-bottom: 0.25rem;
+    width: 100%;
+}
+
+#footer .menubar .callout span:first-child::after,
+#footer .menubar .callout span:last-child::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+    z-index: -1;
+}
+
+#footer .menubar .callout span:first-child::after {
+    bottom: 0;
+}
+
+#footer .menubar .callout span:last-child::before {
+    opacity: 0;
+    top: 0;
+}
+
+
+/* HOVER */
+#footer .menubar .callout:hover span {
+    color: var(--primary-color);
+}
+
+#footer .menubar .callout:hover span:first-child::after,
+#footer .menubar .callout:hover span:last-child::before {
+    /*opacity: 1;*/
+    width: 75%;
+    /*background-color: var(--primary-color);*/
+}

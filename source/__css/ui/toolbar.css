@@ -1,0 +1,143 @@
+/* -------------------------------------------------- */
+/* FOOTER
+/* -------------------------------------------------- */
+
+/* PARENT */
+#toolbar {
+    opacity: 0 !important;
+    overflow: hidden;
+    display: none !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid var(--primary-color);
+    background-color: var(--charcoal-color);
+}
+
+
+/* PARENT */
+#toolbar .menubar {
+    padding-left: 0;
+    padding-right: 0; 
+}
+
+
+/* STICKY */
+#toolbar.sticky .menubar,
+#toolbar.sticky .menubar {
+
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 667px) {
+
+    #toolbar {
+        opacity: 1 !important;
+        display: block !important;
+    }
+
+}
+
+
+/* -------------------------------------------------- */
+/* MENU
+/* -------------------------------------------------- */
+
+/* PARENT */
+#toolbar .menubar .menu-items {
+    
+}
+
+
+/* CHILD */
+#toolbar .menubar .menu-items li {
+    overflow: hidden;
+    position: relative;
+    width: 35%;
+    max-width: 200px;
+    height: 100%;
+    color: var(--white-color);
+    font-family: var(--font-header);
+    font-size: 0.75em;
+}
+
+
+#toolbar .menubar .menu-items li a {
+    display: block;
+    padding: 1.25rem 0 1.25rem 0;
+    width: 100%;
+    text-align: center;
+
+    transition: var(--transition);
+}
+
+
+/* HOVER */
+#toolbar .menubar .menu-items li a:hover {
+    color: var(--primary-color);
+}
+
+
+/* -------------------------------------------------- */
+/* CALLOUT
+/* -------------------------------------------------- */
+
+/* PARENT */
+#toolbar .menubar .callout {
+    position: relative;
+    margin-left: 2rem;
+    max-width: 175px;
+    color: var(--primary-color);
+    font-family: var(--font-header);
+    font-size: 0.8em;
+    letter-spacing: 0.025em;
+    transition: var(--transition);
+}
+
+
+/* CHILD */
+#toolbar .menubar .callout span {
+    display: block;
+    position: relative;
+    padding-bottom: 0.25rem;
+    width: 100%;
+}
+
+#toolbar .menubar .callout span:first-child::after,
+#toolbar .menubar .callout span:last-child::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+    z-index: -1;
+}
+
+#toolbar .menubar .callout span:first-child::after {
+    bottom: 0;
+}
+
+#toolbar .menubar .callout span:last-child::before {
+    opacity: 0;
+    top: 0;
+}
+
+
+/* HOVER */
+#toolbar .menubar .callout:hover span {
+    color: var(--primary-color);
+}
+
+#toolbar .menubar .callout:hover span:first-child::after,
+#toolbar .menubar .callout:hover span:last-child::before {
+    /*opacity: 1;*/
+    width: 75%;
+    /*background-color: var(--primary-color);*/
+}

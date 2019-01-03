@@ -1,0 +1,552 @@
+/* -------------------------------------------------- */
+/* REFERENCE GUIDE
+/* -------------------------------------------------- */
+
+// BREAKPOINTS
+//@include breakpoint($type: 'mobile', $keep-original: false, $prefix: '-', $suffix: '');
+//@include breakpoint($type: 'all', $keep-original: true, $prefix: '-', $suffix: '');
+//@include break($type: 'width', $min: 0, $max: 320px, $orientation: '');
+
+
+// TYPOGRAPHY
+//@include fluid-type($min-font-size: 16px, $max-font-size: 48px, $min-range: 320px, $max-range: 1920px);
+
+//@include icon($type: 'pseudo', $icon: 'f013');
+//@include icon($type: 'inline', $icon: 'f013');
+//@include icon($type: 'inline-block', $icon: 'f013');
+
+
+//COLORS
+//@include color($type: 'hex', $property: 'color', $prefix: '-', $suffix: '--', $alpha: 1);
+//@include color($type: 'rgba', $property: 'border-color', $prefix: '-', $suffix: '--', $alpha: 1);
+//@include color($type: 'svg-gradient', $property: 'color', $prefix: '-', $suffix: '-gradient path', $alpha: 1);
+//@include color($type: 'gradient', $property: 'background-color', $prefix: '-', $suffix: '', $alpha: 1);
+
+
+// FADE
+//@include fade($type: 'left', $color: #fff, $alpha: 1, $scale: 100%, $start: 0, $stop: 100%, $order: 0, $prefix: '-', $suffix: '', $clickable: false);
+
+
+// SHADOWS
+//@include shadow($type: 'text-shadow', $color: #000, $x: $amount, $y: $amount, $blur: 1px, $alpha: 0.25, $strength: 1);
+//@include shadow($type: 'box-shadow', $color: #000, $x: 0, $y: $amount, $blur: $amount, $spread: 0, $alpha: 0.2, $strength: 0.5, $inset: false);
+
+
+// TRANSFORM
+//@include transform($type: '3d', $translate: (0,0,0), $scale: (1,1,1), $rotate: (0,0,0), $skew: (0,0), $origin: 'center center 0', $backface: 'visible', $preserve: true, $perspective: (0,1000) );
+//@include transform($type: '2d', $translate: (0,0), $scale: (1,1), $rotate: (0), $skew: (0,0), $origin: 'center center', $backface: false, $preserve: false);
+
+
+// TRANSITION
+//@include transition($property: color, $ease: ease-out, $duration: 200ms);
+//@include transition($property: (width, background-color), $ease: ease-out, $duration: 200ms);
+
+/* -------------------------------------------------- */
+/* COLORS
+/* -------------------------------------------------- */
+
+@mixin color($type: 'hex', $property: 'color', $prefix: '', $suffix: '', $alpha: 1) {
+
+	@each $name, $color in $colors {
+
+		@if $type == 'hex' or $type == '' {
+
+			&#{$prefix}#{$name}#{$suffix} {
+				#{$property}: $color;
+			}
+
+		} @else if $type == 'rgba' or $type == 'rgb' {
+
+			&#{$prefix}#{$name}#{$suffix} {
+				#{$property}: rgba($color, $alpha);
+			}
+
+			@if $alpha == 1 {
+				@warn '"1" is defined for "$alpha" value. Framework will default to "hex" value instead.';
+			}
+
+		} @else if $type == 'gradient' {
+
+			$start: 25%;
+			$stop: 100%;
+
+			&#{$prefix}#{$name}-top#{$suffix} {
+				#{$property}: linear-gradient(to top, $color $start, darken($color, $darken) $stop);
+			}
+
+			&#{$prefix}#{$name}-right#{$suffix} {
+				#{$property}: linear-gradient(to right, $color $start, darken($color, $darken) $stop);
+			}
+
+			&#{$prefix}#{$name}-bottom#{$suffix} {
+				#{$property}: linear-gradient(to bottom, $color $start, darken($color, $darken) $stop);
+			}
+
+			&#{$prefix}#{$name}-left#{$suffix} {
+				#{$property}: linear-gradient(to left, $color $start, darken($color, $darken) $stop);
+			}
+
+			&#{$prefix}#{$name}-radial#{$suffix} {
+				#{$property}: radial-gradient(circle at center, $color 0%, darken($color, $darken) 100%);
+			}
+
+			&#{$prefix}#{$name}-radial-reverse#{$suffix} {
+				#{$property}: radial-gradient(circle at center, darken($color, $darken) 0%, $color 100%);
+			}
+
+			&#{$prefix}#{$name}-slant#{$suffix} {
+				#{$property}: linear-gradient(45deg, $color $start, darken($color, $darken) $stop);
+			}
+
+			&#{$prefix}#{$name}-slant-reverse#{$suffix} {
+				#{$property}: linear-gradient(-45deg, $color $start, darken($color, $darken) $stop);
+			}
+
+		} @else if $type == 'svg-gradient' or $type == 'svg' {
+
+			&#{$prefix}#{$name}#{$suffix} {
+				fill: url( .svg-#{$name}-stop-color );
+			}
+
+			&#{$prefix}#{$name}-stop-color stop.start-color {
+				stop-color: $color;
+			}
+
+			&#{$prefix}#{$name}-stop-color stop.end-color {
+				stop-color: darken($color, $darken);
+			}
+
+		} @else if $type == '' {
+
+			@warn 'No "$type" value defined. Framework will default to "hex" value instead.';
+
+		}
+
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* BREAKPOINTS
+/* -------------------------------------------------- */
+
+//@at-root #{selector-append($mobile, "-suffix")} & { }
+
+// GENERATOR
+@mixin breakpoint($type: 'mobile', $keep-original: false, $prefix: '-', $suffix: '') {
+
+	// Keep original properties outside of @media queries.
+	@if $keep-original == true {
+
+		&#{$suffix} {
+			@content
+		}
+
+	}
+
+
+	// Ex: iPone 5, iPhone 6
+	@if $type == 'mobile' {
+
+		@media screen and (min-width: 0) and (max-width: map-get($breakpoints, mobile) ) {
+
+			&#{$prefix}#{nth($breakpoint-keys, 1)}#{$suffix} {
+				@content;
+			}
+
+		}
+
+	}
+
+
+	// Ex: iPad, iPad Mini
+	@if $type == 'tablet' {
+
+		@media screen and (min-width: map-get($breaks, mobile) + 1 ) and (max-width: map-get($breakpoints, tablet) ) {
+
+			&#{$prefix}#{nth($breakpoint-keys, 2)}#{$suffix} {
+				@content;
+			}
+
+		}
+
+	}
+
+
+	// Ex: iPad Pro, laptop
+	@if $type == 'laptop' {
+
+		@media screen and (min-width: map-get($breaks, tablet) + 1 ) and (max-width: map-get($breakpoints, laptop) ) {
+
+			&#{$prefix}#{nth($breakpoint-keys, 3)}#{$suffix} {
+				@content;
+			}
+
+		}
+
+	}
+
+
+	// Ex: Desktop
+	@if $type == 'desktop' {
+
+		@media screen and (min-width: map-get($breakpoints, laptop) + 1 ) {
+
+			&#{$prefix}#{nth($breakpoint-keys, 4)}#{$suffix} {
+				@content;
+			}
+
+		}
+
+	}
+
+
+	// ALL
+	@if $type == 'all' {
+
+		// Ex: iPhone 5, iPhone 6
+		@media screen and (min-width: 0) and (max-width: map-get($breakpoints, mobile) ) {
+
+			&#{$prefix}#{nth($breakpoint-keys, 1)}#{$suffix} {
+				@content;
+			}
+
+		}
+
+
+		// Ex: iPad, iPad Mini
+		@media screen and (min-width: map-get($breakpoints, mobile) + 1 ) and (max-width: map-get($breakpoints, tablet) ) {
+
+			&#{$prefix}#{nth($breakpoint-keys, 2)}#{$suffix} {
+				@content;
+			}
+
+		}
+
+
+		// Ex: iPad Pro, laptop
+		@media screen and (min-width: map-get($breakpoints, tablet) + 1 ) and (max-width: map-get($breakpoints, laptop) ) {
+
+			&#{$prefix}#{nth($breakpoint-keys, 3)}#{$suffix} {
+				@content;
+			}
+
+		}
+
+
+		// Ex: Desktop
+		@media screen and (min-width: map-get($breakpoints, laptop) + 1 ) {
+
+			&#{$prefix}#{nth($breakpoint-keys, 4)}#{$suffix} {
+				@content;
+			}
+
+		}
+
+	}
+
+}
+
+
+// RANGE
+@mixin break($type: 'width', $min: 0, $max: 320px, $orientation: '') {
+
+	@if $orientation == '' or $orientation == false {
+
+		@media screen and ( min-#{$type}: $min ) and ( max-#{$type}: $max ) {
+
+			@content;
+
+		}
+
+	} @else {
+
+		@media screen and ( min-#{$type}: $min ) and ( max-#{$type}: $max ) and ( orientation: $orientation ) {
+
+			@content;
+
+		}
+
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* TYPOGRAPHY
+/* -------------------------------------------------- */
+
+// FLUID TYPE
+@mixin fluid-type($min-font-size: map-get($font-sizes, 6), $max-font-size: map-get($font-size, 1), $min-range: map-get($breakpoints, mobile), $max-range: map-get($breakpoints, desktop)) {
+
+	font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$min-range}) / #{(($max-range / ($max-range * 0 + 1)) - ($min-range / ($min-range * 0 + 1)))}));
+
+	@media screen and (max-width: $min-range) {
+		font-size: $min-font-size;
+	}
+
+	@media screen and (min-width: $max-range) {
+		font-size: $max-font-size;
+	}
+  
+}
+
+
+// ICON
+@mixin icon($type: '', $icon: 'f054') {
+
+	// PSEUDO
+	@if $type == 'pseudo' {
+
+		position: $type;
+
+	} @else if $type == 'inline' {
+
+		display: $type;
+
+ 	} @else if $type == 'inline-block' {
+
+		display: $type;
+
+	} @else if $type == '' {
+
+		// empty
+
+	}
+
+
+	// MAIN
+	content: #{"\'\\"}#{$icon + "\'"}; // Corrects variable interpolation with proper format character encoding.
+	font-family: $font-icons;
+
+}
+
+
+/* -------------------------------------------------- */
+/* FADE
+/* -------------------------------------------------- */
+
+@mixin fade($type: 'left', $color: #fff, $alpha: 1, $scale: 100%, $start: 0, $stop: 100%, $order: 0, $prefix: '-', $suffix: '', $clickable: false) {
+
+	&#{$prefix}#{$suffix} {
+
+		$position: $type;
+
+		content: '';
+		z-index: $order;
+		position: absolute;
+
+
+		// CLICKABLE
+		@if $clickable == false {
+
+			pointer-events: none;
+
+		}
+
+
+		// MAIN
+		@if $type == 'top' or $type == 'bottom' {
+
+			#{$position}: 0;
+			left: 0;
+			width: 100%;
+			height: $scale;
+
+			background: linear-gradient(to unquote($type), rgba($color, 0) $start, rgba($color, $alpha) $stop);
+
+		} @else if $type == 'left' or $type == 'right' {
+
+			#{$position}: 0;
+			top: 0;
+			width: $scale;
+			height: 100%;
+
+			background: linear-gradient(to unquote($type), rgba($color, 0) $start, rgba($color, $alpha) $stop);
+
+		} @else if $type == 'full' or $type == 'radial' {
+
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			background: radial-gradient(ellipse at center, rgba($color, 0) $start, rgba($color, $alpha) $stop);
+
+		}
+		
+
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* SHADOWS
+/* -------------------------------------------------- */
+
+@mixin shadow($type: 'box-shadow', $color: #000, $x: 2px, $y: 2px, $blur: 2px, $spread: 0,  $alpha: 0.5, $strength: 1, $inset: false) {
+
+	// BOX
+	@if $type == 'box' and $inset == false or $type == 'box-shadow' and $inset == false {
+
+		box-shadow: $x $y $blur $spread rgba($color,$alpha),
+					$x ($y / 2) ($blur / 2) $spread rgba($color, $alpha * strip-unit($strength) );
+
+ 	}
+
+	@if $type == 'box' and $inset == true or $type == 'box-shadow' and $inset == true {
+
+		box-shadow: inset $x $y $blur rgba($color, $alpha * strip-unit($strength) );
+
+ 	}
+
+
+	// DROP
+	@if $type == 'drop' or $type == 'drop-shadow' {
+
+		filter: drop-shadow($x $y $blur rgba($color, $alpha * strip-unit($strength) ) );
+
+ 	}
+
+ 	@if $type == 'drop' and $inset == true or $type == 'drop-shadow' and $inset == true {
+
+		@warn '"inset" can only be used with "box-shadow".';
+
+	}
+
+
+	// TEXT
+	@if $type == 'text' or $type == 'text-shadow' {
+
+		text-shadow: round($x / 2) round($y / 2) round($blur * strip-unit($strength) ) rgba($color, $alpha);
+
+	}
+
+	@if $type == 'text' and $inset == true or $type == 'text-shadow' and $inset == true {
+
+		@warn '"inset" can only be used with "box-shadow".';
+
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* TRANSFORM
+/* -------------------------------------------------- */
+
+@mixin transform($type: '2d', $translate: (0,0), $scale: (1,1), $rotate: (0), $skew: (0,0), $origin: 'center center', $backface: '', $preserve: false, $perspective: (0, 1000) ) {
+
+	transform-origin: unquote($origin);
+
+
+	// PRESERVE
+	@if $type == '3d' and $preserve == true or $type == '3D' and $preserve == true {
+
+		@at-root .#{$modifier}preserve-3d & {
+
+			@extend %preserve-3d;
+			perspective: nth($perspective, 1) + px;
+			
+		}
+
+	} @else if $type == '2d' and $preserve == true or $type == '2D' and $preserve == true {
+
+		@warn '"$preserve" is only compatible with CSS3 3D properties.';
+
+	}
+
+
+	// BACKFACE
+	@if $backface == true or $backface == 'visible' {
+
+		backface-visibility: visible;
+
+	} @else if $backface == false or $backface == 'hidden' {
+
+		backface-visibility: hidden;
+
+	} @else if $backface == null or $backface == '' {
+
+		// empty
+
+	}
+
+
+	// MAIN
+	@if $type == '3d' or $type == '3D' {
+
+		transform:
+			translateX( nth($translate, 1) )
+			translateY( nth($translate, 2) )
+			translateZ( nth($translate, 3) )
+
+			scaleX( nth($scale, 1) )
+			scaleY( nth($scale, 2) )
+			scaleZ( nth($scale, 3) )
+
+			rotateX( nth($rotate, 1) )
+			rotateY( nth($rotate, 2) )
+			rotateZ( nth($rotate, 3) )
+
+			skewX( nth($skew, 1) )
+			skewY( nth($skew, 2) )
+
+			perspective( nth($perspective, 2) );
+
+	} @else if $type == '2d' or $type == '2D' or $type == '' {
+
+		transform:
+			translateX( nth($translate, 1) )
+			translateY( nth($translate, 2) )
+
+			scaleX( nth($scale, 1) )
+			scaleY( nth($scale, 2) )
+
+			rotate( nth($rotate, 1) )
+
+			skewX( nth($skew, 1) )
+			skewY( nth($skew, 2) );
+
+	} @else if $type == '' {
+
+		@warn 'No "$type" value defined. Framework will default to "2d" value instead.';
+
+	}
+
+}
+
+
+/* -------------------------------------------------- */
+/* TRANSITION
+/* -------------------------------------------------- */
+
+@mixin transition($property: null, $duration: 500ms, $ease: 'ease-in-out', $delay: 0) {
+
+	transition: {
+
+		// PROPERTY
+		@if $property == '' {
+
+			// empty;
+
+		} @else {
+
+			property: $property;
+
+		}
+
+		duration: $duration * $timescale;
+		timing-function: $ease;
+		delay: $delay;
+
+	}
+
+}
+
+
+
+
+
