@@ -35,80 +35,70 @@ var uiInit = function() {
 /* NAV PANEL
 /* -------------------------------------------------- */
 
+var uiNavPanel = function() {
+
 	/* -------------------------------------------------- */
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 
 	var navPaneltoggle = $(".nav-panel-toggle"),
-		menuMain = $(".menu-main");
+		menuMain = $(".menu-main"),
+		navPanelIsOpen = false;
 
 
 	/* -------------------------------------------------- */
 	/* ANIMATION
 	/* -------------------------------------------------- */
 
-	var uiNavPanel = function() {
+	
+	var tlNavPanel = new TimelineMax({paused: true});
+		tlNavPanel.staggerFrom( navPanel.find(".background").children(), 1, {autoAlpha: 0, scaleX: 0, transformOrigin: "left center", ease: Expo.easeInOut,
+																				onStart: function() {
 
-		var navPanelIsOpen = false;
-		
-		var tlNavPanel = new TimelineMax({paused: true});
-			tlNavPanel.staggerFrom( navPanel.find(".background").children(), 1, {autoAlpha: 0, scaleX: 0, transformOrigin: "left center", ease: Expo.easeInOut,
-																					onStart: function() {
+																					$$(".ui-menu").addClass("no-pointer");
 
-																						$$(".ui-menu").addClass("no-pointer");
+																					navPanel.css({ "display" : "block" });
+																					menuMain.addClass("no-pointer");
 
-																						navPanel.css({ "display" : "block" });
-																						menuMain.addClass("no-pointer");
+																					lock();
 
-																						disableContent();
+																				},
+																				onComplete: function() {
 
-																					},
-																					onComplete: function() {
+																					navPanelIsOpen = true;
 
-																						navPanelIsOpen = true;
+																					$$(".ui-menu").addClass("is-active");
+																					$$(".ui-menu").removeClass("no-pointer");
+																					menuMain.removeClass("no-pointer");
 
-																						$$(".ui-menu").addClass("is-active");
-																						$$(".ui-menu").removeClass("no-pointer");
-																						menuMain.removeClass("no-pointer");
+																					menuMain.flickity("resize");
 
-																						menuMain.flickity("resize");
+																					lock();
 
-																						disableContent();
+																				},
+																				onReverseComplete: function() {
 
-																					},
-																					onReverseComplete: function() {
+																					navPanelIsOpen = false;
 
-																						navPanelIsOpen = false;
+																					$$(".ui-menu").removeClass("is-active");
+																					navPanel.find(".menu-flickity").addClass("no-pointer");
+																					navPanel.css({ "display" : "none" });
 
-																						$$(".ui-menu").removeClass("is-active");
-																						navPanel.find(".menu-flickity").addClass("no-pointer");
-																						navPanel.css({ "display" : "none" });
+																					unlock();
 
-																						enableContent();
+																				}
+																			}, 0.05)
 
-																					}
-																				}, 0.05)
-
-					 .to( navbar.find(".logo"), 1, {autoAlpha: 0, ease: Expo.easeOut }, "-=1")
-					 .staggerFrom( navPanel.find(".content-left").children(), 1, {autoAlpha: 0, ease: Expo.easeOut }, 0.12, "-=0.5")
-					 .from( menuMain, 1, {autoAlpha: 0, ease: Expo.easeOut }, "-=1")
-					 .staggerFrom( menuMain.children(), 0.5, {autoAlpha: 0, x: '-5%', ease: Expo.easeInOut }, 0.12, "-=0.75")
-					 .from( navPanel.find("#canvas"), 1, {autoAlpha: 0, ease: Expo.easeOut }, "-=0");
+				 .to( navbar.find(".logo"), 1, {autoAlpha: 0, ease: Expo.easeOut }, "-=1")
+				 .staggerFrom( navPanel.find(".content-left").children(), 1, {autoAlpha: 0, ease: Expo.easeOut }, 0.12, "-=0.5")
+				 .from( menuMain, 1, {autoAlpha: 0, ease: Expo.easeOut }, "-=1")
+				 .staggerFrom( menuMain.children(), 0.5, {autoAlpha: 0, x: '-5%', ease: Expo.easeInOut }, 0.12, "-=0.75")
+				 .from( navPanel.find("#canvas"), 1, {autoAlpha: 0, ease: Expo.easeOut }, "-=0");
 
 
 	/* -------------------------------------------------- */
 	/* TOGGLE
 	/* -------------------------------------------------- */
-
-	if ( $hasTouch || $isEdge || $isSafari ) {
-
-		menuMain.addClass("frost-black-xl");
-
-	} else if ( $isFirefox || $isChrome ) {
-
-		menuMain.addClass("background-black-50")
-
-	}
 
 	navPaneltoggle.on("click", function(e) {
 		e.preventDefault();
@@ -229,6 +219,7 @@ var uiInit = function() {
 	menuMain.on("staticClick", function( event, pointer, cellElement, cellIndex ) {
 
 		console.log("is click");
+
 		// Dismiss if cell was not clicked.
 		if ( !cellElement ) {
 

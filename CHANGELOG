@@ -28,7 +28,7 @@ Version 0.0.1
 		- Improved CSS optimizations.
 		- Foundation Framework lib and core assets such as jQuery are now configured in a separate config file (framework.json).
 		- Sorted and grouped some configuration options.
-		- Rewrote some tasks in main 'gulp.babel.js' file.
+		- Rewrote some tasks in main 'gulpfile.babel.js' file.
 		- Compiler will no longer compile CSS files.
 		- Updated NPM and Node.js to latest build.
 		- Updated plugins and modules.

@@ -18,7 +18,7 @@ var shaders = function() {
 	}
 
 	
-	var curtains = new Curtains("canvas"), // Set up our WebGL context and append the canvas to our wrapper.
+	var curtains = new Curtains("canvas", true), // Set up our WebGL context and append the canvas to our wrapper.
 		planeElements = document.getElementsByClassName("plane-textures"), // Get our plane element.
 		pixelRatio = window.devicePixelRatio ? window.devicePixelRatio : 1.0, // Could be useful to get pixel ratio.
 

@@ -18,7 +18,7 @@ var currentURLHash = location.hash;
 /* FRAMEWORK
 /* -------------------------------------------------- */
 
-var frameworkInit = function() {
+var frameworkInit = function frameworkInit() {
 //
 	//var elem = new Foundation.Sticky($$("#sidebar nav"));
 
@@ -109,7 +109,7 @@ var frameworkInit = function() {
 /* CORE / COMPONENTS / MODULES
 /* -------------------------------------------------- */
 
-var core = function() {
+var core = function core() {
 
 	frameworkInit();
 
@@ -119,9 +119,9 @@ var core = function() {
 	//comSlider();
 	comTestimonials();
 
-	utilAssetObserver();
-	utilDataAttributes();
-	utilPrint();
+	assetObserver();
+	dataHelpers();
+	print();
 
 	uiInit();
 	//uiNavbar();
@@ -139,15 +139,15 @@ var core = function() {
 };
 
 
-var components = function() {
+var components = function components() {
 
 	//comStories();
 	//comTilt();
 
 	shaders();
 
-	utilEmergence();
-	utilPageVisibility();
+	reveal();
+	pageVisibility();
 
 	animCore();
 	
@@ -165,18 +165,18 @@ var targetElement = document.querySelector("#nav-panel");
 
 
 // ENABLE / DISABLE CONTENT
-var disableContent = function() {		
+var lock = function lock() {		
 	"use strict";
-	//console.log("Content disabled.");
+	//console.log("Content locked.");
 
 	html.not(".no-scroll").css({"overflow-x" : "hidden", "overflow-y" : "hidden"});
 	bodyScrollLock.disableBodyScroll(targetElement);
 
 };
 
-var enableContent = function() {		
+var unlock = function unlock() {		
 	"use strict";
-	//console.log("Content enabled.");
+	//console.log("Content unlocked.");
 	
 	html.not(".no-scroll").css({"overflow-x" : "hidden", "overflow-y" : "scroll"});
 	bodyScrollLock.enableBodyScroll(targetElement);

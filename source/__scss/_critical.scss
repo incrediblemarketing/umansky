@@ -3,9 +3,11 @@
 /* -------------------------------------------------- */
 
 :root {
+
     overflow-x: hidden;
     height: 100%;
     font-size: $root-font-size;
+
 }
 
 html {
@@ -13,6 +15,7 @@ html {
 }
 
 body {
+
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -31,11 +34,18 @@ body {
 
     /*-webkit-overflow-scrolling: touch;
 	touch-action: none;*/
+
 }
 
 html, body {
-    //overflow-x: hidden;
-    //overflow-y: hidden;
+
+    /*
+    overflow: {
+        x: hidden;
+        y: hidden;
+    }
+    */
+
 }
 
 
@@ -45,8 +55,6 @@ html, body {
 
 main {
     background: map-get($main, background);
-    /*visibility: hidden;*/ /* Causes stylized scrollbar to not appear on page load. */
-    /*display: none;*/ /*Potentially prevents iOS Reader from rendering text.*/
 }
 
 
@@ -54,19 +62,19 @@ main {
 /* ERROR: JS DISABLED
 /* -------------------------------------------------- */
 
-/* HIDE MAIN CONTENT FIRST */
-/*
+/* COMMON */
 html.no-js {
     background-color: $charcoal;
 }
 
-html.no-js main {
+html.no-js body main {
     display: none;
 }
-*/
+
 
 /* PARENT */
 noscript {
+
     z-index: 1;
     position: absolute;
     top: 0;
@@ -77,6 +85,7 @@ noscript {
     padding: 0;
 
     div {
+
         @extend .center-vh;
 
         position: absolute;
@@ -88,19 +97,28 @@ noscript {
         padding: 0;
         width: 100%;
         max-width: 300px;
-        color: $white;
+        color: $primary;
         text-align: center;
 
         img {
+
             display: block;
             width: 75%;
             margin: auto;
             padding-bottom: 1rem;
+
         }
 
-        span {
+        h1 {
+
+            font-size: 1em;
+
+        }
+
+        p {
+
             font-weight: bold;
-            color: $white;
+
         }
 
     }
@@ -114,6 +132,7 @@ noscript {
 
 /* PARENT */
 #error {
+
     overflow: hidden;
     display: none;
     position: fixed;
@@ -125,6 +144,7 @@ noscript {
     background-color: $charcoal;
 
     p {
+
         display: block;
         position: absolute;
         top: 50%;
@@ -137,6 +157,7 @@ noscript {
         text-align: center;
 
         transform: translateX(-50%) translateY(-50%);
+
     }
 
     @include break($type: 'width', $min: 0, $max: 319px) {
@@ -151,8 +172,12 @@ noscript {
 @include break($type: 'width', $min: 0, $max: 319px) {
 
     html {
-        overflow-x: hidden;
-        overflow-y: hidden;
+
+        overflow: {
+            x: hidden;
+            y: hidden;
+        }
+
     }
 
 }

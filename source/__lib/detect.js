@@ -1,225 +1,50 @@
 /* -------------------------------------------------- */
-/* FEATURE DETECTION (MODERNIZR)
+/* FEATURE DETECTION
 /* -------------------------------------------------- */
 
 /*
-var hasBackdropFilter = Modernizr.backdropfilter,
-	hasCSSFilters = Modernizr.cssfilters,
-	hasCSSGrid = Modernizr.cssgrid,
-	hasCSSGridLegacy = Modernizr.cssgridlegacy,
+var hasAttrDownload = Modernizr.adownload,
+	hasBackdropFilter = Modernizr.backdropfilter,
+	hasBackgroundClipText = Modernizr.backgroundcliptext,
+	hasCookies = Modernizr.cookies,
 	hasCSSPointerEvents = Modernizr.csspointerevents,
-	hasCSSvhUnit = Modernizr.cssvhunit,
-	hasCSSvmaxUnit = Modernizr.cssvmaxunit,
-	hasCSSvminUnit = Modernizr.cssvminunit,
-	hasCSSvwUnit = Modernizr.cssvwunit,
+	hasCSSFilters = Modernizr.cssfilters,
+	hasCSSGradients = Modernizr.cssgradients,
+	hasCSSVHUnit = Modernizr.cssvhunit,
+	hasCSSVMaxUnit = Modernizr.cssvmaxunit,
+	hasCSSVMinUnit = Modernizr.cssvminunit,
+	hasCSSVWUnit = Modernizr.cssvwunit,
+	hasDeviceMotion = Modernizr.devicemotion,
+	hasDeviceOrientation = Modernizr.deviceorientation,
+	hasFontLigatures = Modernizr.ligatures,
 	hasForceTouch = Modernizr.forcetouch,
 	hasFullscreen = Modernizr.fullscreen,
 	hasHover = Modernizr.hovermq,
 	hasJPEG2000 = Modernizr.jpeg2000,
 	hasJPEGXR = Modernizr.jpegxr,
-	hasDeviceMotion = Modernizr.devicemotion,
-	hasDeviceOrientation = Modernizr.deviceorientation,
+	hasMatchMedia = Modernizr.matchmedia,
 	hasObjectFit = Modernizr.objectfit,
 	hasPassiveEventListeners = Modernizr.passiveeventlisteners,
 	hasPicture = Modernizr.picture,
+	hasPointer = Modernizr.pointermq,
 	hasPointerEvents = Modernizr.pointerevents,
-	hasPointerMQ = Modernizr.pointermq,
-	hasScrollSnapPoints = Modernizr.scrollsnappoints,
-	hasSMIL = Modernizr.smil,
+	hasPointerLock = Modernizr.pointerlock,
 	hasSRCSizes = Modernizr.sizes,
 	hasSRCSet = Modernizr.srcset,
+	hasSVGFilters = Modernizr.svgfilters,
 	hasTouch = Modernizr.touchevents,
+	hasVideoOgg = Modernizr.video.ogg,
+	hasVideoWebm = Modernizr.video.webm,
 	hasWebP = Modernizr.webp,
 	hasWillChange = Modernizr.willchange;
 */
 
+
+/* -------------------------------------------------- */
+/* TOUCH
+/* -------------------------------------------------- */
+
 var $hasTouch = "ontouchstart" in document.documentElement || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
-	//$hasTouch = Modernizr.touchevents; // Unreliable. Use above method instead.
-
-
-/* -------------------------------------------------- */
-/* CACHE SELECTORS
-/* -------------------------------------------------- */
-
-var isiOS = $(".is-ios"),
-	isAndroid = $(".is-android"),
-	isMobile = $(".is-mobile"),
-	//isTablet = $(".is-tablet"),
-	isDesktop = $(".is-desktop");
-
-
-/* -------------------------------------------------- */
-/* SCREEN / DEVICE
-/* -------------------------------------------------- */
-
-var $isMobileScreen = Modernizr.mq("(max-width: 667px)"),
-	$isTabletScreen = Modernizr.mq("(max-width: 768px)"),
-	$isLaptopScreen = Modernizr.mq("(max-width: 1024px)"),
-	$isDesktopScreen = Modernizr.mq("(max-width: 1920px)"),
-	
-	$isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1,
-	$isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone") > -1,
-	$isiPad = navigator.userAgent.toLowerCase().indexOf("ipad") > -1,
-	$isiPod = navigator.userAgent.toLowerCase().indexOf("ipod") > -1,
-	
-	$isMobile = $isAndroid || $isiPhone || $isiPad || $isiPod,
-	
-	$isPortrait = window.innerWidth < window.innerHeight,
-	$isLandscape = window.innerWidth > window.innerHeight,
-	
-	//$orientationPortrait = $isMobile && orientation === 0,
-	//$orientationLandscape = $isMobile && orientation === 90,
-	
-	$isDesktop = !$isMobile,
-	$isTouchScreen = $hasTouch && isDesktop; // Detects any touch-enabled device that is not a mobile device.
-
-
-/* -------------------------------------------------- */
-/* DEVICES
-/* -------------------------------------------------- */
-
-	/* -------------------------------------------------- */
-	/* MOBILE SCREEN (SMALL)
-	/* -------------------------------------------------- */
-
-	if ( $isMobileScreen ) {
-		
-		console.log("Viewing on MOBILE (SMALL) screen: " + $$(window).width() + "px" );
-
-	}
-
-
-	/* -------------------------------------------------- */
-	/* TABLET SCREEN (MEDIUM)
-	/* -------------------------------------------------- */
-
-	if ( $isTabletScreen ) {
-		
-		console.log("Viewing on TABLET (MEDIUM) screen: " + $$(window).width() + "px" );
-
-	}
-
-
-	/* -------------------------------------------------- */
-	/* LAPTOP (LARGE)
-	/* -------------------------------------------------- */
-
-	if ( $isLaptopScreen ) {
-		
-		console.log("Viewing on LAPTOP (LARGE) screen: " + $$(window).width() + "px" );
-
-	}
-
-
-	/* -------------------------------------------------- */
-	/* DESKTOP (EXTRA LARGE)
-	/* -------------------------------------------------- */
-
-	if ( $isDesktopScreen ) {
-		
-		console.log("Viewing on a DESKTOP (X-LARGE) screen: " + $$(window).width() + "px" );
-
-	}
-
-
-	/* -------------------------------------------------- */
-	/* ANDROID
-	/* -------------------------------------------------- */
-
-	if ( $isAndroid ) {
-		
-		console.log("Android device detected.");
-		
-		isiOS.addClass("hide");
-		isDesktop.addClass("hide");
-
-	}
-
-
-	/* -------------------------------------------------- */
-	/* APPLE
-	/* -------------------------------------------------- */
-
-	if ( $isiPhone || $isiPad || $isiPod ) {
-		
-		console.log("iOS device detected.");
-		
-		isAndroid.addClass("hide");
-		isDesktop.addClass("hide");
-		
-	}
-
-
-	/* -------------------------------------------------- */
-	/* MOBILE
-	/* -------------------------------------------------- */
-
-	if ( $isMobile ) {
-		
-		console.log("Viewing on mobile device.");
-		
-		isDesktop.addClass("hide");
-		
-	} else {
-		
-		isMobile.addClass("hide");
-		
-	}
-
-
-	/* -------------------------------------------------- */
-	/* DESKTOP
-	/* -------------------------------------------------- */
-
-	if ( $isDesktop ) {
-		
-		console.log("Viewing on desktop / laptop.");
-		
-		isMobile.addClass("hide");
-		
-	} else {
-		
-		isDesktop.addClass("hide");
-		
-	}
-
-
-/* -------------------------------------------------- */
-/* DETECT TOUCH
-/* -------------------------------------------------- */
-
-var hasTouch = function() {
-
-	if ( $hasTouch ) {
-		
-		console.log("This device is touch enabled and will disable all :hover states.");
-
-		try {
-
-			// Prevent exception on browsers not supporting DOM 'styleSheet' properly.
-			for (var si in document.styleSheets) {
-				var styleSheet = document.styleSheets[si];
-				if (!styleSheet.rules) continue;
-
-				for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-					if (!styleSheet.rules[ri].selectorText) continue;
-					if (styleSheet.rules[ri].selectorText.match(":hover")) {
-						
-						styleSheet.deleteRule(ri);
-
-					}
-				}
-			}
-
-		}
-
-		catch (ex) {
-
-		}
-
-	}
-
-};
 
 
 /* -------------------------------------------------- */
@@ -312,71 +137,334 @@ var $isChrome = browserDetect.browser === "Chrome",
 	$isOpera = browserDetect.browser === "Opera",
 	$isSafari = browserDetect.browser === "Safari";
 
-console.log("You are using " + browserDetect.browser + " with version " + browserDetect.version);
+
+/* -------------------------------------------------- */
+/* DEVICE
+/* -------------------------------------------------- */
+
+var $isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1,
+	$isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone") > -1,
+	$isiPad = navigator.userAgent.toLowerCase().indexOf("ipad") > -1,
+	$isiPod = navigator.userAgent.toLowerCase().indexOf("ipod") > -1,
+	
+	$isMobile = $isAndroid || $isiPhone || $isiPad || $isiPod,
+	
+	$isPortrait = window.innerWidth < window.innerHeight,
+	$isLandscape = window.innerWidth > window.innerHeight,
+	
+	//$orientationPortrait = $isMobile && orientation === 0,
+	//$orientationLandscape = $isMobile && orientation === 90,
+	
+	$isDesktop = !$isMobile,
+	$isTouchScreen = $hasTouch && isDesktop; // Detects any touch-enabled device that is not a mobile device.
 
 
 /* -------------------------------------------------- */
-/* CHROME
+/* SCREEN
 /* -------------------------------------------------- */
 
-if ( $isChrome ) {
+var $isMobileScreen = Modernizr.mq("(max-width: 667px)"),
+	$isTabletScreen = Modernizr.mq("(max-width: 768px)"),
+	$isLaptopScreen = Modernizr.mq("(max-width: 1024px)"),
+	$isDesktopScreen = Modernizr.mq("(max-width: 1920px)");
+
+
+/* -------------------------------------------------- */
+/* CACHE SELECTORS
+/* -------------------------------------------------- */
+
+var isiOS = $(".is-ios"),
+	isAndroid = $(".is-android"),
+	isMobile = $(".is-mobile"),
+	//isTablet = $(".is-tablet"),
+	isDesktop = $(".is-desktop");
+
+
+/* -------------------------------------------------- */
+/* TOUCH
+/* -------------------------------------------------- */
+
+var hasTouch = function hasTouch() {
+
+	if ( $hasTouch ) {
+		
+		console.log("This device is touch enabled and will disable all :hover states.");
+
+		try {
+
+			// Prevent exception on browsers not supporting DOM 'styleSheet' properly.
+			for (var si in document.styleSheets) {
+
+				var styleSheet = document.styleSheets[si];
+
+				if (!styleSheet.rules) continue;
+
+				for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+
+					if (!styleSheet.rules[ri].selectorText) continue;
+
+					if (styleSheet.rules[ri].selectorText.match(":hover")) {
+						
+						styleSheet.deleteRule(ri);
+
+					}
+
+				}
+
+			}
+
+
+		}
+
+		catch (ex) {
+
+		}
+
+	}
+
+};
+
+
+/* -------------------------------------------------- */
+/* BROWSER
+/* -------------------------------------------------- */
+
+//removeIf(production)
+var detectBrowser = function detectBrowser() {
+
+	console.log("You are using " + browserDetect.browser + " with version " + browserDetect.version);
+
+
+	/* -------------------------------------------------- */
+	/* CHROME
+	/* -------------------------------------------------- */
+
+	if ( $isChrome ) {
+
+	} else {
+
+		return false;
+
+	}
+
+
+	/* -------------------------------------------------- */
+	/* EDGE / EXPLORER
+	/* -------------------------------------------------- */
+
+	if ( $isEdge || $isExplorer ) {
+
+	} else {
+
+		return false;
+
+	}
+
+
+	/* -------------------------------------------------- */
+	/* EXPLORER
+	/* -------------------------------------------------- */
+
+	if ( $isExplorer ) {
+
+	} else {
+
+		return false;
+
+	}
+
+
+	/* -------------------------------------------------- */
+	/* FIREFOX
+	/* -------------------------------------------------- */
+
+	if ( $isFirefox ) {
+
+	} else {
+
+		return false;
+
+	}
+
+
+	/* -------------------------------------------------- */
+	/* OPERA
+	/* -------------------------------------------------- */
+
+	if ( $isOpera ) {
+
+	} else {
+
+		return false;
+
+	}
+
+
+	/* -------------------------------------------------- */
+	/* SAFARI
+	/* -------------------------------------------------- */
+
+	if ( $isSafari ) {
+
+	} else {
+
+		return false;
+
+	}
 
 }
+//endRemoveIf(production)
 
 
 /* -------------------------------------------------- */
-/* EDGE / EXPLORER
+/* DEVICE
 /* -------------------------------------------------- */
 
-if ( $isEdge || $isExplorer ) {
+//removeIf(production)
+var detectDevice = function detectDevice() {
 
-	// Create elements for IE (8 and earlier), cause IE sucks.
-	/*
-	document.createElement("header");
-	document.createElement("nav");
-	document.createElement("main");
-	document.createElement("footer");
-	document.createElement("section");
-	document.createElement("article");
-	document.createElement("figure");
-	document.createElement("figcaption");
-	document.createElement("aside");
-	*/
+	/* -------------------------------------------------- */
+	/* ANDROID
+	/* -------------------------------------------------- */
+
+	if ( $isAndroid ) {
+		
+		console.log("Android device detected.");
+		
+		isiOS.addClass("hide");
+		isDesktop.addClass("hide");
+
+	} else {
+
+		return false;
+
+	}
+
+
+	/* -------------------------------------------------- */
+	/* APPLE
+	/* -------------------------------------------------- */
+
+	if ( $isiPhone || $isiPad || $isiPod ) {
+		
+		console.log("iOS device detected.");
+		
+		isAndroid.addClass("hide");
+		isDesktop.addClass("hide");
+		
+	} else {
+
+		return false;
+
+	}
+
+
+	/* -------------------------------------------------- */
+	/* MOBILE
+	/* -------------------------------------------------- */
+
+	if ( $isMobile ) {
+		
+		console.log("Viewing on mobile device.");
+		
+		isDesktop.addClass("hide");
+		
+	} else {
+		
+		isMobile.addClass("hide");
+
+		return false;
+		
+	}
+
+
+	/* -------------------------------------------------- */
+	/* DESKTOP
+	/* -------------------------------------------------- */
+
+	if ( $isDesktop ) {
+		
+		console.log("Viewing on desktop / laptop.");
+		
+		isMobile.addClass("hide");
+		
+	} else {
+		
+		isDesktop.addClass("hide");
+
+		return false;
+		
+	}
 
 }
+//endRemoveIf(production)
 
 
 /* -------------------------------------------------- */
-/* EXPLORER
+/* SCREEN
 /* -------------------------------------------------- */
 
-if ( $isExplorer ) {
+//removeIf(production)
+var detectScreen = function detectScreen() {
+
+	/* -------------------------------------------------- */
+	/* MOBILE SCREEN (SMALL)
+	/* -------------------------------------------------- */
+
+	if ( $isMobileScreen ) {
+		
+		console.log("Viewing on MOBILE (SMALL) screen: " + $$(window).width() + "px" );
+
+	} else {
+
+		return false;
+
+	}
+
+
+	/* -------------------------------------------------- */
+	/* TABLET SCREEN (MEDIUM)
+	/* -------------------------------------------------- */
+
+	if ( $isTabletScreen ) {
+		
+		console.log("Viewing on TABLET (MEDIUM) screen: " + $$(window).width() + "px" );
+
+	} else {
+
+		return false;
+
+	}
+
+
+	/* -------------------------------------------------- */
+	/* LAPTOP (LARGE)
+	/* -------------------------------------------------- */
+
+	if ( $isLaptopScreen ) {
+		
+		console.log("Viewing on LAPTOP (LARGE) screen: " + $$(window).width() + "px" );
+
+	} else {
+
+		return false;
+
+	}
+
+
+	/* -------------------------------------------------- */
+	/* DESKTOP (EXTRA LARGE)
+	/* -------------------------------------------------- */
+
+	if ( $isDesktopScreen ) {
+		
+		console.log("Viewing on a DESKTOP (X-LARGE) screen: " + $$(window).width() + "px" );
+
+	} else {
+
+		return false;
+
+	}
 
 }
-
-
-/* -------------------------------------------------- */
-/* FIREFOX
-/* -------------------------------------------------- */
-
-if ( $isFirefox ) {
-
-}
-
-
-/* -------------------------------------------------- */
-/* OPERA
-/* -------------------------------------------------- */
-
-if ( $isOpera ) {
-
-}
-
-
-/* -------------------------------------------------- */
-/* SAFARI
-/* -------------------------------------------------- */
-
-if ( $isSafari ) {
-
-}
+//endRemoveIf(production)

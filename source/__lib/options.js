@@ -3,7 +3,7 @@
 /* -------------------------------------------------- */
 
 // BLOCKS
-html = $("html"),
+var html = $("html"),
 body = $("body"),
 main = $("main"),
 section = $("section"),
@@ -16,7 +16,7 @@ navPanel = $("#nav-panel"),
 panelOverlay = $(".js-off-canvas-overlay"),
 navPanelString = "#nav-panel",
 
-mainScrollContent = window;
+mainScrollContent = window,
 	
 	
 /* -------------------------------------------------- */

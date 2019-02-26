@@ -3,6 +3,7 @@
 	"options": {
 		"name": "Umansky",
 		"site": "https://domain.com",
+		"language": "en",
 		"siteVersion": "0.0.1",
 		"styleguideVersion": "0.0.1",
 		"production": true,
@@ -307,20 +308,34 @@
 				  ">>plugins/p5/plugins/p5.sound.js",
 
 
-				  "<COMPONENTS>",
+				  "<PLUGINS>",
 				  ">>plugins/fullpage/plugins/dragandmove.js",
 				  ">>plugins/fullpage/plugins/scrolloverflow.js",
 				  ">>plugins/fullpage/fullpage.extensions.js",
 				  ">>plugins/fullpage/fullpage.js",
 
 				  "plugins/metafizzy/flickity.js",
-				  "plugins/metafizzy/imagesloaded.js",
+				  ">>plugins/metafizzy/imagesloaded.js",
 				  ">>plugins/metafizzy/isotope.js",
 				  "plugins/metafizzy/plugins/background.lazyload.js",
 
-
-				  "<WIDGETS>",
 				  "plugins/waves.js",
+
+
+				  "<CORE>",
+
+
+
+				  "<UTILITIES>",
+
+
+
+				  "<COMPONENTS>",
+
+
+
+				  "<UI>",
+
 
 
 				  "<APP>",

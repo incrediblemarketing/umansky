@@ -6,6 +6,7 @@
 	
 	"files": ["<JQUERY>",
 			  "jquery/dist/jquery.js",
+			  ">>>>>jquery/dist/jquery.slim.js",
 			  "jquery.easing/jquery.easing.js",
 
 

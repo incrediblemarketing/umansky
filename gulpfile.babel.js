@@ -70,7 +70,6 @@ import webfontloader from "inject-webfontloader"; // Inject WebFontLoader.
 import babel from "gulp-babel"; // JavaScript converter and compiler.
 import defer from "gulp-defer"; // Moves render blocking JavaScript and CSS files into a deferred loading section.
 import jshint from "gulp-jshint"; // Detect errors and potential problems in JavaScript syntax.
-import modernizr from "gulp-modernizr"; // Detect browser and device specific features.
 import uglify from "gulp-uglify"; // Minify JS files.
 
 
@@ -579,7 +578,7 @@ export function appjs() {
 			   .pipe(gulpif( config.optimizations.js.lint, jshint() ))
 			   .pipe(gulpif( config.optimizations.js.lint, jshint.reporter() ))
 
-			   .pipe(removeCode({production: true}))
+			   //.pipe(removeCode({production: true}))
 			   .pipe(concat("appCustom.js"))
 			   .pipe(gulp.dest( pathBuild + pathScripts ));
 
@@ -594,8 +593,8 @@ export function combinejs() {
 	return gulp.src([pathBuild + pathScripts + "appFramework.js",
 					 pathBuild + pathScripts + "appCustom.js"], {allowEmpty: true} )
 			   .pipe(gulpif( config.options.cacheBuild, cache("combinejs") ))
+
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
-			   //.pipe(modernizr())
 			   .pipe(removeCode({production: true}))
 
 			   //.pipe(babel( { presets: ['es2015'] } ))
@@ -621,8 +620,6 @@ export function combinejs() {
 }
 
 
-
-
 // STYLEGUIDE
 export function styleguidejs() {
 
@@ -630,7 +627,6 @@ export function styleguidejs() {
 
 	return gulp.src( config.js.files.map( function(base) { return pathSource + pathJS + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
-			   //.pipe(modernizr())
 			   //.pipe(babel())
 			   //.pipe(removeCode({production: true}))
 			   //.pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
@@ -647,7 +643,6 @@ export function styleguidejs() {
 												 pathSource + pathJS + "assets/clipboard.js",
 												 pathSource + pathJS + "styleguide.js"])
 										   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
-										   //.pipe(modernizr())
 										   //.pipe(babel())
 										   .pipe(removeCode({production: true}))
 										   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
@@ -669,7 +664,6 @@ export function vendors() {
 			   .pipe(gulpif( config.vendors.lint, jshint() ))
 			   .pipe(gulpif( config.vendors.lint, jshint.reporter() ))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
-			   //.pipe(modernizr())
 			   //.pipe(babel())
 			   .pipe(removeCode({production: true}))
 			   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
@@ -684,61 +678,39 @@ export function vendors() {
 /* CSS
 /* -------------------------------------------------- */
 
-// CRITICAL-ALT (IN TESTING)
+// CRITICAL
 var critical = require("critical").stream;
 
 export function criticalcss() {
 
 	return gulp.src( pathBuild + "**/*.html" )
-				.pipe(critical({base: pathBuild,
-								inline: config.optimizations.critical.inline,
-								css: [ pathBuild + pathScripts + config.scss.critical ],
+				.pipe(gulpif( config.options.cacheBuild, cache("critical") ))
+				.pipe(gulpif( config.optimizations.critical.allow, critical({base: pathBuild,
+																			inline: config.optimizations.critical.inline,
+																			css: [ pathBuild + pathScripts + config.scss.critical ],
 
-								dimensions: [{width: config.optimizations.critical.width,
-											  height: config.optimizations.critical.height
-								}],
+																			dimensions: [{width: config.optimizations.critical.width,
+																						  height: config.optimizations.critical.height
+																			}],
 
-								extract: config.optimizations.critical.extract,
+																			extract: config.optimizations.critical.extract,
 
-								minify: config.optimizations.html.minify,
-								timeout: 30000,
+																			//minify: config.optimizations.html.minify,
+																			timeout: 30000,
 
-								ignore: {atrule: ["@font-face"],
-										 rule: [/some-regexp/],
-										 decl: (node, value) => /big-image\.png/.test(value)
-								}
+																			ignore: {atrule: ["@font-face"],
+																					 rule: [/some-regexp/],
+																					 decl: (node, value) => /big-image\.png/.test(value)
+																			}
 
-				}))
+				}) ))
 
 				.on('error', function(err) { 
 					gutil.log(gutil.colors.red(err.message))
 				})
 
-				.pipe(gulp.dest( pathBuild ));
-
-}
-
-
-// CRITICAL
-export function critical() {
-
-	console.log("Compiling critical css...");
-
-	return gulp.src( pathSource + pathSCSS + config.scss.critical, { base: null, allowEmpty: true } )
-			   .pipe(gulpif( config.options.cacheBuild, cache("critical") ))
-			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
-			   //.pipe(scsslint({ "reporterOutput": "scssreport.json" }))
-			   .pipe(sassGlob( { ignorePaths: [ ] } ))
-			   .pipe( sass({ outputStyle: null, trace: true, verbose: true }).on("error", sass.logError) )
-			   //.pipe(sourcemaps.write())
-			   .pipe(postcss(plugins))
-			   //.pipe(gulpif( production, purgecss(purgeCSSOptions) ))
-			   //.pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
-			   //.pipe(renameExt(".css"))
-			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
-			   .pipe(gulp.dest( pathSource + config.html.inlineScripts ))
-			   //.pipe(gulp.dest( pathBuild + pathScripts ))
-			   .pipe(browserSync.stream());
+				.pipe(gulp.dest( pathBuild ))
+				.pipe(browserSync.stream());
 
 }
 
@@ -1565,13 +1537,17 @@ export function sync() {
 				pathSource + "**/browserconfig.xml",
 				pathSource + config.html.inlineScripts + "**/*.js",
 				pathSource + config.html.inlineScripts + "**/*.css",
+
+				//pathSource + pathSCSS + "_critical.scss",
+
 				pathSource + config.html.files,
 				pathSource + "{_data,_helpers,_layouts,_dialog,_partials}/**/*.{html,hbs,handlebars,json,yml}"
-				]).on("all", gulp.series(clearcache, html, dialog, meta, refresh, gulp.series(refresh, html, dialog, injectwebfontloader, injectscripts, meta, reload) ));
+				]).on("all", gulp.series(clearcache, html, dialog, meta, scss, refresh, gulp.series(refresh, html, dialog, injectwebfontloader, injectscripts, meta, reload) ));
 
 
 	gulp.watch([configFile,
-				frameworkFile
+				frameworkFile,
+				"gulpfile.babel.js"
 				]).on("all", configwarning );
 
 }
@@ -1706,6 +1682,26 @@ export function ftpdeploy(done) {
 /* HELPERS
 /* -------------------------------------------------- */		
 
+// PRODUCTION SWITCH
+function mode(done) {
+
+	production = false;
+
+	if (production === false) {
+
+		console.log("Build Mode: Development");
+
+	} else {
+
+		console.log("Build Mode: Production");
+
+	}
+
+	return done();
+
+}
+
+
 // REFRESH
 function refresh(done) {
 
@@ -1723,26 +1719,6 @@ export function reload(done) {
 	console.log("Reloading...");
 
 	browserSync.reload();
-	return done();
-
-}
-
-
-// PRODUCTION SWITCH
-function mode(done) {
-
-	production = false;
-
-	if (production === false) {
-
-		console.log("Build Mode: Development");
-
-	} else {
-
-		console.log("Build Mode: Production");
-
-	}
-
 	return done();
 
 }
@@ -1818,10 +1794,9 @@ export function completed(done) {
 export function configwarning() {
 
 
-	console.log("Your " + "'" + configFile + "'" + " and/or " + "'" + frameworkFile + "'" + " has been modified. You must quit your current development session and run 'gulp test' in order to load your saved configuration file settings.");
+	console.log("Your " + "'" + gulpfile.babel.js + "'" + "'" + configFile + "'" + " and/or " + "'" + frameworkFile + "'" + " has been modified. You must quit your current development session and run 'gulp test' in order to load your new tasks and configuration file settings.");
 
 	//return done();
-
 
 }
 

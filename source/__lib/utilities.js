@@ -2,113 +2,8 @@
 /* LAZY LOAD / INTERSECTION OBSERVER
 /* -------------------------------------------------- */
 
-var utilAssetObserver = function() {
+var assetObserver = function assetObserver() {
 
-	/* -------------------------------------------------- */
-	/* IMAGE RESIZE
-	/* -------------------------------------------------- */
-	
-		/* -------------------------------------------------- */
-		/* CACHE SELECTORS
-		/* -------------------------------------------------- */
-
-	    var imageBackground = $(".img-bg-resize");
-		
-		
-		/* -------------------------------------------------- */
-		/* PROPERTIES
-		/* -------------------------------------------------- */
-
-		// Set default styling and properties.
-		//$imageBackground.parent().css({"height" : "600px"});
-		imageBackground.parent().addClass("background-pattern");
-		
-		imageBackground.css({"width": "100%",
-							 "height": "100%", // Safari does not render '100vh' properly.
-							 "min-height": "400px",
-							 //"background-position": "center center",
-							 "background-repeat": "repeat",
-							 //"background-size": "cover",
-							 "transition-property": "background-position"});
-
-		
-		/* -------------------------------------------------- */
-		/* FUNCTIONS
-		/* -------------------------------------------------- */
-
-		var imageBackgroundResize = function () {
-		
-			imageBackground.each(function() {
-
-				// Cache selectors.
-				var self = $(this);
-
-				// Get the 'background-image'.
-				var background = self.css("background-image");
-				
-				// If the background image is anything other than 'none'.
-				if (background !== "none") {
-					
-					// Find and replace 'url()' to get the pure image URL
-					background = background.replace('url("','').replace('")','');
-
-					// Create new 'Image' instance and set path to our background.
-					var bg = new Image();
-					bg.src = background;
-
-					// We now have serveral vars availible to pass through to the plugin.
-					// self = the element.
-					// background = the url.
-					// bg.width = image width.
-					// bg.height = image height.
-
-					//console.log(bg.width);
-					//console.log(bg.height);
-	                   
-					// Check if image has loaded and apply size and properties.
-					bg.onload = function () {
-	   					//console.info("Background image loaded. Calculating size.");
-	 
-						self.css({"width" : "100%",
-								  "height" : bg.height,
-								  //"min-height" : "400px",
-								  "background-repeat" : "no-repeat"});
-
-						
-						// Recalculate 'background-image' height and resize proportionately.
-						self.parent().css({"height" : bg.height / 1.25});
-
-						
-						if ( $isMobile && orientation === 0 ) {
-				
-							//console.log( "Orientation Mode: Portrait / " + orientation);
-							self.parent().css({"height" : bg.height / 1});
-
-							
-						} else if ( $isMobile && orientation === 90 ) {
-							
-							//console.log( "Orientation Mode: Landscape / " + orientation);
-							self.parent().css({"height" : bg.height * 1});
-
-						}
-						
-						
-					};
-
-				}
-				
-			});
-		
-		};
-		
-		
-		/* -------------------------------------------------- */
-		/* INIT
-		/* -------------------------------------------------- */
-
-		$$(mainScrollContent).on("resize orientationchange", _.debounce(imageBackgroundResize, $updateInterval));
-
-	
 	/* -------------------------------------------------- */
 	/* PRELOADER
 	/* -------------------------------------------------- */
@@ -141,41 +36,13 @@ var utilAssetObserver = function() {
 			
 		
 		var lazyLoading = function(element) {		
-			
-			$(element).imagesLoaded({ background: true })
-			
-				.always( function() {
-				
-					//lazyLog("LOADING:", element);			
-					//TweenMax.set(element, {opacity: 0, scale: 0.9});
-				
-				})
-				
-				.progress( function(instance, image) {
-	    			//var result = image.isLoaded ? 'loaded' : 'broken';
-					//console.log( 'image is ' + result + ' for ' + image.img.src );
-	  			});
+		
 			
 		};
 
 		
 		var lazySet = function(element) {
 
-			$(element).imagesLoaded({ background: true })
-
-				.done( function() {
-				
-					//lazyLog("LOADED:", element);
-					//TweenMax.to(element, 0.35, {opacity: 1, scale: 1, delay: 0.5, ease: Back.easeOut});
-					imageBackgroundResize();
-				
-				})
-			
-				.fail( function() {
-				
-					//lazyLog("UNABLE TO LOAD", element);
-				
-				});
 
 		};
 
@@ -215,7 +82,7 @@ var utilAssetObserver = function() {
 /* DATA ATTRIBUTES
 /* -------------------------------------------------- */
 
-var utilDataAttributes = function() {
+var dataHelpers = function dataHelpers() {
 	"use strict";
 	
 	/* -------------------------------------------------- */
@@ -278,7 +145,7 @@ var utilDataAttributes = function() {
 /* EMERGENCE
 /* -------------------------------------------------- */
 
-var utilEmergence = function() {
+var reveal = function reveal() {
 
 	/* -------------------------------------------------- */
 	/* CACHE SELECTORS
@@ -463,7 +330,7 @@ var utilEmergence = function() {
 /* PAGE VISIBILITY
 /* -------------------------------------------------- */
 
-var utilPageVisibility = function() {
+var pageVisibility = function pageVisibility() {
 	"use strict";
 	
 	/* -------------------------------------------------- */
@@ -515,7 +382,7 @@ var utilPageVisibility = function() {
 /* PRINT
 /* -------------------------------------------------- */
 
-var utilPrint = function() {
+var print = function print() {
 	"use strict";
 	
 	/* -------------------------------------------------- */
